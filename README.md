@@ -50,10 +50,6 @@ Officially supported CI servers:
 
 ## API
 
-In some cases the specific CI vendor cannot be detected. In that case
-only `ci.isCI` is set to `true` whereas `ci.name` and the vendor
-specific boolean constant isn't set.
-
 ### `ci.name`
 
 A string. Will contain the name of the CI server the code is running on.
@@ -67,6 +63,11 @@ most likely want to use `ci.TRAVIS` instead.
 
 A boolean. Will be `true` if the code is running on a CI server.
 Otherwise `false`.
+
+Some CI servers not listed here might still trigger the `ci.isCI`
+boolean to be set to `true` if they use certain vendor neutral
+environment variables. In those cases `ci.name` will be `null` and no
+vendor specific boolean will be set to `true`.
 
 ### `ci.<VENDOR-CONSTANT>`
 
