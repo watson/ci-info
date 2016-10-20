@@ -34,9 +34,9 @@ Officially supported CI servers:
 - [CircleCI](http://circleci.com)
 - [Jenkins CI](https://jenkins-ci.org)
 - [Hudson](http://hudson-ci.org)
-- [Bamboo](https://www.atlassian.com/software/bamboo)
-- [TeamCity](https://www.jetbrains.com/teamcity/)
-- [Team Foundation Server](https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx)
+- [Bamboo](https://www.atlassian.com/software/bamboo) by Atlassian
+- [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains
+- [Team Foundation Server](https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx) by Microsoft
 - [GitLab CI](https://about.gitlab.com/gitlab-ci/)
 - [Codeship](https://codeship.com)
 - [Drone](https://drone.io)
@@ -83,9 +83,9 @@ Otherwise `false`.
 - `ci.MAGNUM`
 - `ci.SEMAPHORE`
 - `ci.JENKINS`
-- `ci.BAMBOO` - by Atlassian
-- `ci.TFS` - Team Foundation Server by Microsoft
-- `ci.TEAMCITY` - by JetBrains
+- `ci.BAMBOO`
+- `ci.TFS` (Team Foundation Server)
+- `ci.TEAMCITY`
 - `ci.BUILDKITE`
 - `ci.HUDSON`
 - `ci.TASKCLUSTER`
