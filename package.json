@@ -1,6 +1,6 @@
 {
   "name": "ci-info",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Get details about the current Continuous Integration environment",
   "main": "index.js",
   "dependencies": {},
@@ -27,5 +27,9 @@
   "bugs": {
     "url": "https://github.com/watson/ci-info/issues"
   },
-  "homepage": "https://github.com/watson/ci-info"
+  "homepage": "https://github.com/watson/ci-info",
+  "coordinates": [
+    55.68768499999999,
+    12.5955698
+  ]
 }
