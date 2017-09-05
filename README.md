@@ -47,6 +47,7 @@ Officially supported CI servers:
 - [TaskCluster](http://docs.taskcluster.net)
 - [GoCD](https://www.go.cd/)
 - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
+- [AWS CodeBuild](https://aws.amazon.com/codebuild/)
 
 ## API
 
@@ -92,6 +93,7 @@ Otherwise `false`.
 - `ci.TASKCLUSTER`
 - `ci.GOCD`
 - `ci.BITBUCKET`
+- `ci.CODEBUILD`
 
 ## License
 
