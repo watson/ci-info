@@ -30,24 +30,24 @@ if (ci.isCI) {
 
 Officially supported CI servers:
 
-- [Travis CI](http://travis-ci.org)
-- [CircleCI](http://circleci.com)
-- [Jenkins CI](https://jenkins-ci.org)
-- [Hudson](http://hudson-ci.org)
+- [AWS CodeBuild](https://aws.amazon.com/codebuild/)
+- [AppVeyor](http://www.appveyor.com)
 - [Bamboo](https://www.atlassian.com/software/bamboo) by Atlassian
-- [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains
-- [Team Foundation Server](https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx) by Microsoft
-- [GitLab CI](https://about.gitlab.com/gitlab-ci/)
+- [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
+- [Buildkite](https://buildkite.com)
+- [CircleCI](http://circleci.com)
 - [Codeship](https://codeship.com)
 - [Drone](https://drone.io)
+- [GitLab CI](https://about.gitlab.com/gitlab-ci/)
+- [GoCD](https://www.go.cd/)
+- [Hudson](http://hudson-ci.org)
+- [Jenkins CI](https://jenkins-ci.org)
 - [Magnum CI](https://magnum-ci.com)
 - [Semaphore](https://semaphoreci.com)
-- [AppVeyor](http://www.appveyor.com)
-- [Buildkite](https://buildkite.com)
 - [TaskCluster](http://docs.taskcluster.net)
-- [GoCD](https://www.go.cd/)
-- [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
-- [AWS CodeBuild](https://aws.amazon.com/codebuild/)
+- [Team Foundation Server](https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx) by Microsoft
+- [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains
+- [Travis CI](http://travis-ci.org)
 
 ## API
 
@@ -76,24 +76,24 @@ The following vendor specific boolean constants are exposed. A constant
 will be `true` if the code is determined to run on the given CI server.
 Otherwise `false`.
 
-- `ci.TRAVIS`
-- `ci.CIRCLE`
-- `ci.GITLAB`
 - `ci.APPVEYOR`
+- `ci.BAMBOO`
+- `ci.BITBUCKET`
+- `ci.BUILDKITE`
+- `ci.CIRCLE`
+- `ci.CODEBUILD`
 - `ci.CODESHIP`
 - `ci.DRONE`
+- `ci.GITLAB`
+- `ci.GOCD`
+- `ci.HUDSON`
+- `ci.JENKINS`
 - `ci.MAGNUM`
 - `ci.SEMAPHORE`
-- `ci.JENKINS`
-- `ci.BAMBOO`
-- `ci.TFS` (Team Foundation Server)
-- `ci.TEAMCITY`
-- `ci.BUILDKITE`
-- `ci.HUDSON`
 - `ci.TASKCLUSTER`
-- `ci.GOCD`
-- `ci.BITBUCKET`
-- `ci.CODEBUILD`
+- `ci.TEAMCITY`
+- `ci.TFS` (Team Foundation Server)
+- `ci.TRAVIS`
 
 ## License
 
