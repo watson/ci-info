@@ -20,7 +20,8 @@ var vendors = [
   ['HUDSON', 'Hudsun', 'HUDSON_URL'],
   ['TASKCLUSTER', 'TaskCluster', 'TASK_ID', 'RUN_ID'],
   ['GOCD', 'GoCD', 'GO_PIPELINE_LABEL'],
-  ['BITBUCKET', 'Bitbucket Pipelines', 'BITBUCKET_COMMIT']
+  ['BITBUCKET', 'Bitbucket Pipelines', 'BITBUCKET_COMMIT'],
+  ['CODEBUILD', 'AWS CodeBuild', 'CODEBUILD_BUILD_ARN']
 ]
 
 exports.name = null

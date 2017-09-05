@@ -26,6 +26,7 @@ assert.equal(ci.HUDSON, false)
 assert.equal(ci.TASKCLUSTER, false)
 assert.equal(ci.GOCD, false)
 assert.equal(ci.BITBUCKET, false)
+assert.equal(ci.CODEBUILD, false)
 
 // Not CI
 delete process.env.CI
@@ -54,6 +55,7 @@ assert.equal(ci.HUDSON, false)
 assert.equal(ci.TASKCLUSTER, false)
 assert.equal(ci.GOCD, false)
 assert.equal(ci.BITBUCKET, false)
+assert.equal(ci.CODEBUILD, false)
 
 // Unknown CI
 process.env.CI = 'true'
@@ -79,3 +81,4 @@ assert.equal(ci.HUDSON, false)
 assert.equal(ci.TASKCLUSTER, false)
 assert.equal(ci.GOCD, false)
 assert.equal(ci.BITBUCKET, false)
+assert.equal(ci.CODEBUILD, false)
