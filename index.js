@@ -12,7 +12,7 @@ var vendors = [
   ['DRONE', 'Drone', 'DRONE'],
   ['MAGNUM', 'Magnum CI', 'MAGNUM'],
   ['SEMAPHORE', 'Semaphore', 'SEMAPHORE'],
-  ['JENKINS', 'Jenkins', 'JENKINS_URL'],
+  ['JENKINS', 'Jenkins', 'JENKINS_URL', 'BUILD_ID'],
   ['BAMBOO', 'Bamboo', 'bamboo_planKey'],
   ['TFS', 'Team Foundation Server', 'TF_BUILD'],
   ['TEAMCITY', 'TeamCity', 'TEAMCITY_VERSION'],
