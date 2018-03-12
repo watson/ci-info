@@ -17,7 +17,7 @@ var vendors = [
   ['TFS', 'Team Foundation Server', 'TF_BUILD'],
   ['TEAMCITY', 'TeamCity', 'TEAMCITY_VERSION'],
   ['BUILDKITE', 'Buildkite', 'BUILDKITE'],
-  ['HUDSON', 'Hudsun', 'HUDSON_URL'],
+  ['HUDSON', 'Hudson', 'HUDSON_URL'],
   ['TASKCLUSTER', 'TaskCluster', 'TASK_ID', 'RUN_ID'],
   ['GOCD', 'GoCD', 'GO_PIPELINE_LABEL'],
   ['BITBUCKET', 'Bitbucket Pipelines', 'BITBUCKET_COMMIT'],
