@@ -92,13 +92,18 @@ Otherwise `false`.
 - `ci.HUDSON`
 - `ci.JENKINS`
 - `ci.MAGNUM`
+- `ci.SOLANO`
 - `ci.SEMAPHORE`
-- `ci.TDDIUM` (Solano CI)
 - `ci.STRIDER`
 - `ci.TASKCLUSTER`
 - `ci.TEAMCITY`
 - `ci.TFS` (Team Foundation Server)
 - `ci.TRAVIS`
+
+Deprecated vendor constants that will be removed in the next major
+release:
+
+- `ci.TDDIUM` (Solano CI) This have been renamed `ci.SOLANO`
 
 ## License
 

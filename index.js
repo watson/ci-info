@@ -18,9 +18,10 @@ var vendors = [
   ['JENKINS', 'Jenkins', 'JENKINS_URL', 'BUILD_ID'],
   ['MAGNUM', 'Magnum CI', 'MAGNUM'],
   ['SEMAPHORE', 'Semaphore', 'SEMAPHORE'],
+  ['SOLANO', 'Solano CI', 'TDDIUM'],
   ['STRIDER', 'Strider CD', 'STRIDER'],
   ['TASKCLUSTER', 'TaskCluster', 'TASK_ID', 'RUN_ID'],
-  ['TDDIUM', 'Solano CI', 'TDDIUM'],
+  ['TDDIUM', 'Solano CI', 'TDDIUM'], // Deprecated
   ['TEAMCITY', 'TeamCity', 'TEAMCITY_VERSION'],
   ['TFS', 'Team Foundation Server', 'TF_BUILD'],
   ['TRAVIS', 'Travis CI', 'TRAVIS']
