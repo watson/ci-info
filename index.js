@@ -41,9 +41,9 @@ vendors.forEach(function (vendor) {
 })
 
 exports.isCI = !!(
-  env.CI ||                      // Travis CI, CircleCI, Gitlab CI, Appveyor, CodeShip
-  env.CONTINUOUS_INTEGRATION ||  // Travis CI
-  env.BUILD_NUMBER ||            // Jenkins, TeamCity
+  env.CI || // Travis CI, CircleCI, Gitlab CI, Appveyor, CodeShip
+  env.CONTINUOUS_INTEGRATION || // Travis CI
+  env.BUILD_NUMBER || // Jenkins, TeamCity
   exports.name ||
   false
 )
