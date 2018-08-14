@@ -34,7 +34,6 @@ delete process.env.CI
 delete process.env.CONTINUOUS_INTEGRATION
 delete process.env.BUILD_NUMBER
 delete process.env.TRAVIS
-delete process.env.TDDIUM
 clearRequire('./')
 ci = require('./')
 
