@@ -100,4 +100,4 @@ Otherwise `false`.
 
 ## License
 
-MIT
+[MIT](LICENSE)
