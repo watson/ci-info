@@ -28,6 +28,7 @@ assert.equal(ci.GOCD, false)
 assert.equal(ci.BITBUCKET, false)
 assert.equal(ci.CODEBUILD, false)
 assert.equal(ci.TDDIUM, false)
+assert.equal(ci.STRIDER, false)
 
 // Not CI
 delete process.env.CI
@@ -58,6 +59,7 @@ assert.equal(ci.GOCD, false)
 assert.equal(ci.BITBUCKET, false)
 assert.equal(ci.CODEBUILD, false)
 assert.equal(ci.TDDIUM, false)
+assert.equal(ci.STRIDER, false)
 
 // Unknown CI
 process.env.CI = 'true'

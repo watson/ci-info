@@ -22,7 +22,8 @@ var vendors = [
   ['GOCD', 'GoCD', 'GO_PIPELINE_LABEL'],
   ['BITBUCKET', 'Bitbucket Pipelines', 'BITBUCKET_COMMIT'],
   ['CODEBUILD', 'AWS CodeBuild', 'CODEBUILD_BUILD_ARN'],
-  ['TDDIUM', 'Solano CI', 'TDDIUM']
+  ['TDDIUM', 'Solano CI', 'TDDIUM'],
+  ['STRIDER', 'Strider CD', 'STRIDER']
 ]
 
 exports.name = null

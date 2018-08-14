@@ -46,6 +46,7 @@ Officially supported CI servers:
 - [Magnum CI](https://magnum-ci.com)
 - [Semaphore](https://semaphoreci.com)
 - [Solano CI](https://www.solanolabs.com/)
+- [Strider CD](https://strider-cd.github.io/)
 - [TaskCluster](http://docs.taskcluster.net)
 - [Team Foundation Server](https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx) by Microsoft
 - [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains
