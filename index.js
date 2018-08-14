@@ -21,7 +21,8 @@ var vendors = [
   ['TASKCLUSTER', 'TaskCluster', 'TASK_ID', 'RUN_ID'],
   ['GOCD', 'GoCD', 'GO_PIPELINE_LABEL'],
   ['BITBUCKET', 'Bitbucket Pipelines', 'BITBUCKET_COMMIT'],
-  ['CODEBUILD', 'AWS CodeBuild', 'CODEBUILD_BUILD_ARN']
+  ['CODEBUILD', 'AWS CodeBuild', 'CODEBUILD_BUILD_ARN'],
+  ['TDDIUM', 'Solano CI', 'TDDIUM']
 ]
 
 exports.name = null

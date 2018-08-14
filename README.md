@@ -44,6 +44,7 @@ Officially supported CI servers:
 - [Jenkins CI](https://jenkins-ci.org)
 - [Magnum CI](https://magnum-ci.com)
 - [Semaphore](https://semaphoreci.com)
+- [Solano CI](https://www.solanolabs.com/)
 - [TaskCluster](http://docs.taskcluster.net)
 - [Team Foundation Server](https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx) by Microsoft
 - [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains
@@ -90,6 +91,7 @@ Otherwise `false`.
 - `ci.JENKINS`
 - `ci.MAGNUM`
 - `ci.SEMAPHORE`
+- `ci.TDDIUM` (Solano CI)
 - `ci.TASKCLUSTER`
 - `ci.TEAMCITY`
 - `ci.TFS` (Team Foundation Server)
