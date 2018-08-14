@@ -94,6 +94,7 @@ Otherwise `false`.
 - `ci.MAGNUM`
 - `ci.SEMAPHORE`
 - `ci.TDDIUM` (Solano CI)
+- `ci.STRIDER`
 - `ci.TASKCLUSTER`
 - `ci.TEAMCITY`
 - `ci.TFS` (Team Foundation Server)
