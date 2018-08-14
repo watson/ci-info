@@ -4,26 +4,26 @@ var env = process.env
 
 var vendors = [
   // Constant, Name, Envs
-  ['TRAVIS', 'Travis CI', 'TRAVIS'],
-  ['CIRCLE', 'CircleCI', 'CIRCLECI'],
-  ['GITLAB', 'GitLab CI', 'GITLAB_CI'],
   ['APPVEYOR', 'AppVeyor', 'APPVEYOR'],
+  ['BAMBOO', 'Bamboo', 'bamboo_planKey'],
+  ['BITBUCKET', 'Bitbucket Pipelines', 'BITBUCKET_COMMIT'],
+  ['BUILDKITE', 'Buildkite', 'BUILDKITE'],
+  ['CIRCLE', 'CircleCI', 'CIRCLECI'],
+  ['CODEBUILD', 'AWS CodeBuild', 'CODEBUILD_BUILD_ARN'],
   ['CODESHIP', 'Codeship', {CI_NAME: 'codeship'}],
   ['DRONE', 'Drone', 'DRONE'],
+  ['GITLAB', 'GitLab CI', 'GITLAB_CI'],
+  ['GOCD', 'GoCD', 'GO_PIPELINE_LABEL'],
+  ['HUDSON', 'Hudson', 'HUDSON_URL'],
+  ['JENKINS', 'Jenkins', 'JENKINS_URL', 'BUILD_ID'],
   ['MAGNUM', 'Magnum CI', 'MAGNUM'],
   ['SEMAPHORE', 'Semaphore', 'SEMAPHORE'],
-  ['JENKINS', 'Jenkins', 'JENKINS_URL', 'BUILD_ID'],
-  ['BAMBOO', 'Bamboo', 'bamboo_planKey'],
-  ['TFS', 'Team Foundation Server', 'TF_BUILD'],
-  ['TEAMCITY', 'TeamCity', 'TEAMCITY_VERSION'],
-  ['BUILDKITE', 'Buildkite', 'BUILDKITE'],
-  ['HUDSON', 'Hudson', 'HUDSON_URL'],
+  ['STRIDER', 'Strider CD', 'STRIDER'],
   ['TASKCLUSTER', 'TaskCluster', 'TASK_ID', 'RUN_ID'],
-  ['GOCD', 'GoCD', 'GO_PIPELINE_LABEL'],
-  ['BITBUCKET', 'Bitbucket Pipelines', 'BITBUCKET_COMMIT'],
-  ['CODEBUILD', 'AWS CodeBuild', 'CODEBUILD_BUILD_ARN'],
   ['TDDIUM', 'Solano CI', 'TDDIUM'],
-  ['STRIDER', 'Strider CD', 'STRIDER']
+  ['TEAMCITY', 'TeamCity', 'TEAMCITY_VERSION'],
+  ['TFS', 'Team Foundation Server', 'TF_BUILD'],
+  ['TRAVIS', 'Travis CI', 'TRAVIS']
 ]
 
 exports.name = null
