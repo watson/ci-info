@@ -2,8 +2,9 @@
 
 Get details about the current Continuous Integration environment.
 
-Please [open an issue](https://github.com/watson/ci-info/issues) if your
-CI server isn't properly detected :)
+Please [open an
+issue](https://github.com/watson/ci-info/issues/new?template=ci-server-not-detected.md)
+if your CI server isn't properly detected :)
 
 [![npm](https://img.shields.io/npm/v/ci-info.svg)](https://www.npmjs.com/package/ci-info)
 [![Build status](https://travis-ci.org/watson/ci-info.svg?branch=master)](https://travis-ci.org/watson/ci-info)
