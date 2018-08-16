@@ -38,6 +38,7 @@ Officially supported CI servers:
 - [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)
 - [Buildkite](https://buildkite.com)
 - [CircleCI](http://circleci.com)
+- [Cirrus CI](https://cirrus-ci.org)
 - [Codeship](https://codeship.com)
 - [Drone](https://drone.io)
 - [GitLab CI](https://about.gitlab.com/gitlab-ci/)
@@ -85,6 +86,7 @@ Otherwise `false`.
 - `ci.BITBUCKET`
 - `ci.BUILDKITE`
 - `ci.CIRCLE`
+- `ci.CIRRUS`
 - `ci.CODEBUILD`
 - `ci.CODESHIP`
 - `ci.DRONE`
