@@ -12,7 +12,7 @@ if your CI server isn't properly detected :)
 
 ## Installation
 
-```
+```bash
 npm install ci-info --save
 ```
 
@@ -94,9 +94,9 @@ Otherwise `false`.
 - `ci.HUDSON`
 - `ci.JENKINS`
 - `ci.MAGNUM`
-- `ci.SOLANO`
 - `ci.SEMAPHORE`
 - `ci.SHIPPABLE`
+- `ci.SOLANO`
 - `ci.STRIDER`
 - `ci.TASKCLUSTER`
 - `ci.TEAMCITY`
