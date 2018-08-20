@@ -29,6 +29,11 @@ var vendors = [
   ['TRAVIS', 'Travis CI', 'TRAVIS']
 ]
 
+// Used for testinging only
+Object.defineProperty(exports, '_vendors', {
+  value: vendors.map(function (v) { return v[0] })
+})
+
 exports.name = null
 
 vendors.forEach(function (vendor) {
