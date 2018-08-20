@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.4.0
+
+* feat: add Cirrus CI detection ([#13](https://github.com/watson/ci-info/pull/13))
+* feat: add Shippable CI detection ([#14](https://github.com/watson/ci-info/pull/14))
+
 ## v1.3.1
 
 * chore: reduce npm package size by not including `.github` folder content ([#11](https://github.com/watson/ci-info/pull/11))
