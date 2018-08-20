@@ -12,7 +12,7 @@ if your CI server isn't properly detected :)
 
 ## Installation
 
-```
+```bash
 npm install ci-info --save
 ```
 
@@ -46,6 +46,7 @@ Officially supported CI servers:
 - [Jenkins CI](https://jenkins-ci.org)
 - [Magnum CI](https://magnum-ci.com)
 - [Semaphore](https://semaphoreci.com)
+- [Shippable](https://www.shippable.com/)
 - [Solano CI](https://www.solanolabs.com/)
 - [Strider CD](https://strider-cd.github.io/)
 - [TaskCluster](http://docs.taskcluster.net)
@@ -93,8 +94,9 @@ Otherwise `false`.
 - `ci.HUDSON`
 - `ci.JENKINS`
 - `ci.MAGNUM`
-- `ci.SOLANO`
 - `ci.SEMAPHORE`
+- `ci.SHIPPABLE`
+- `ci.SOLANO`
 - `ci.STRIDER`
 - `ci.TASKCLUSTER`
 - `ci.TEAMCITY`

@@ -18,6 +18,7 @@ var vendors = [
   ['JENKINS', 'Jenkins', 'JENKINS_URL', 'BUILD_ID'],
   ['MAGNUM', 'Magnum CI', 'MAGNUM'],
   ['SEMAPHORE', 'Semaphore', 'SEMAPHORE'],
+  ['SHIPPABLE', 'Shippable', 'SHIPPABLE'],
   ['SOLANO', 'Solano CI', 'TDDIUM'],
   ['STRIDER', 'Strider CD', 'STRIDER'],
   ['TASKCLUSTER', 'TaskCluster', 'TASK_ID', 'RUN_ID'],
