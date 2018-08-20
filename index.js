@@ -9,6 +9,7 @@ var vendors = [
   ['BITBUCKET', 'Bitbucket Pipelines', 'BITBUCKET_COMMIT'],
   ['BUILDKITE', 'Buildkite', 'BUILDKITE'],
   ['CIRCLE', 'CircleCI', 'CIRCLECI'],
+  ['CIRRUS', 'Cirrus CI', 'CIRRUS_CI'],
   ['CODEBUILD', 'AWS CodeBuild', 'CODEBUILD_BUILD_ARN'],
   ['CODESHIP', 'Codeship', {CI_NAME: 'codeship'}],
   ['DRONE', 'Drone', 'DRONE'],
@@ -44,8 +45,8 @@ vendors.forEach(function (vendor) {
 })
 
 exports.isCI = !!(
-  env.CI || // Travis CI, CircleCI, Gitlab CI, Appveyor, CodeShip
-  env.CONTINUOUS_INTEGRATION || // Travis CI
+  env.CI || // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip
+  env.CONTINUOUS_INTEGRATION || // Travis CI, Cirrus CI
   env.BUILD_NUMBER || // Jenkins, TeamCity
   exports.name ||
   false
