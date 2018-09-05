@@ -13,6 +13,7 @@ var vendors = [
   ['CODEBUILD', 'AWS CodeBuild', 'CODEBUILD_BUILD_ARN'],
   ['CODESHIP', 'Codeship', {CI_NAME: 'codeship'}],
   ['DRONE', 'Drone', 'DRONE'],
+  ['DSARI', 'dsari', 'DSARI'],
   ['GITLAB', 'GitLab CI', 'GITLAB_CI'],
   ['GOCD', 'GoCD', 'GO_PIPELINE_LABEL'],
   ['HUDSON', 'Hudson', 'HUDSON_URL'],
@@ -50,9 +51,10 @@ vendors.forEach(function (vendor) {
 })
 
 exports.isCI = !!(
-  env.CI || // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip
+  env.CI || // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip, dsari
   env.CONTINUOUS_INTEGRATION || // Travis CI, Cirrus CI
   env.BUILD_NUMBER || // Jenkins, TeamCity
+  env.RUN_ID || // TaskCluster, dsari
   exports.name ||
   false
 )
