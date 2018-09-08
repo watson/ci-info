@@ -2,7 +2,8 @@
   {
     "name": "AppVeyor",
     "constant": "APPVEYOR",
-    "env": "APPVEYOR"
+    "env": "APPVEYOR",
+    "pr": { "env": "APPVEYOR_PULL_REQUEST_NUMBER", "type": "string" }
   },
   {
     "name": "Bamboo",
@@ -17,17 +18,20 @@
   {
     "name": "Buildkite",
     "constant": "BUILDKITE",
-    "env": "BUILDKITE"
+    "env": "BUILDKITE",
+    "pr": { "env": "BUILDKITE_PULL_REQUEST", "type": "not-false" }
   },
   {
     "name": "CircleCI",
     "constant": "CIRCLE",
-    "env": "CIRCLECI"
+    "env": "CIRCLECI",
+    "pr": { "env": "CIRCLE_PULL_REQUEST", "type": "string" }
   },
   {
     "name": "Cirrus CI",
     "constant": "CIRRUS",
-    "env": "CIRRUS_CI"
+    "env": "CIRRUS_CI",
+    "pr": { "env": "CIRRUS_PR", "type": "string" }
   },
   {
     "name": "AWS CodeBuild",
@@ -72,17 +76,20 @@
   {
     "name": "Semaphore",
     "constant": "SEMAPHORE",
-    "env": "SEMAPHORE"
+    "env": "SEMAPHORE",
+    "pr": { "env": "PULL_REQUEST_NUMBER", "type": "string" }
   },
   {
     "name": "Shippable",
     "constant": "SHIPPABLE",
-    "env": "SHIPPABLE"
+    "env": "SHIPPABLE",
+    "pr": { "env": "IS_PULL_REQUEST", "type": "boolean" }
   },
   {
     "name": "Solano CI",
     "constant": "SOLANO",
-    "env": "TDDIUM"
+    "env": "TDDIUM",
+    "pr": { "env": "TDDIUM_PR_ID", "type": "string" }
   },
   {
     "name": "Strider CD",
@@ -113,6 +120,7 @@
   {
     "name": "Travis CI",
     "constant": "TRAVIS",
-    "env": "TRAVIS"
+    "env": "TRAVIS",
+    "pr": { "env": "TRAVIS_PULL_REQUEST", "type": "not-false" }
   }
 ]
