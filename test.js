@@ -10,9 +10,9 @@ var ci = require('./')
 assert(Array.isArray(ci._vendors))
 assert(ci._vendors.length > 0)
 
-assert.equal(ci.isCI, true)
-assert.equal(ci.name, 'Travis CI')
-assert.equal(ci.TRAVIS, true)
+assert.strictEqual(ci.isCI, true)
+assert.strictEqual(ci.name, 'Travis CI')
+assert.strictEqual(ci.TRAVIS, true)
 assertVendorConstants(true)
 
 // Not CI
@@ -23,9 +23,9 @@ delete process.env.TRAVIS
 clearRequire('./')
 ci = require('./')
 
-assert.equal(ci.isCI, false)
-assert.equal(ci.name, undefined)
-assert.equal(ci.TRAVIS, false)
+assert.strictEqual(ci.isCI, false)
+assert.strictEqual(ci.name, null)
+assert.strictEqual(ci.TRAVIS, false)
 assertVendorConstants(false)
 
 // Unknown CI
@@ -33,14 +33,14 @@ process.env.CI = 'true'
 clearRequire('./')
 ci = require('./')
 
-assert.equal(ci.isCI, true)
-assert.equal(ci.name, undefined)
-assert.equal(ci.TRAVIS, false)
+assert.strictEqual(ci.isCI, true)
+assert.strictEqual(ci.name, null)
+assert.strictEqual(ci.TRAVIS, false)
 assertVendorConstants(false)
 
 function assertVendorConstants () {
   ci._vendors.forEach(function (constant) {
     if (constant === 'TRAVIS') return
-    assert.equal(ci[constant], false)
+    assert.strictEqual(ci[constant], false)
   })
 }
