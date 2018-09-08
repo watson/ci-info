@@ -49,6 +49,11 @@
     "env": "DRONE"
   },
   {
+    "name": "dsari",
+    "constant": "DSARI",
+    "env": "DSARI"
+  },
+  {
     "name": "GitLab CI",
     "constant": "GITLAB",
     "env": "GITLAB_CI"
