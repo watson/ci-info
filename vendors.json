@@ -44,14 +44,14 @@
     "env": { "CI_NAME": "codeship" }
   },
   {
-    "name": "dsari",
-    "constant": "DSARI",
-    "env": "DSARI"
-  },
-  {
     "name": "Drone",
     "constant": "DRONE",
     "env": "DRONE"
+  },
+  {
+    "name": "dsari",
+    "constant": "DSARI",
+    "env": "DSARI"
   },
   {
     "name": "GitLab CI",
