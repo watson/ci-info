@@ -1,46 +1,58 @@
 'use strict'
 
-var assert = require('assert')
+var test = require('tape')
 var clearRequire = require('clear-require')
 
-// Known CI
-process.env.TRAVIS = 'true'
-var ci = require('./')
+test('Known CI', function (t) {
+  process.env.TRAVIS = 'true'
 
-assert(Array.isArray(ci._vendors))
-assert(ci._vendors.length > 0)
+  var ci = require('./')
 
-assert.strictEqual(ci.isCI, true)
-assert.strictEqual(ci.name, 'Travis CI')
-assert.strictEqual(ci.TRAVIS, true)
-assertVendorConstants(true)
+  t.ok(Array.isArray(ci._vendors))
+  t.ok(ci._vendors.length > 0)
 
-// Not CI
-delete process.env.CI
-delete process.env.CONTINUOUS_INTEGRATION
-delete process.env.BUILD_NUMBER
-delete process.env.TRAVIS
-clearRequire('./')
-ci = require('./')
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, 'Travis CI')
+  t.equal(ci.TRAVIS, true)
+  assertVendorConstants(ci, t)
 
-assert.strictEqual(ci.isCI, false)
-assert.strictEqual(ci.name, null)
-assert.strictEqual(ci.TRAVIS, false)
-assertVendorConstants(false)
+  t.end()
+})
 
-// Unknown CI
-process.env.CI = 'true'
-clearRequire('./')
-ci = require('./')
+test('Not CI', function (t) {
+  delete process.env.CI
+  delete process.env.CONTINUOUS_INTEGRATION
+  delete process.env.BUILD_NUMBER
+  delete process.env.TRAVIS
 
-assert.strictEqual(ci.isCI, true)
-assert.strictEqual(ci.name, null)
-assert.strictEqual(ci.TRAVIS, false)
-assertVendorConstants(false)
+  clearRequire('./')
+  var ci = require('./')
 
-function assertVendorConstants () {
+  t.equal(ci.isCI, false)
+  t.equal(ci.name, null)
+  t.equal(ci.TRAVIS, false)
+  assertVendorConstants(ci, t)
+
+  t.end()
+})
+
+test('Unknown CI', function (t) {
+  process.env.CI = 'true'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, null)
+  t.equal(ci.TRAVIS, false)
+  assertVendorConstants(ci, t)
+
+  t.end()
+})
+
+function assertVendorConstants (ci, t) {
   ci._vendors.forEach(function (constant) {
     if (constant === 'TRAVIS') return
-    assert.strictEqual(ci[constant], false)
+    t.equal(ci[constant], false)
   })
 }
