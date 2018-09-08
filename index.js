@@ -10,6 +10,7 @@ Object.defineProperty(exports, '_vendors', {
 })
 
 exports.name = null
+exports.isPR = null
 
 vendors.forEach(function (vendor) {
   var envs = Array.isArray(vendor.env) ? vendor.env : [vendor.env]
@@ -19,8 +20,30 @@ vendors.forEach(function (vendor) {
       return env[k] === obj[k]
     })
   })
+
   exports[vendor.constant] = isCI
-  if (isCI) exports.name = vendor.name
+
+  if (isCI) {
+    exports.name = vendor.name
+
+    if (vendor.pr) {
+      var val = env[vendor.pr.env]
+      if (val) {
+        switch (vendor.pr.type) {
+          case 'not-false':
+            exports.isPR = val !== 'false'
+            break
+          case 'boolean':
+            exports.isPR = val === 'true'
+            break
+          default:
+            exports.isPR = true
+        }
+      } else {
+        exports.isPR = false
+      }
+    }
+  }
 })
 
 exports.isCI = !!(

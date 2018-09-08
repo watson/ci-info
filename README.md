@@ -78,6 +78,12 @@ boolean to be set to `true` if they use certain vendor neutral
 environment variables. In those cases `ci.name` will be `null` and no
 vendor specific boolean will be set to `true`.
 
+### `ci.isPR`
+
+A boolean if PR detection is supported for the current CI server. Will
+be `true` if a PR is being tested. Otherwise `false`. If PR detection is
+not supported for the current CI server, the value will be `null`.
+
 ### `ci.<VENDOR-CONSTANT>`
 
 A vendor specific boolean constants is exposed for each support CI
