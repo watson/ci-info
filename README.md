@@ -42,8 +42,8 @@ Officially supported CI servers:
 | [CircleCI](http://circleci.com) | `ci.CIRCLE` |
 | [Cirrus CI](https://cirrus-ci.org) | `ci.CIRRUS` |
 | [Codeship](https://codeship.com) | `ci.CODESHIP` |
-| [Drone](https://drone.io) | `ci.DRONE` |
 | [dsari](https://github.com/rfinnie/dsari) | `ci.DSARI` |
+| [Drone](https://drone.io) | `ci.DRONE` |
 | [GitLab CI](https://about.gitlab.com/gitlab-ci/) | `ci.GITLAB` |
 | [GoCD](https://www.go.cd/) | `ci.GOCD` |
 | [Hudson](http://hudson-ci.org) | `ci.HUDSON` |
