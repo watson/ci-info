@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.5.1
+
+* fix: use full path to vendors.json
+
+## v1.5.0
+
+* feat: add dsari detection ([#15](https://github.com/watson/ci-info/pull/15))
+* feat: add ci.isPR ([#16](https://github.com/watson/ci-info/pull/16))
+
 ## v1.4.0
 
 * feat: add Cirrus CI detection ([#13](https://github.com/watson/ci-info/pull/13))
