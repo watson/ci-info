@@ -1,6 +1,6 @@
 'use strict'
 
-var vendors = require('./vendors')
+var vendors = require('./vendors.json')
 
 var env = process.env
 
