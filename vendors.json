@@ -22,6 +22,12 @@
     "pr": { "env": "BITRISE_PULL_REQUEST", "type": "string" }
   },
   {
+    "name": "Buddy",
+    "constant": "BUDDY",
+    "env": "BUDDY_WORKSPACE_ID",
+    "pr": { "env": "BUDDY_EXECUTION_PULL_REQUEST_ID", "type": "string" }
+  },
+  {
     "name": "Buildkite",
     "constant": "BUILDKITE",
     "env": "BUILDKITE",
