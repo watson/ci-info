@@ -84,7 +84,8 @@
   {
     "name": "Jenkins",
     "constant": "JENKINS",
-    "env": ["JENKINS_URL", "BUILD_ID"]
+    "env": ["JENKINS_URL", "BUILD_ID"],
+    "pr": { "any": ["ghprbPullId", "CHANGE_ID"] }
   },
   {
     "name": "Magnum CI",

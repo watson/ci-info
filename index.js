@@ -32,6 +32,11 @@ vendors.forEach(function (vendor) {
         if ('env' in vendor.pr) {
           // "pr": { "env": "BUILDKITE_PULL_REQUEST", "ne": "false" }
           exports.isPR = vendor.pr.env in env && env[vendor.pr.env] !== vendor.pr.ne
+        } else if ('any' in vendor.pr) {
+          // "pr": { "any": ["ghprbPullId", "CHANGE_ID"] }
+          exports.isPR = vendor.pr.any.some(function (key) {
+            return !!env[key]
+          })
         } else {
           // "pr": { "DRONE_BUILD_EVENT": "pull_request" }
           exports.isPR = checkEnv(vendor.pr)
