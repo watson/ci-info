@@ -93,6 +93,12 @@
     "env": "MAGNUM"
   },
   {
+    "name": "Sail CI",
+    "constant": "SAIL",
+    "env": "SAILCI",
+    "pr": "SAIL_PULL_REQUEST_NUMBER"
+  },
+  {
     "name": "Semaphore",
     "constant": "SEMAPHORE",
     "env": "SEMAPHORE",
