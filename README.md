@@ -38,6 +38,7 @@ Officially supported CI servers:
 | [AppVeyor](http://www.appveyor.com) | `ci.APPVEYOR` |
 | [Bamboo](https://www.atlassian.com/software/bamboo) by Atlassian | `ci.BAMBOO` |
 | [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines) | `ci.BITBUCKET` |
+| [Bitrise](https://www.bitrise.io/) | `ci.BITRISE` |
 | [Buildkite](https://buildkite.com) | `ci.BUILDKITE` |
 | [CircleCI](http://circleci.com) | `ci.CIRCLE` |
 | [Cirrus CI](https://cirrus-ci.org) | `ci.CIRRUS` |

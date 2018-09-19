@@ -16,6 +16,12 @@
     "env": "BITBUCKET_COMMIT"
   },
   {
+    "name": "Bitrise",
+    "constant": "BITRISE",
+    "env": "BITRISE_IO",
+    "pr": { "env": "BITRISE_PULL_REQUEST", "type": "string" }
+  },
+  {
     "name": "Buildkite",
     "constant": "BUILDKITE",
     "env": "BUILDKITE",
