@@ -1,0 +1,34 @@
+{
+  "name": "is-ci",
+  "version": "1.2.1",
+  "description": "Detect if the current environment is a CI server",
+  "author": "Thomas Watson Steen <w@tson.dk> (https://twitter.com/wa7son)",
+  "license": "MIT",
+  "bin": "bin.js",
+  "main": "index.js",
+  "homepage": "https://github.com/watson/ci-info",
+  "bugs": {
+    "url": "https://github.com/watson/ci-info/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watson/ci-info.git"
+  },
+  "keywords": [
+    "ci",
+    "continuous",
+    "integration",
+    "test",
+    "detect"
+  ],
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "dependencies": {
+    "ci-info": "^1.5.0"
+  },
+  "coordinates": [
+    55.778255,
+    12.593033
+  ]
+}

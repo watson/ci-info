@@ -1,0 +1,38 @@
+{
+  "name": "is-pr",
+  "version": "1.0.0",
+  "description": "Detect if the current environment is a CI server configured for a PR build",
+  "author": "Thomas Watson Steen <w@tson.dk> (https://twitter.com/wa7son)",
+  "license": "MIT",
+  "bin": "bin.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard && node test.js"
+  },
+  "homepage": "https://github.com/watson/ci-info",
+  "bugs": {
+    "url": "https://github.com/watson/ci-info/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watson/ci-info.git"
+  },
+  "dependencies": {
+    "ci-info": "^1.5.0"
+  },
+  "keywords": [
+    "ci",
+    "continuous",
+    "integration",
+    "pr",
+    "pullrequest",
+    "pull-request",
+    "github",
+    "test",
+    "detect"
+  ],
+  "coordinates": [
+    55.778271,
+    12.593126
+  ]
+}

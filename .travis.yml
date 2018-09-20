@@ -1,11 +1,21 @@
 language: node_js
 node_js:
 - '10'
-- '9'
 - '8'
-- '7'
 - '6'
-- '5'
-- '4'
-- '0.12'
-- '0.10'
+
+env:
+  matrix:
+    - PACKAGE = ci-info
+    - PACKAGE = is-ci
+    - PACKAGE = is-pr
+
+branches:
+  only:
+  - master
+
+install:
+  - yarn
+
+script: 
+  - lerna run test --scope $PACKAGE

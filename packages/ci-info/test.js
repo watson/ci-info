@@ -1,7 +1,7 @@
 'use strict'
 
 var test = require('tape')
-var clearRequire = require('clear-require')
+var clearModule = require('clear-module')
 
 var isActualPR = !!(process.env.TRAVIS_PULL_REQUEST && process.env.TRAVIS_PULL_REQUEST !== 'false')
 
@@ -28,7 +28,7 @@ test('Not CI', function (t) {
   delete process.env.BUILD_NUMBER
   delete process.env.TRAVIS
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, false)
@@ -43,7 +43,7 @@ test('Not CI', function (t) {
 test('Unknown CI', function (t) {
   process.env.CI = 'true'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -59,7 +59,7 @@ test('AppVeyor - PR', function (t) {
   process.env.APPVEYOR = 'true'
   process.env.APPVEYOR_PULL_REQUEST_NUMBER = '42'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -77,7 +77,7 @@ test('AppVeyor - PR', function (t) {
 test('AppVeyor - Not PR', function (t) {
   process.env.APPVEYOR = 'true'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -95,7 +95,7 @@ test('Buildkite - PR', function (t) {
   process.env.BUILDKITE = 'true'
   process.env.BUILDKITE_PULL_REQUEST = '42'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -114,7 +114,7 @@ test('Buildkite - Not PR', function (t) {
   process.env.BUILDKITE = 'true'
   process.env.BUILDKITE_PULL_REQUEST = 'false'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -133,7 +133,7 @@ test('CircleCI - PR', function (t) {
   process.env.CIRCLECI = 'true'
   process.env.CIRCLE_PULL_REQUEST = '42'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -151,7 +151,7 @@ test('CircleCI - PR', function (t) {
 test('CircleCI - Not PR', function (t) {
   process.env.CIRCLECI = 'true'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -169,7 +169,7 @@ test('Cirrus CI - PR', function (t) {
   process.env.CIRRUS_CI = 'true'
   process.env.CIRRUS_PR = '42'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -187,7 +187,7 @@ test('Cirrus CI - PR', function (t) {
 test('Cirrus CI - Not PR', function (t) {
   process.env.CIRRUS_CI = 'true'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -205,7 +205,7 @@ test('Semaphore - PR', function (t) {
   process.env.SEMAPHORE = 'true'
   process.env.PULL_REQUEST_NUMBER = '42'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -223,7 +223,7 @@ test('Semaphore - PR', function (t) {
 test('Semaphore - Not PR', function (t) {
   process.env.SEMAPHORE = 'true'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -241,7 +241,7 @@ test('Shippable - PR', function (t) {
   process.env.SHIPPABLE = 'true'
   process.env.IS_PULL_REQUEST = 'true'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -260,7 +260,7 @@ test('Semaphore - Not PR', function (t) {
   process.env.SHIPPABLE = 'true'
   process.env.IS_PULL_REQUEST = 'false'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -279,7 +279,7 @@ test('Solano CI - PR', function (t) {
   process.env.TDDIUM = 'true'
   process.env.TDDIUM_PR_ID = '42'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -297,7 +297,7 @@ test('Solano CI - PR', function (t) {
 test('Solano CI - Not PR', function (t) {
   process.env.TDDIUM = 'true'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -315,7 +315,7 @@ test('Travis CI - PR', function (t) {
   process.env.TRAVIS = 'true'
   process.env.TRAVIS_PULL_REQUEST = '42'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -334,7 +334,7 @@ test('Travis CI - Not PR', function (t) {
   process.env.TRAVIS = 'true'
   process.env.TRAVIS_PULL_REQUEST = 'false'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
