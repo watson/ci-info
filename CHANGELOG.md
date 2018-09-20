@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.6.0
+
+* feat: add Sail CI support
+* feat: add Buddy support
+* feat: add Bitrise support
+* feat: detect Jenkins PRs
+* feat: detect Drone PRs
+
 ## v1.5.1
 
 * fix: use full path to vendors.json
