@@ -2,6 +2,9 @@
   "name": "ci-info",
   "license": "MIT",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "clear-module": "^3.0.0",
     "lerna": "^3.4.0",
