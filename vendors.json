@@ -147,7 +147,8 @@
   {
     "name": "Team Foundation Server",
     "constant": "TFS",
-    "env": "TF_BUILD"
+    "env": "TF_BUILD",
+    "deprecated": true
   },
   {
     "name": "Travis CI",

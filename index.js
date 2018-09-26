@@ -54,8 +54,6 @@ exports.isCI = !!(
   env.CONTINUOUS_INTEGRATION || // Travis CI, Cirrus CI
   env.BUILD_NUMBER || // Jenkins, TeamCity
   env.RUN_ID || // TaskCluster, dsari
-  // Azure Pipelines
-  (env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI && env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI.startsWith('https://dev.azure.com')) ||
   exports.name ||
   false
 )
