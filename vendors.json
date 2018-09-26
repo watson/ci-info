@@ -6,6 +6,12 @@
     "pr": "APPVEYOR_PULL_REQUEST_NUMBER"
   },
   {
+    "name": "Azure Pipelines",
+    "constant": "AZURE_PIPELINES",
+    "env": "SYSTEM_TEAMFOUNDATIONCOLLECTIONURI",
+    "pr": "SYSTEM_PULLREQUEST_PULLREQUESTID"
+  },
+  {
     "name": "Bamboo",
     "constant": "BAMBOO",
     "env": "bamboo_planKey"
