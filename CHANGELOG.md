@@ -1,4 +1,4 @@
-# Changelog
+# CHANGELOG
 
 ## v1.6.0
 

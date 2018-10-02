@@ -1,5 +1,5 @@
 {
-  "name": "ci-info",
+  "name": "ci-info_monorepo",
   "license": "MIT",
   "private": true,
   "workspaces": [
