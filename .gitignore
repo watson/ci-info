@@ -72,3 +72,7 @@ typings/
 
 # Serverless directories
 .serverless
+
+# ignore lock files
+package-lock.json
+yarn.lock
