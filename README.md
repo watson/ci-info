@@ -104,4 +104,4 @@ release:
 
 ## License
 
-[MIT](LICENSE)
+[MIT](https://github.com/watson/ci-info/blob/master/LICENSE)

@@ -6,11 +6,11 @@ server configured to run a PR build.
 If PR detection is not supported for the current CI server, the value
 will be `null`. Otherwise `false`.
 
-Please [open an issue](https://github.com/watson/is-pr/issues) if your
+Please [open an issue](https://github.com/watson/ci-info/issues) if your
 CI server or PR build isn't properly detected :)
 
 [![npm](https://img.shields.io/npm/v/is-pr.svg)](https://www.npmjs.com/package/is-pr)
-[![Build status](https://travis-ci.org/watson/is-pr.svg?branch=master)](https://travis-ci.org/watson/is-pr)
+[![Build status](https://travis-ci.org/watson/ci-info.svg?branch=master)](https://travis-ci.org/watson/is-pr)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 ## Installation
@@ -51,4 +51,4 @@ docs for all supported CI's
 
 ## License
 
-[MIT](LICENSE)
+[MIT](https://github.com/watson/ci-info/blob/master/LICENSE)

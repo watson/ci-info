@@ -3,11 +3,11 @@
 Returns `true` if the current environment is a Continuous Integration
 server.
 
-Please [open an issue](https://github.com/watson/is-ci/issues) if your
+Please [open an issue](https://github.com/watson/ci-info/issues) if your
 CI server isn't properly detected :)
 
 [![npm](https://img.shields.io/npm/v/is-ci.svg)](https://www.npmjs.com/package/is-ci)
-[![Build status](https://travis-ci.org/watson/is-ci.svg?branch=master)](https://travis-ci.org/watson/is-ci)
+[![Build status](https://travis-ci.org/watson/ci-info.svg?branch=master)](https://travis-ci.org/watson/is-ci)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
 
 ## Installation
@@ -47,4 +47,4 @@ Refer to [ci-info](https://github.com/watson/ci-info#supported-ci-tools) docs fo
 
 ## License
 
-[MIT](LICENSE)
+[MIT](https://github.com/watson/ci-info/blob/master/LICENSE)
