@@ -68,11 +68,6 @@ the given CI server.  Otherwise `false`.
 Examples of vendor constants are `ci.TRAVIS` or `ci.APPVEYOR`. For a
 complete list, see the support table above.
 
-Deprecated vendor constants that will be removed in the next major
-release:
-
-- `ci.TDDIUM` (Solano CI) This have been renamed `ci.SOLANO`
-
 ## License
 
 [MIT](https://github.com/watson/ci-info/blob/master/LICENSE)

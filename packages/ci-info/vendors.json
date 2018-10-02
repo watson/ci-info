@@ -127,13 +127,6 @@
     "env": ["TASK_ID", "RUN_ID"]
   },
   {
-    "name": "Solano CI",
-    "constant": "TDDIUM",
-    "env": "TDDIUM",
-    "pr": "TDDIUM_PR_ID",
-    "deprecated": true
-  },
-  {
     "name": "TeamCity",
     "constant": "TEAMCITY",
     "env": "TEAMCITY_VERSION"
