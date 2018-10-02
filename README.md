@@ -32,46 +32,13 @@ if (ci.isCI) {
 
 Refer to [Supported CI](https://github.com/watson/ci-info/blob/master/SUPPORTED_CI.md) all supported CI's
 
-## API
+## MonoRepo
 
-### `ci.name`
+This is a monorepo for the following packages
 
-A string. Will contain the name of the CI server the code is running on.
-If not CI server is detected, it will be `null`.
-
-Don't depend on the value of this string not to change for a specific
-vendor. If you find your self writing `ci.name === 'Travis CI'`, you
-most likely want to use `ci.TRAVIS` instead.
-
-### `ci.isCI`
-
-A boolean. Will be `true` if the code is running on a CI server.
-Otherwise `false`.
-
-Some CI servers not listed here might still trigger the `ci.isCI`
-boolean to be set to `true` if they use certain vendor neutral
-environment variables. In those cases `ci.name` will be `null` and no
-vendor specific boolean will be set to `true`.
-
-### `ci.isPR`
-
-A boolean if PR detection is supported for the current CI server. Will
-be `true` if a PR is being tested. Otherwise `false`. If PR detection is
-not supported for the current CI server, the value will be `null`.
-
-### `ci.<VENDOR-CONSTANT>`
-
-A vendor specific boolean constants is exposed for each support CI
-vendor. A constant will be `true` if the code is determined to run on
-the given CI server.  Otherwise `false`.
-
-Examples of vendor constants are `ci.TRAVIS` or `ci.APPVEYOR`. For a
-complete list, see the support table above.
-
-Deprecated vendor constants that will be removed in the next major
-release:
-
-- `ci.TDDIUM` (Solano CI) This have been renamed `ci.SOLANO`
+- [ci-info](packages/ci-info) - Get details about the current Continuous Integration environment.
+- [is-ci](packages/is-ci) - Returns `true` if the current environment is a Continuous Integration server.
+- [is-pr](packages/is-pr) - Returns `true` if the current environment is a Continuous Integration server configured to run a PR build.
 
 ## License
 
