@@ -65,8 +65,8 @@ Officially supported CI servers:
 
 ### `ci.name`
 
-A string. Will contain the name of the CI server the code is running on.
-If not CI server is detected, it will be `null`.
+Returns a string containing name of the CI server the code is running on.
+If CI server is not detected, it returns `null`.
 
 Don't depend on the value of this string not to change for a specific
 vendor. If you find your self writing `ci.name === 'Travis CI'`, you
@@ -74,8 +74,8 @@ most likely want to use `ci.TRAVIS` instead.
 
 ### `ci.isCI`
 
-A boolean. Will be `true` if the code is running on a CI server.
-Otherwise `false`.
+Returns a boolean. Will be `true` if the code is running on a CI server,
+otherwise `false`.
 
 Some CI servers not listed here might still trigger the `ci.isCI`
 boolean to be set to `true` if they use certain vendor neutral
@@ -84,15 +84,15 @@ vendor specific boolean will be set to `true`.
 
 ### `ci.isPR`
 
-A boolean if PR detection is supported for the current CI server. Will
-be `true` if a PR is being tested. Otherwise `false`. If PR detection is
+Returns a boolean if PR detection is supported for the current CI server. Will
+be `true` if a PR is being tested, otherwise `false`. If PR detection is
 not supported for the current CI server, the value will be `null`.
 
 ### `ci.<VENDOR-CONSTANT>`
 
-A vendor specific boolean constants is exposed for each support CI
+A vendor specific boolean constant is exposed for each support CI
 vendor. A constant will be `true` if the code is determined to run on
-the given CI server.  Otherwise `false`.
+the given CI server, otherwise `false`.
 
 Examples of vendor constants are `ci.TRAVIS` or `ci.APPVEYOR`. For a
 complete list, see the support table above.
