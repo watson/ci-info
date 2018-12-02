@@ -3,7 +3,9 @@
 var test = require('tape')
 var clearRequire = require('clear-require')
 
-var isActualPR = !!(process.env.TRAVIS_PULL_REQUEST && process.env.TRAVIS_PULL_REQUEST !== 'false')
+var isActualPR = !!(
+  process.env.TRAVIS_PULL_REQUEST && process.env.TRAVIS_PULL_REQUEST !== 'false'
+)
 
 test('Known CI', function (t) {
   process.env.TRAVIS = 'true'
@@ -358,7 +360,7 @@ test('Netlify CI - PR', function (t) {
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
-  t.equal(ci.name, 'Netlify CI"')
+  t.equal(ci.name, 'Netlify CI')
   t.equal(ci.NETLIFY, true)
   assertVendorConstants('NETLIFY', ci, t)
 
@@ -377,9 +379,9 @@ test('Netlify CI - Not PR', function (t) {
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
-  t.equal(ci.name, 'Netlify CI"')
+  t.equal(ci.name, 'Netlify CI')
   t.equal(ci.NETLIFY, true)
-  assertVendorConstants('CIRCLE', ci, t)
+  assertVendorConstants('NETLIFY', ci, t)
 
   delete process.env.NETLIFY_BUILD_BASE
   delete process.env.PULL_REQUEST
