@@ -148,5 +148,11 @@
     "constant": "TRAVIS",
     "env": "TRAVIS",
     "pr": { "env": "TRAVIS_PULL_REQUEST", "ne": "false" }
+  },
+  {
+    "name": "Netlify CI",
+    "constant": "NETLIFY",
+    "env": "NETLIFY_BUILD_BASE",
+    "pr": { "PULL_REQUEST": "true" }
   }
 ]
