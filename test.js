@@ -378,7 +378,7 @@ test('Netlify CI - Not PR', function (t) {
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Netlify CI"')
-  t.equal(ci.NETLIFY, true)  
+  t.equal(ci.NETLIFY, true)
   assertVendorConstants('CIRCLE', ci, t)
 
   delete process.env.NETLIFY_BUILD_BASE
