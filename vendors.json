@@ -153,6 +153,6 @@
     "name": "Netlify CI",
     "constant": "NETLIFY",
     "env": "NETLIFY_BUILD_BASE",
-    "pr": { "PULL_REQUEST": "true" }
+    "pr": { "env": "PULL_REQUEST" }
   }
 ]
