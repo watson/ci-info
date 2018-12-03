@@ -3,9 +3,7 @@
 var test = require('tape')
 var clearRequire = require('clear-require')
 
-var isActualPR = !!(
-  process.env.TRAVIS_PULL_REQUEST && process.env.TRAVIS_PULL_REQUEST !== 'false'
-)
+var isActualPR = !!(process.env.TRAVIS_PULL_REQUEST && process.env.TRAVIS_PULL_REQUEST !== 'false')
 
 test('Known CI', function (t) {
   process.env.TRAVIS = 'true'
