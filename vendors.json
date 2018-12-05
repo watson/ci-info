@@ -19,7 +19,8 @@
   {
     "name": "Bitbucket Pipelines",
     "constant": "BITBUCKET",
-    "env": "BITBUCKET_COMMIT"
+    "env": "BITBUCKET_COMMIT",
+    "pr": "BITBUCKET_PR_ID"
   },
   {
     "name": "Bitrise",

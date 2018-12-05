@@ -37,7 +37,7 @@ Officially supported CI servers:
 | [AWS CodeBuild](https://aws.amazon.com/codebuild/) | `ci.CODEBUILD` | 🚫 |
 | [AppVeyor](http://www.appveyor.com) | `ci.APPVEYOR` | ✅ |
 | [Bamboo](https://www.atlassian.com/software/bamboo) by Atlassian | `ci.BAMBOO` | 🚫 |
-| [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines) | `ci.BITBUCKET` | 🚫 |
+| [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines) | `ci.BITBUCKET` | ✅ |
 | [Bitrise](https://www.bitrise.io/) | `ci.BITRISE` | ✅ |
 | [Buddy](https://buddy.works/) | `ci.BUDDY` | ✅ |
 | [Buildkite](https://buildkite.com) | `ci.BUILDKITE` | ✅ |
