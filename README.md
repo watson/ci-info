@@ -60,6 +60,7 @@ Officially supported CI servers:
 | [Team Foundation Server](https://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx) by Microsoft | `ci.TFS` | 🚫 |
 | [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains | `ci.TEAMCITY` | 🚫 |
 | [Travis CI](http://travis-ci.org) | `ci.TRAVIS` | ✅ |
+| [Netlify CI](https://www.netlify.com/) | `ci.NETLIFY` | ✅ |
 
 ## API
 
