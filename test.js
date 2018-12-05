@@ -91,6 +91,42 @@ test('AppVeyor - Not PR', function (t) {
   t.end()
 })
 
+test('Azure Pipelines - PR', function (t) {
+  process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = 'https://dev.azure.com/Contoso'
+  process.env.SYSTEM_PULLREQUEST_PULLREQUESTID = '42'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Azure Pipelines')
+  t.equal(ci.AZURE_PIPELINES, true)
+  assertVendorConstants('AZURE_PIPELINES', ci, t)
+
+  delete process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI
+  delete process.env.SYSTEM_PULLREQUEST_PULLREQUESTID
+
+  t.end()
+})
+
+test('Azure Pipelines - Not PR', function (t) {
+  process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = 'https://dev.azure.com/Contoso'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Azure Pipelines')
+  t.equal(ci.AZURE_PIPELINES, true)
+  assertVendorConstants('AZURE_PIPELINES', ci, t)
+
+  delete process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI
+
+  t.end()
+})
+
 test('Buildkite - PR', function (t) {
   process.env.BUILDKITE = 'true'
   process.env.BUILDKITE_PULL_REQUEST = '42'
