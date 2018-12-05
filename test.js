@@ -91,6 +91,42 @@ test('AppVeyor - Not PR', function (t) {
   t.end()
 })
 
+test('Bitbucket Pipelines - PR', function (t) {
+  process.env.BITBUCKET_COMMIT = 'true'
+  process.env.BITBUCKET_PR_ID = '42'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Bitbucket Pipelines')
+  t.equal(ci.BITBUCKET, true)
+  assertVendorConstants('BITBUCKET', ci, t)
+
+  delete process.env.BITBUCKET_COMMIT
+  delete process.env.BITBUCKET_PR_ID
+
+  t.end()
+})
+
+test('Bitbucket Pipelines - Not PR', function (t) {
+  process.env.BITBUCKET_COMMIT = 'true'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Bitbucket Pipelines')
+  t.equal(ci.BITBUCKET, true)
+  assertVendorConstants('BITBUCKET', ci, t)
+
+  delete process.env.BITBUCKET_COMMIT
+
+  t.end()
+})
+
 test('Buildkite - PR', function (t) {
   process.env.BUILDKITE = 'true'
   process.env.BUILDKITE_PULL_REQUEST = '42'
