@@ -99,6 +99,12 @@
     "env": "MAGNUM"
   },
   {
+    "name": "Netlify CI",
+    "constant": "NETLIFY",
+    "env": "NETLIFY_BUILD_BASE",
+    "pr": { "env": "PULL_REQUEST", "ne": "false" }
+  },
+  {
     "name": "Sail CI",
     "constant": "SAIL",
     "env": "SAILCI",
@@ -155,11 +161,5 @@
     "constant": "TRAVIS",
     "env": "TRAVIS",
     "pr": { "env": "TRAVIS_PULL_REQUEST", "ne": "false" }
-  },
-  {
-    "name": "Netlify CI",
-    "constant": "NETLIFY",
-    "env": "NETLIFY_BUILD_BASE",
-    "pr": { "env": "PULL_REQUEST", "ne": "false" }
   }
 ]
