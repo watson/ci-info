@@ -51,6 +51,7 @@ Officially supported CI servers:
 | [Hudson](http://hudson-ci.org) | `ci.HUDSON` | 🚫 |
 | [Jenkins CI](https://jenkins-ci.org) | `ci.JENKINS` | ✅ |
 | [Magnum CI](https://magnum-ci.com) | `ci.MAGNUM` | 🚫 |
+| [Netlify CI](https://www.netlify.com/) | `ci.NETLIFY` | ✅ |
 | [Sail CI](https://sail.ci/) | `ci.SAIL` | ✅ |
 | [Semaphore](https://semaphoreci.com) | `ci.SEMAPHORE` | ✅ |
 | [Shippable](https://www.shippable.com/) | `ci.SHIPPABLE` | ✅ |
