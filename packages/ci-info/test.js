@@ -91,6 +91,78 @@ test('AppVeyor - Not PR', function (t) {
   t.end()
 })
 
+test('Azure Pipelines - PR', function (t) {
+  process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = 'https://dev.azure.com/Contoso'
+  process.env.SYSTEM_PULLREQUEST_PULLREQUESTID = '42'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Azure Pipelines')
+  t.equal(ci.AZURE_PIPELINES, true)
+  assertVendorConstants('AZURE_PIPELINES', ci, t)
+
+  delete process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI
+  delete process.env.SYSTEM_PULLREQUEST_PULLREQUESTID
+
+  t.end()
+})
+
+test('Azure Pipelines - Not PR', function (t) {
+  process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = 'https://dev.azure.com/Contoso'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Azure Pipelines')
+  t.equal(ci.AZURE_PIPELINES, true)
+  assertVendorConstants('AZURE_PIPELINES', ci, t)
+
+  delete process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI
+
+  t.end()
+})
+
+test('Bitbucket Pipelines - PR', function (t) {
+  process.env.BITBUCKET_COMMIT = 'true'
+  process.env.BITBUCKET_PR_ID = '42'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Bitbucket Pipelines')
+  t.equal(ci.BITBUCKET, true)
+  assertVendorConstants('BITBUCKET', ci, t)
+
+  delete process.env.BITBUCKET_COMMIT
+  delete process.env.BITBUCKET_PR_ID
+
+  t.end()
+})
+
+test('Bitbucket Pipelines - Not PR', function (t) {
+  process.env.BITBUCKET_COMMIT = 'true'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Bitbucket Pipelines')
+  t.equal(ci.BITBUCKET, true)
+  assertVendorConstants('BITBUCKET', ci, t)
+
+  delete process.env.BITBUCKET_COMMIT
+
+  t.end()
+})
+
 test('Buildkite - PR', function (t) {
   process.env.BUILDKITE = 'true'
   process.env.BUILDKITE_PULL_REQUEST = '42'
@@ -345,6 +417,44 @@ test('Travis CI - Not PR', function (t) {
 
   delete process.env.TRAVIS
   delete process.env.TRAVIS_PULL_REQUEST
+
+  t.end()
+})
+
+test('Netlify CI - PR', function (t) {
+  process.env.NETLIFY_BUILD_BASE = '/opt/build'
+  process.env.PULL_REQUEST = 'true'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Netlify CI')
+  t.equal(ci.NETLIFY, true)
+  assertVendorConstants('NETLIFY', ci, t)
+
+  delete process.env.NETLIFY_BUILD_BASE
+  delete process.env.PULL_REQUEST
+
+  t.end()
+})
+
+test('Netlify CI - Not PR', function (t) {
+  process.env.NETLIFY_BUILD_BASE = '/opt/build'
+  process.env.PULL_REQUEST = 'false'
+
+  clearRequire('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Netlify CI')
+  t.equal(ci.NETLIFY, true)
+  assertVendorConstants('NETLIFY', ci, t)
+
+  delete process.env.NETLIFY_BUILD_BASE
+  delete process.env.PULL_REQUEST
 
   t.end()
 })
