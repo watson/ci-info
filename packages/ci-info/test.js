@@ -95,7 +95,7 @@ test('Azure Pipelines - PR', function (t) {
   process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = 'https://dev.azure.com/Contoso'
   process.env.SYSTEM_PULLREQUEST_PULLREQUESTID = '42'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -113,7 +113,7 @@ test('Azure Pipelines - PR', function (t) {
 test('Azure Pipelines - Not PR', function (t) {
   process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = 'https://dev.azure.com/Contoso'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -131,7 +131,7 @@ test('Bitbucket Pipelines - PR', function (t) {
   process.env.BITBUCKET_COMMIT = 'true'
   process.env.BITBUCKET_PR_ID = '42'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -149,7 +149,7 @@ test('Bitbucket Pipelines - PR', function (t) {
 test('Bitbucket Pipelines - Not PR', function (t) {
   process.env.BITBUCKET_COMMIT = 'true'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -425,7 +425,7 @@ test('Netlify CI - PR', function (t) {
   process.env.NETLIFY_BUILD_BASE = '/opt/build'
   process.env.PULL_REQUEST = 'true'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
@@ -444,7 +444,7 @@ test('Netlify CI - Not PR', function (t) {
   process.env.NETLIFY_BUILD_BASE = '/opt/build'
   process.env.PULL_REQUEST = 'false'
 
-  clearRequire('./')
+  clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
