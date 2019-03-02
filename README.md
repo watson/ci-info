@@ -49,6 +49,7 @@ Officially supported CI servers:
 | [dsari](https://github.com/rfinnie/dsari) | `ci.DSARI` | 🚫 |
 | [GitLab CI](https://about.gitlab.com/gitlab-ci/) | `ci.GITLAB` | 🚫 |
 | [GoCD](https://www.go.cd/) | `ci.GOCD` | 🚫 |
+| [Heroku](https://www.heroku.com) | `ci.HEROKU` | 🚫 |
 | [Hudson](http://hudson-ci.org) | `ci.HUDSON` | 🚫 |
 | [Jenkins CI](https://jenkins-ci.org) | `ci.JENKINS` | ✅ |
 | [Magnum CI](https://magnum-ci.com) | `ci.MAGNUM` | 🚫 |
