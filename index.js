@@ -12,6 +12,10 @@ Object.defineProperty(exports, '_vendors', {
 exports.name = null
 exports.isPR = null
 
+function includes (str, search) {
+  return !!~str.indexOf(search)
+}
+
 vendors.forEach(function (vendor) {
   var envs = Array.isArray(vendor.env) ? vendor.env : [vendor.env]
   var isCI = envs.every(function (obj) {
@@ -60,6 +64,13 @@ exports.isCI = !!(
 
 function checkEnv (obj) {
   if (typeof obj === 'string') return !!env[obj]
+
+  if ('env' in obj) {
+    // { env: "NODE", includes: "heroku" }
+    return obj.env in env && includes(env[obj.env], obj.includes)
+  }
+
+  // { "CI_NAME": "codeship" }
   return Object.keys(obj).every(function (k) {
     return env[k] === obj[k]
   })

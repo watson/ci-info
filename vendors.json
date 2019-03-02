@@ -84,6 +84,11 @@
     "env": "GO_PIPELINE_LABEL"
   },
   {
+    "name": "Heroku",
+    "constant": "HEROKU",
+    "env": { "env": "NODE", "includes": "heroku" }
+  },
+  {
     "name": "Hudson",
     "constant": "HUDSON",
     "env": "HUDSON_URL"
