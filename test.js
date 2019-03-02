@@ -273,6 +273,23 @@ test('Cirrus CI - Not PR', function (t) {
   t.end()
 })
 
+test('Heroku - Not PR', function (t) {
+  process.env.NODE = '/app/.heroku/node/bin/node'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, null)
+  t.equal(ci.name, 'Heroku')
+  t.equal(ci.HEROKU, true)
+  assertVendorConstants('HEROKU', ci, t)
+
+  delete process.env.NODE
+
+  t.end()
+})
+
 test('Semaphore - PR', function (t) {
   process.env.SEMAPHORE = 'true'
   process.env.PULL_REQUEST_NUMBER = '42'
