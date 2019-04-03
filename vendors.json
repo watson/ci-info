@@ -106,6 +106,12 @@
     "pr": { "env": "PULL_REQUEST", "ne": "false" }
   },
   {
+    "name": "Render",
+    "constant": "RENDER",
+    "env": "RENDER",
+    "pr": { "IS_PULL_REQUEST": "true" }
+  },
+  {
     "name": "Sail CI",
     "constant": "SAIL",
     "env": "SAILCI",
