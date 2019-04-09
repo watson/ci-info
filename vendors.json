@@ -95,6 +95,11 @@
     "pr": { "any": ["ghprbPullId", "CHANGE_ID"] }
   },
   {
+    "name": "Now",
+    "constant": "NOW",
+    "env": "NOW_REGION"
+  },
+  {
     "name": "Magnum CI",
     "constant": "MAGNUM",
     "env": "MAGNUM"
