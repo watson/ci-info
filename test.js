@@ -459,6 +459,44 @@ test('Netlify CI - Not PR', function (t) {
   t.end()
 })
 
+test('Nevercode - PR', function (t) {
+  process.env.NEVERCODE = 'true'
+  process.env.NEVERCODE_PULL_REQUEST = 'true'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Nevercode')
+  t.equal(ci.NEVERCODE, true)
+  assertVendorConstants('NEVERCODE', ci, t)
+
+  delete process.env.NEVERCODE
+  delete process.env.NEVERCODE_PULL_REQUEST
+
+  t.end()
+})
+
+test('Nevercode - Not PR', function (t) {
+  process.env.NEVERCODE = 'true'
+  process.env.NEVERCODE_PULL_REQUEST = 'false'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Nevercode')
+  t.equal(ci.NEVERCODE, true)
+  assertVendorConstants('NEVERCODE', ci, t)
+
+  delete process.env.NEVERCODE
+  delete process.env.NEVERCODE_PULL_REQUEST
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     var bool = constant === expect

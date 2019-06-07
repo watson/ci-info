@@ -106,6 +106,12 @@
     "pr": { "env": "PULL_REQUEST", "ne": "false" }
   },
   {
+    "name": "Nevercode",
+    "constant": "NEVERCODE",
+    "env": "NEVERCODE",
+    "pr": { "env": "NEVERCODE_PULL_REQUEST", "ne": "false" }
+  },
+  {
     "name": "Sail CI",
     "constant": "SAIL",
     "env": "SAILCI",
