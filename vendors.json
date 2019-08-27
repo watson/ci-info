@@ -97,7 +97,7 @@
   {
     "name": "ZEIT Now",
     "constant": "NOW",
-    "env": "NOW_REGION"
+    "env": "NOW_BUILDER_ANNOTATE"
   },
   {
     "name": "Magnum CI",
