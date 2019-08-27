@@ -95,7 +95,7 @@
     "pr": { "any": ["ghprbPullId", "CHANGE_ID"] }
   },
   {
-    "name": "Now",
+    "name": "ZEIT Now",
     "constant": "NOW",
     "env": "NOW_REGION"
   },
