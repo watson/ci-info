@@ -96,7 +96,7 @@
   },
   {
     "name": "ZEIT Now",
-    "constant": "NOW",
+    "constant": "ZEIT_NOW",
     "env": "NOW_BUILDER_ANNOTATE"
   },
   {
