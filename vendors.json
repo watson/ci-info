@@ -74,6 +74,12 @@
     "env": "DSARI"
   },
   {
+    "name": "GitHub Actions",
+    "constant": "GITHUB_ACTIONS",
+    "env": "GITHUB_ACTIONS",
+    "pr": { "GITHUB_EVENT_NAME": "pull_request" }
+  },
+  {
     "name": "GitLab CI",
     "constant": "GITLAB",
     "env": "GITLAB_CI"

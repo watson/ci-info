@@ -497,6 +497,44 @@ test('Nevercode - Not PR', function (t) {
   t.end()
 })
 
+test('GitHub Actions - PR', function (t) {
+  process.env.GITHUB_ACTIONS = 'true'
+  process.env.GITHUB_EVENT_NAME = 'pull_request'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'GitHub Actions')
+  t.equal(ci.GITHUB_ACTIONS, true)
+  assertVendorConstants('GITHUB_ACTIONS', ci, t)
+
+  delete process.env.GITHUB_ACTIONS
+  delete process.env.GITHUB_EVENT_NAME
+
+  t.end()
+})
+
+test('GitHub Actions - Not PR', function (t) {
+  process.env.GITHUB_ACTIONS = 'true'
+  process.env.GITHUB_EVENT_NAME = 'push'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'GitHub Actions')
+  t.equal(ci.GITHUB_ACTIONS, true)
+  assertVendorConstants('GITHUB_ACTIONS', ci, t)
+
+  delete process.env.GITHUB_ACTIONS
+  delete process.env.GITHUB_EVENT_NAME
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     var bool = constant === expect
