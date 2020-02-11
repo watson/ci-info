@@ -480,6 +480,10 @@ test('Nevercode - PR', function (t) {
   process.env.NEVERCODE = 'true'
   process.env.NEVERCODE_PULL_REQUEST = 'true'
 
+  clearModule('./')
+  var ci = require('./')	  var ci = require('./')
+
+  t.equal(ci.isCI, true)	  t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Nevercode')
   t.equal(ci.NEVERCODE, true)
