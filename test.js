@@ -461,7 +461,7 @@ test('Netlify CI - Not PR', function (t) {
 
 test('ZEIT Now CI', function (t) {
   process.env.NOW_BUILDER = 'true'
-  
+
   clearModule('./')
   var ci = require('./')
 
@@ -472,7 +472,7 @@ test('ZEIT Now CI', function (t) {
   assertVendorConstants('ZEIT_NOW', ci, t)
 
   delete process.env.NOW_BUILDER
-  
+
   t.end()
 })
 
