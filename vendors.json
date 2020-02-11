@@ -74,6 +74,12 @@
     "env": "DSARI"
   },
   {
+    "name": "GitHub Actions",
+    "constant": "GITHUB_ACTIONS",
+    "env": "GITHUB_ACTIONS",
+    "pr": { "GITHUB_EVENT_NAME": "pull_request" }
+  },
+  {
     "name": "GitLab CI",
     "constant": "GITLAB",
     "env": "GITLAB_CI"
@@ -109,6 +115,12 @@
     "constant": "NETLIFY",
     "env": "NETLIFY_BUILD_BASE",
     "pr": { "env": "PULL_REQUEST", "ne": "false" }
+  },
+  {
+    "name": "Nevercode",
+    "constant": "NEVERCODE",
+    "env": "NEVERCODE",
+    "pr": { "env": "NEVERCODE_PULL_REQUEST", "ne": "false" }
   },
   {
     "name": "Sail CI",

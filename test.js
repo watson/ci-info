@@ -461,7 +461,7 @@ test('Netlify CI - Not PR', function (t) {
 
 test('ZEIT Now CI', function (t) {
   process.env.NOW_BUILDER = 'true'
-
+  
   clearModule('./')
   var ci = require('./')
 
@@ -472,6 +472,78 @@ test('ZEIT Now CI', function (t) {
   assertVendorConstants('ZEIT_NOW', ci, t)
 
   delete process.env.NOW_BUILDER
+  
+  t.end()
+})
+
+test('Nevercode - PR', function (t) {
+  process.env.NEVERCODE = 'true'
+  process.env.NEVERCODE_PULL_REQUEST = 'true'
+
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Nevercode')
+  t.equal(ci.NEVERCODE, true)
+  assertVendorConstants('NEVERCODE', ci, t)
+
+  delete process.env.NEVERCODE
+  delete process.env.NEVERCODE_PULL_REQUEST
+
+  t.end()
+})
+
+test('Nevercode - Not PR', function (t) {
+  process.env.NEVERCODE = 'true'
+  process.env.NEVERCODE_PULL_REQUEST = 'false'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Nevercode')
+  t.equal(ci.NEVERCODE, true)
+  assertVendorConstants('NEVERCODE', ci, t)
+
+  delete process.env.NEVERCODE
+  delete process.env.NEVERCODE_PULL_REQUEST
+
+  t.end()
+})
+
+test('GitHub Actions - PR', function (t) {
+  process.env.GITHUB_ACTIONS = 'true'
+  process.env.GITHUB_EVENT_NAME = 'pull_request'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'GitHub Actions')
+  t.equal(ci.GITHUB_ACTIONS, true)
+  assertVendorConstants('GITHUB_ACTIONS', ci, t)
+
+  delete process.env.GITHUB_ACTIONS
+  delete process.env.GITHUB_EVENT_NAME
+
+  t.end()
+})
+
+test('GitHub Actions - Not PR', function (t) {
+  process.env.GITHUB_ACTIONS = 'true'
+  process.env.GITHUB_EVENT_NAME = 'push'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'GitHub Actions')
+  t.equal(ci.GITHUB_ACTIONS, true)
+  assertVendorConstants('GITHUB_ACTIONS', ci, t)
+
+  delete process.env.GITHUB_ACTIONS
+  delete process.env.GITHUB_EVENT_NAME
 
   t.end()
 })

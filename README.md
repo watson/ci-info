@@ -47,12 +47,14 @@ Officially supported CI servers:
 | [Codeship](https://codeship.com) | `ci.CODESHIP` | 🚫 |
 | [Drone](https://drone.io) | `ci.DRONE` | ✅ |
 | [dsari](https://github.com/rfinnie/dsari) | `ci.DSARI` | 🚫 |
+| [GitHub Actions](https://github.com/features/actions/) | `ci.GITHUB_ACTIONS` | ✅ |
 | [GitLab CI](https://about.gitlab.com/gitlab-ci/) | `ci.GITLAB` | 🚫 |
 | [GoCD](https://www.go.cd/) | `ci.GOCD` | 🚫 |
 | [Hudson](http://hudson-ci.org) | `ci.HUDSON` | 🚫 |
 | [Jenkins CI](https://jenkins-ci.org) | `ci.JENKINS` | ✅ |
 | [Magnum CI](https://magnum-ci.com) | `ci.MAGNUM` | 🚫 |
 | [Netlify CI](https://www.netlify.com/) | `ci.NETLIFY` | ✅ |
+| [Nevercode](http://nevercode.io/) | `ci.NEVERCODE` | ✅ |
 | [Sail CI](https://sail.ci/) | `ci.SAIL` | ✅ |
 | [Semaphore](https://semaphoreci.com) | `ci.SEMAPHORE` | ✅ |
 | [Shippable](https://www.shippable.com/) | `ci.SHIPPABLE` | ✅ |
