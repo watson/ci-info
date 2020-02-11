@@ -459,6 +459,23 @@ test('Netlify CI - Not PR', function (t) {
   t.end()
 })
 
+test('ZEIT Now CI', function (t) {
+  process.env.NOW_BUILDER = 'true'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, null)
+  t.equal(ci.name, 'ZEIT Now')
+  t.equal(ci.ZEIT_NOW, true)
+  assertVendorConstants('ZEIT_NOW', ci, t)
+
+  delete process.env.NOW_BUILDER
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     var bool = constant === expect
