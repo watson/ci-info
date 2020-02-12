@@ -101,6 +101,11 @@
     "pr": { "any": ["ghprbPullId", "CHANGE_ID"] }
   },
   {
+    "name": "ZEIT Now",
+    "constant": "ZEIT_NOW",
+    "env": "NOW_BUILDER"
+  },
+  {
     "name": "Magnum CI",
     "constant": "MAGNUM",
     "env": "MAGNUM"
