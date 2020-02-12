@@ -55,6 +55,7 @@ Officially supported CI servers:
 | [Magnum CI](https://magnum-ci.com) | `ci.MAGNUM` | 🚫 |
 | [Netlify CI](https://www.netlify.com/) | `ci.NETLIFY` | ✅ |
 | [Nevercode](http://nevercode.io/) | `ci.NEVERCODE` | ✅ |
+| [Render](https://render.com/) | `ci.RENDER` | ✅ |
 | [Sail CI](https://sail.ci/) | `ci.SAIL` | ✅ |
 | [Semaphore](https://semaphoreci.com) | `ci.SEMAPHORE` | ✅ |
 | [Shippable](https://www.shippable.com/) | `ci.SHIPPABLE` | ✅ |

@@ -273,6 +273,44 @@ test('Cirrus CI - Not PR', function (t) {
   t.end()
 })
 
+test('Render - PR', function (t) {
+  process.env.RENDER = 'true'
+  process.env.IS_PULL_REQUEST = 'true'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Render')
+  t.equal(ci.RENDER, true)
+  assertVendorConstants('RENDER', ci, t)
+
+  delete process.env.RENDER
+  delete process.env.IS_PULL_REQUEST
+
+  t.end()
+})
+
+test('Render - Not PR', function (t) {
+  process.env.RENDER = 'true'
+  process.env.IS_PULL_REQUEST = 'false'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Render')
+  t.equal(ci.RENDER, true)
+  assertVendorConstants('RENDER', ci, t)
+
+  delete process.env.RENDER
+  delete process.env.IS_PULL_REQUEST
+
+  t.end()
+})
+
 test('Semaphore - PR', function (t) {
   process.env.SEMAPHORE = 'true'
   process.env.PULL_REQUEST_NUMBER = '42'
