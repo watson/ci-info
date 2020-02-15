@@ -460,7 +460,7 @@ test('Travis CI - Not PR', function (t) {
 })
 
 test('Netlify CI - PR', function (t) {
-  process.env.NETLIFY_BUILD_BASE = '/opt/build'
+  process.env.NETLIFY = 'true'
   process.env.PULL_REQUEST = 'true'
 
   clearModule('./')
@@ -472,14 +472,14 @@ test('Netlify CI - PR', function (t) {
   t.equal(ci.NETLIFY, true)
   assertVendorConstants('NETLIFY', ci, t)
 
-  delete process.env.NETLIFY_BUILD_BASE
+  delete process.env.NETLIFY
   delete process.env.PULL_REQUEST
 
   t.end()
 })
 
 test('Netlify CI - Not PR', function (t) {
-  process.env.NETLIFY_BUILD_BASE = '/opt/build'
+  process.env.NETLIFY = 'true'
   process.env.PULL_REQUEST = 'false'
 
   clearModule('./')
@@ -491,7 +491,7 @@ test('Netlify CI - Not PR', function (t) {
   t.equal(ci.NETLIFY, true)
   assertVendorConstants('NETLIFY', ci, t)
 
-  delete process.env.NETLIFY_BUILD_BASE
+  delete process.env.NETLIFY
   delete process.env.PULL_REQUEST
 
   t.end()
