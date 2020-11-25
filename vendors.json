@@ -172,5 +172,10 @@
     "constant": "TRAVIS",
     "env": "TRAVIS",
     "pr": { "env": "TRAVIS_PULL_REQUEST", "ne": "false" }
+  },
+  {
+    "name": "Vercel",
+    "constant": "VERCEL",
+    "env": "NOW_BUILDER"
   }
 ]
