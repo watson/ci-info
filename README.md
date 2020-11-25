@@ -65,7 +65,6 @@ Officially supported CI servers:
 | [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains | `ci.TEAMCITY` | 🚫 |
 | [Travis CI](http://travis-ci.org) | `ci.TRAVIS` | ✅ |
 | [Vercel](https://vercel.com/) | `ci.VERCEL` | 🚫 |
-| [Zeit Now](https://zeit.co/) | `ci.ZEIT_NOW` | 🚫 |
 
 ## API
 
