@@ -82,7 +82,8 @@
   {
     "name": "GitLab CI",
     "constant": "GITLAB",
-    "env": "GITLAB_CI"
+    "env": "GITLAB_CI",
+    "pr": "CI_MERGE_REQUEST_ID"
   },
   {
     "name": "GoCD",
