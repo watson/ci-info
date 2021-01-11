@@ -102,11 +102,6 @@
     "pr": { "any": ["ghprbPullId", "CHANGE_ID"] }
   },
   {
-    "name": "ZEIT Now",
-    "constant": "ZEIT_NOW",
-    "env": "NOW_BUILDER"
-  },
-  {
     "name": "Magnum CI",
     "constant": "MAGNUM",
     "env": "MAGNUM"
@@ -173,5 +168,10 @@
     "constant": "TRAVIS",
     "env": "TRAVIS",
     "pr": { "env": "TRAVIS_PULL_REQUEST", "ne": "false" }
+  },
+  {
+    "name": "Vercel",
+    "constant": "VERCEL",
+    "env": "NOW_BUILDER"
   }
 ]
