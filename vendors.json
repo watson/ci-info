@@ -179,5 +179,10 @@
     "name": "Vercel",
     "constant": "VERCEL",
     "env": "NOW_BUILDER"
+  },
+  {
+    "name": "Visual Studio App Center",
+    "constant": "APPCENTER",
+    "env": "APPCENTER_BUILD_ID"
   }
 ]

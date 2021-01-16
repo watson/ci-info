@@ -10,6 +10,7 @@ Features:
 - support Now CI ([#37](https://github.com/watson/ci-info/pull/37))
 - support GitLab PR ([#59](https://github.com/watson/ci-info/pull/59))
 - support Screwdriver CD ([#60](https://github.com/watson/ci-info/pull/60))
+- support Visual Studio App Center ([#61](https://github.com/watson/ci-info/pull/61))
 
 Bug Fixes:
 
