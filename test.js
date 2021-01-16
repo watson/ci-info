@@ -628,6 +628,23 @@ test('Screwdriver - Not PR', function (t) {
   t.end()
 })
 
+test('Visual Studio App Center', function (t) {
+  process.env.APPCENTER_BUILD_ID = '1'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  // t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Visual Studio App Center')
+  t.equal(ci.APPCENTER, true)
+  assertVendorConstants('APPCENTER', ci, t)
+
+  delete process.env.APPCENTER
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     var bool = constant === expect

@@ -66,6 +66,7 @@ Officially supported CI servers:
 | [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains | `ci.TEAMCITY` | 🚫 |
 | [Travis CI](http://travis-ci.org) | `ci.TRAVIS` | ✅ |
 | [Vercel](https://vercel.com/) | `ci.VERCEL` | 🚫 |
+| [Visual Studio App Center](https://appcenter.ms/) | `ci.APPCENTER` | 🚫 |
 
 ## API
 
