@@ -57,6 +57,7 @@ Officially supported CI servers:
 | [Nevercode](http://nevercode.io/) | `ci.NEVERCODE` | ✅ |
 | [Render](https://render.com/) | `ci.RENDER` | ✅ |
 | [Sail CI](https://sail.ci/) | `ci.SAIL` | ✅ |
+| [Screwdriver](https://screwdriver.cd/) | `ci.SCREWDRIVER` | ✅ |
 | [Semaphore](https://semaphoreci.com) | `ci.SEMAPHORE` | ✅ |
 | [Shippable](https://www.shippable.com/) | `ci.SHIPPABLE` | ✅ |
 | [Solano CI](https://www.solanolabs.com/) | `ci.SOLANO` | ✅ |
