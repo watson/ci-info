@@ -137,6 +137,12 @@
     "pr": "PULL_REQUEST_NUMBER"
   },
   {
+    "name": "Screwdriver",
+    "constant": "SCREWDRIVER",
+    "env": "SCREWDRIVER",
+    "pr": { "env": "SD_PULL_REQUEST", "ne": "false" }
+  },
+  {
     "name": "Shippable",
     "constant": "SHIPPABLE",
     "env": "SHIPPABLE",

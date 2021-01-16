@@ -590,6 +590,44 @@ test('GitHub Actions - Not PR', function (t) {
   t.end()
 })
 
+test('Screwdriver - PR', function (t) {
+  process.env.SCREWDRIVER = 'true'
+  process.env.SD_PULL_REQUEST = '1'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Screwdriver')
+  t.equal(ci.SCREWDRIVER, true)
+  assertVendorConstants('SCREWDRIVER', ci, t)
+
+  delete process.env.SCREWDRIVER
+  delete process.env.SD_PULL_REQUEST
+
+  t.end()
+})
+
+test('Screwdriver - Not PR', function (t) {
+  process.env.SCREWDRIVER = 'true'
+  process.env.SD_PULL_REQUEST = 'false'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Screwdriver')
+  t.equal(ci.SCREWDRIVER, true)
+  assertVendorConstants('SCREWDRIVER', ci, t)
+
+  delete process.env.SCREWDRIVER
+  delete process.env.SD_PULL_REQUEST
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     var bool = constant === expect
