@@ -1,23 +1,23 @@
 'use strict'
 
-var test = require('tape')
-var clearModule = require('clear-module')
+const test = require('tape')
+const clearModule = require('clear-module')
 
-var isActualPR = !!(process.env.TRAVIS_PULL_REQUEST && process.env.TRAVIS_PULL_REQUEST !== 'false')
+const isActualPR = !!(process.env.GITHUB_EVENT_NAME && process.env.GITHUB_EVENT_NAME === 'pull_request')
 
 test('Known CI', function (t) {
-  process.env.TRAVIS = 'true'
+  process.env.GITHUB_ACTIONS = 'true'
 
-  var ci = require('./')
+  const ci = require('./')
 
   t.ok(Array.isArray(ci._vendors))
   t.ok(ci._vendors.length > 0)
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, isActualPR)
-  t.equal(ci.name, 'Travis CI')
-  t.equal(ci.TRAVIS, true)
-  assertVendorConstants('TRAVIS', ci, t)
+  t.equal(ci.name, 'GitHub Actions')
+  t.equal(ci.GITHUB_ACTIONS, true)
+  assertVendorConstants('GITHUB_ACTIONS', ci, t)
 
   t.end()
 })
@@ -27,9 +27,10 @@ test('Not CI', function (t) {
   delete process.env.CONTINUOUS_INTEGRATION
   delete process.env.BUILD_NUMBER
   delete process.env.TRAVIS
+  delete process.env.GITHUB_ACTIONS
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, false)
   t.equal(ci.isPR, null)
@@ -44,7 +45,7 @@ test('Unknown CI', function (t) {
   process.env.CI = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, null)
@@ -60,7 +61,7 @@ test('AppVeyor - PR', function (t) {
   process.env.APPVEYOR_PULL_REQUEST_NUMBER = '42'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -78,7 +79,7 @@ test('AppVeyor - Not PR', function (t) {
   process.env.APPVEYOR = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -96,7 +97,7 @@ test('Azure Pipelines - PR', function (t) {
   process.env.SYSTEM_PULLREQUEST_PULLREQUESTID = '42'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -114,7 +115,7 @@ test('Azure Pipelines - Not PR', function (t) {
   process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = 'https://dev.azure.com/Contoso'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -132,7 +133,7 @@ test('Bitbucket Pipelines - PR', function (t) {
   process.env.BITBUCKET_PR_ID = '42'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -150,7 +151,7 @@ test('Bitbucket Pipelines - Not PR', function (t) {
   process.env.BITBUCKET_COMMIT = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -168,7 +169,7 @@ test('Buildkite - PR', function (t) {
   process.env.BUILDKITE_PULL_REQUEST = '42'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -187,7 +188,7 @@ test('Buildkite - Not PR', function (t) {
   process.env.BUILDKITE_PULL_REQUEST = 'false'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -206,7 +207,7 @@ test('CircleCI - PR', function (t) {
   process.env.CIRCLE_PULL_REQUEST = '42'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -224,7 +225,7 @@ test('CircleCI - Not PR', function (t) {
   process.env.CIRCLECI = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -242,7 +243,7 @@ test('Cirrus CI - PR', function (t) {
   process.env.CIRRUS_PR = '42'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -260,7 +261,7 @@ test('Cirrus CI - Not PR', function (t) {
   process.env.CIRRUS_CI = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -278,7 +279,7 @@ test('Render - PR', function (t) {
   process.env.IS_PULL_REQUEST = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -297,7 +298,7 @@ test('Render - Not PR', function (t) {
   process.env.IS_PULL_REQUEST = 'false'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -316,7 +317,7 @@ test('Semaphore - PR', function (t) {
   process.env.PULL_REQUEST_NUMBER = '42'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -334,7 +335,7 @@ test('Semaphore - Not PR', function (t) {
   process.env.SEMAPHORE = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -352,7 +353,7 @@ test('Shippable - PR', function (t) {
   process.env.IS_PULL_REQUEST = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -371,7 +372,7 @@ test('Semaphore - Not PR', function (t) {
   process.env.IS_PULL_REQUEST = 'false'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -390,7 +391,7 @@ test('Solano CI - PR', function (t) {
   process.env.TDDIUM_PR_ID = '42'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -408,7 +409,7 @@ test('Solano CI - Not PR', function (t) {
   process.env.TDDIUM = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -426,7 +427,7 @@ test('Travis CI - PR', function (t) {
   process.env.TRAVIS_PULL_REQUEST = '42'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -445,7 +446,7 @@ test('Travis CI - Not PR', function (t) {
   process.env.TRAVIS_PULL_REQUEST = 'false'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -464,7 +465,7 @@ test('Netlify CI - PR', function (t) {
   process.env.PULL_REQUEST = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -483,7 +484,7 @@ test('Netlify CI - Not PR', function (t) {
   process.env.PULL_REQUEST = 'false'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -501,7 +502,7 @@ test('Vercel', function (t) {
   process.env.NOW_BUILDER = '1'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, null)
@@ -519,7 +520,7 @@ test('Nevercode - PR', function (t) {
   process.env.NEVERCODE_PULL_REQUEST = 'true'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -538,7 +539,7 @@ test('Nevercode - Not PR', function (t) {
   process.env.NEVERCODE_PULL_REQUEST = 'false'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -557,7 +558,7 @@ test('GitHub Actions - PR', function (t) {
   process.env.GITHUB_EVENT_NAME = 'pull_request'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -576,7 +577,7 @@ test('GitHub Actions - Not PR', function (t) {
   process.env.GITHUB_EVENT_NAME = 'push'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -595,7 +596,7 @@ test('Screwdriver - PR', function (t) {
   process.env.SD_PULL_REQUEST = '1'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, true)
@@ -614,7 +615,7 @@ test('Screwdriver - Not PR', function (t) {
   process.env.SD_PULL_REQUEST = 'false'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, false)
@@ -632,7 +633,7 @@ test('Visual Studio App Center', function (t) {
   process.env.APPCENTER_BUILD_ID = '1'
 
   clearModule('./')
-  var ci = require('./')
+  const ci = require('./')
 
   t.equal(ci.isCI, true)
   // t.equal(ci.isPR, false)
@@ -647,7 +648,7 @@ test('Visual Studio App Center', function (t) {
 
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
-    var bool = constant === expect
+    let bool = constant === expect
     bool = (expect === 'SOLANO' && constant === 'TDDIUM') || bool // support deprecated option
     t.equal(ci[constant], bool, 'ci.' + constant)
   })
