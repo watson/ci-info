@@ -460,7 +460,7 @@ test('Travis CI - Not PR', function (t) {
 })
 
 test('Netlify CI - PR', function (t) {
-  process.env.NETLIFY_BUILD_BASE = '/opt/build'
+  process.env.NETLIFY = 'true'
   process.env.PULL_REQUEST = 'true'
 
   clearModule('./')
@@ -472,14 +472,14 @@ test('Netlify CI - PR', function (t) {
   t.equal(ci.NETLIFY, true)
   assertVendorConstants('NETLIFY', ci, t)
 
-  delete process.env.NETLIFY_BUILD_BASE
+  delete process.env.NETLIFY
   delete process.env.PULL_REQUEST
 
   t.end()
 })
 
 test('Netlify CI - Not PR', function (t) {
-  process.env.NETLIFY_BUILD_BASE = '/opt/build'
+  process.env.NETLIFY = 'true'
   process.env.PULL_REQUEST = 'false'
 
   clearModule('./')
@@ -491,23 +491,23 @@ test('Netlify CI - Not PR', function (t) {
   t.equal(ci.NETLIFY, true)
   assertVendorConstants('NETLIFY', ci, t)
 
-  delete process.env.NETLIFY_BUILD_BASE
+  delete process.env.NETLIFY
   delete process.env.PULL_REQUEST
 
   t.end()
 })
 
-test('ZEIT Now CI', function (t) {
-  process.env.NOW_BUILDER = 'true'
+test('Vercel', function (t) {
+  process.env.NOW_BUILDER = '1'
 
   clearModule('./')
   var ci = require('./')
 
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, null)
-  t.equal(ci.name, 'ZEIT Now')
-  t.equal(ci.ZEIT_NOW, true)
-  assertVendorConstants('ZEIT_NOW', ci, t)
+  t.equal(ci.name, 'Vercel')
+  t.equal(ci.VERCEL, true)
+  assertVendorConstants('VERCEL', ci, t)
 
   delete process.env.NOW_BUILDER
 
@@ -586,6 +586,61 @@ test('GitHub Actions - Not PR', function (t) {
 
   delete process.env.GITHUB_ACTIONS
   delete process.env.GITHUB_EVENT_NAME
+
+  t.end()
+})
+
+test('Screwdriver - PR', function (t) {
+  process.env.SCREWDRIVER = 'true'
+  process.env.SD_PULL_REQUEST = '1'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Screwdriver')
+  t.equal(ci.SCREWDRIVER, true)
+  assertVendorConstants('SCREWDRIVER', ci, t)
+
+  delete process.env.SCREWDRIVER
+  delete process.env.SD_PULL_REQUEST
+
+  t.end()
+})
+
+test('Screwdriver - Not PR', function (t) {
+  process.env.SCREWDRIVER = 'true'
+  process.env.SD_PULL_REQUEST = 'false'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Screwdriver')
+  t.equal(ci.SCREWDRIVER, true)
+  assertVendorConstants('SCREWDRIVER', ci, t)
+
+  delete process.env.SCREWDRIVER
+  delete process.env.SD_PULL_REQUEST
+
+  t.end()
+})
+
+test('Visual Studio App Center', function (t) {
+  process.env.APPCENTER_BUILD_ID = '1'
+
+  clearModule('./')
+  var ci = require('./')
+
+  t.equal(ci.isCI, true)
+  // t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Visual Studio App Center')
+  t.equal(ci.APPCENTER, true)
+  assertVendorConstants('APPCENTER', ci, t)
+
+  delete process.env.APPCENTER
 
   t.end()
 })

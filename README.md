@@ -48,7 +48,7 @@ Officially supported CI servers:
 | [Drone](https://drone.io) | `ci.DRONE` | ✅ |
 | [dsari](https://github.com/rfinnie/dsari) | `ci.DSARI` | 🚫 |
 | [GitHub Actions](https://github.com/features/actions/) | `ci.GITHUB_ACTIONS` | ✅ |
-| [GitLab CI](https://about.gitlab.com/gitlab-ci/) | `ci.GITLAB` | 🚫 |
+| [GitLab CI](https://about.gitlab.com/gitlab-ci/) | `ci.GITLAB` | ✅ |
 | [GoCD](https://www.go.cd/) | `ci.GOCD` | 🚫 |
 | [Hudson](http://hudson-ci.org) | `ci.HUDSON` | 🚫 |
 | [Jenkins CI](https://jenkins-ci.org) | `ci.JENKINS` | ✅ |
@@ -57,6 +57,7 @@ Officially supported CI servers:
 | [Nevercode](http://nevercode.io/) | `ci.NEVERCODE` | ✅ |
 | [Render](https://render.com/) | `ci.RENDER` | ✅ |
 | [Sail CI](https://sail.ci/) | `ci.SAIL` | ✅ |
+| [Screwdriver](https://screwdriver.cd/) | `ci.SCREWDRIVER` | ✅ |
 | [Semaphore](https://semaphoreci.com) | `ci.SEMAPHORE` | ✅ |
 | [Shippable](https://www.shippable.com/) | `ci.SHIPPABLE` | ✅ |
 | [Solano CI](https://www.solanolabs.com/) | `ci.SOLANO` | ✅ |
@@ -64,7 +65,8 @@ Officially supported CI servers:
 | [TaskCluster](http://docs.taskcluster.net) | `ci.TASKCLUSTER` | 🚫 |
 | [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains | `ci.TEAMCITY` | 🚫 |
 | [Travis CI](http://travis-ci.org) | `ci.TRAVIS` | ✅ |
-| [Zeit Now](https://zeit.co/) | `ci.ZEIT_NOW` | 🚫 |
+| [Vercel](https://vercel.com/) | `ci.VERCEL` | 🚫 |
+| [Visual Studio App Center](https://appcenter.ms/) | `ci.APPCENTER` | 🚫 |
 
 ## API
 
