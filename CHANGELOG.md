@@ -1,6 +1,6 @@
 # Changelog
 
-## Master
+## v3.0.0
 
 Features:
 
