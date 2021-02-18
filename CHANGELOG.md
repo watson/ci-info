@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.1.1
+
+Bug Fixes:
+
+- remove duplicate declaration in typings
+
 ## v3.1.0
 
 Features:
