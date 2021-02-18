@@ -1,5 +1,11 @@
 # Changelog
 
+## v3.1.0
+
+Features:
+
+- add typings
+
 ## v3.0.0
 
 Features:
