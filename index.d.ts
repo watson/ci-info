@@ -48,7 +48,6 @@ export const NEVERCODE: boolean;
 export const RENDER: boolean;
 export const SAIL: boolean;
 export const SEMAPHORE: boolean;
-export const SEMAPHORE: boolean;
 export const SCREWDRIVER: boolean;
 export const SHIPPABLE: boolean;
 export const SOLANO: boolean;
