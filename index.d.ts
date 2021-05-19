@@ -34,6 +34,7 @@ export const BUILDKITE: boolean;
 export const CIRCLE: boolean;
 export const CIRRUS: boolean;
 export const CODEBUILD: boolean;
+export const CODEFRESH: boolean;
 export const CODESHIP: boolean;
 export const DRONE: boolean;
 export const DSARI: boolean;
