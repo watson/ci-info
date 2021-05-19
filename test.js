@@ -274,6 +274,42 @@ test('Cirrus CI - Not PR', function (t) {
   t.end()
 })
 
+test('Codefresh - PR', function (t) {
+  process.env.CF_BUILD_ID = 'true'
+  process.env.CF_PULL_REQUEST_ID = '42'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Codefresh')
+  t.equal(ci.CODEFRESH, true)
+  assertVendorConstants('CODEFRESH', ci, t)
+
+  delete process.env.CF_BUILD_ID
+  delete process.env.CF_PULL_REQUEST_ID
+
+  t.end()
+})
+
+test('Codefresh - Not PR', function (t) {
+  process.env.CF_BUILD_ID = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Codefresh')
+  t.equal(ci.CODEFRESH, true)
+  assertVendorConstants('CODEFRESH', ci, t)
+
+  delete process.env.CF_BUILD_ID
+
+  t.end()
+})
+
 test('Render - PR', function (t) {
   process.env.RENDER = 'true'
   process.env.IS_PULL_REQUEST = 'true'
