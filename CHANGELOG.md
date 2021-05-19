@@ -1,5 +1,9 @@
 # Changelog
 
+## Master
+
+- support Codefresh CI ([#65](https://github.com/watson/ci-info/pull/65))
+
 ## v3.1.1
 
 Bug Fixes:
