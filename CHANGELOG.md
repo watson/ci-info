@@ -1,8 +1,11 @@
 # Changelog
 
-## Master
+## v3.2.0
 
+- support LayerCI ([#68](https://github.com/watson/ci-info/pull/68))
+- support Appcircle ([#69](https://github.com/watson/ci-info/pull/69))
 - support Codefresh CI ([#65](https://github.com/watson/ci-info/pull/65))
+- Add support for nodejs v16
 
 ## v3.1.1
 
