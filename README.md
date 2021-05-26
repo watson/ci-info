@@ -37,6 +37,7 @@ Officially supported CI servers:
 | [AWS CodeBuild](https://aws.amazon.com/codebuild/)                              | `ci.CODEBUILD`       | 🚫   |
 | [AppVeyor](http://www.appveyor.com)                                             | `ci.APPVEYOR`        | ✅   |
 | [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) | `ci.AZURE_PIPELINES` | ✅   |
+| [Appcircle](https://appcircle.io/)                                              | `ci.APPCIRCLE`       | 🚫   |
 | [Bamboo](https://www.atlassian.com/software/bamboo) by Atlassian                | `ci.BAMBOO`          | 🚫   |
 | [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)         | `ci.BITBUCKET`       | ✅   |
 | [Bitrise](https://www.bitrise.io/)                                              | `ci.BITRISE`         | ✅   |
@@ -53,6 +54,7 @@ Officially supported CI servers:
 | [GoCD](https://www.go.cd/)                                                      | `ci.GOCD`            | 🚫   |
 | [Hudson](http://hudson-ci.org)                                                  | `ci.HUDSON`          | 🚫   |
 | [Jenkins CI](https://jenkins-ci.org)                                            | `ci.JENKINS`         | ✅   |
+| [LayerCI](https://layerci.com/)                                                 | `ci.LAYERCI`         | ✅   |
 | [Magnum CI](https://magnum-ci.com)                                              | `ci.MAGNUM`          | 🚫   |
 | [Netlify CI](https://www.netlify.com/)                                          | `ci.NETLIFY`         | ✅   |
 | [Nevercode](http://nevercode.io/)                                               | `ci.NEVERCODE`       | ✅   |
