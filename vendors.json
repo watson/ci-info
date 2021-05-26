@@ -97,6 +97,12 @@
     "env": "GO_PIPELINE_LABEL"
   },
   {
+    "name": "LayerCI",
+    "constant": "LAYERCI",
+    "env": "LAYERCI",
+    "pr": "LAYERCI_PULL_REQUEST"
+  },
+  {
     "name": "Hudson",
     "constant": "HUDSON",
     "env": "HUDSON_URL"

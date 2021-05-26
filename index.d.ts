@@ -43,6 +43,7 @@ export const GITLAB: boolean;
 export const GOCD: boolean;
 export const HUDSON: boolean;
 export const JENKINS: boolean;
+export const LAYERCI: boolean;
 export const MAGNUM: boolean;
 export const NETLIFY: boolean;
 export const NEVERCODE: boolean;
