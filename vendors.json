@@ -12,6 +12,11 @@
     "pr": "SYSTEM_PULLREQUEST_PULLREQUESTID"
   },
   {
+    "name": "Appcircle",
+    "constant": "APPCIRCLE",
+    "env": "AC_APPCIRCLE"
+  },
+  {
     "name": "Bamboo",
     "constant": "BAMBOO",
     "env": "bamboo_planKey"

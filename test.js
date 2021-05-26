@@ -346,6 +346,22 @@ test('LayerCI - Not PR', function (t) {
   t.end()
 })
 
+test('Appcircle', function (t) {
+  process.env.AC_APPCIRCLE = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, 'Appcircle')
+  t.equal(ci.APPCIRCLE, true)
+  assertVendorConstants('APPCIRCLE', ci, t)
+
+  delete process.env.AC_APPCIRCLE
+
+  t.end()
+})
+
 test('Render - PR', function (t) {
   process.env.RENDER = 'true'
   process.env.IS_PULL_REQUEST = 'true'

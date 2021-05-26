@@ -26,6 +26,7 @@ export const name: string | null;
 
 export const APPVEYOR: boolean;
 export const AZURE_PIPELINES: boolean;
+export const APPCIRCLE: boolean;
 export const BAMBOO: boolean;
 export const BITBUCKET: boolean;
 export const BITRISE: boolean;
