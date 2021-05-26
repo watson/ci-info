@@ -310,6 +310,42 @@ test('Codefresh - Not PR', function (t) {
   t.end()
 })
 
+test('LayerCI - PR', function (t) {
+  process.env.LAYERCI = 'true'
+  process.env.LAYERCI_PULL_REQUEST = 'https://link-to-pr/5'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'LayerCI')
+  t.equal(ci.LAYERCI, true)
+  assertVendorConstants('LAYERCI', ci, t)
+
+  delete process.env.LAYERCI
+  delete process.env.LAYERCI_PULL_REQUEST
+
+  t.end()
+})
+
+test('LayerCI - Not PR', function (t) {
+  process.env.LAYERCI = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'LayerCI')
+  t.equal(ci.LAYERCI, true)
+  assertVendorConstants('LAYERCI', ci, t)
+
+  delete process.env.LAYERCI
+
+  t.end()
+})
+
 test('Render - PR', function (t) {
   process.env.RENDER = 'true'
   process.env.IS_PULL_REQUEST = 'true'
