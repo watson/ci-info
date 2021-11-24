@@ -1,5 +1,9 @@
 # Changelog
 
+## Master
+
+- support Expo Application Services ([#70](https://github.com/watson/ci-info/pull/70))
+
 ## v3.2.0
 
 - support LayerCI ([#68](https://github.com/watson/ci-info/pull/68))

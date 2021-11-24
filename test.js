@@ -641,6 +641,23 @@ test('Nevercode - Not PR', function (t) {
   t.end()
 })
 
+test('Expo Application Services', function (t) {
+  process.env.EAS_BUILD = '1'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, null)
+  t.equal(ci.name, 'Expo Application Services')
+  t.equal(ci.EAS, true)
+  assertVendorConstants('EAS', ci, t)
+
+  delete process.env.EAS_BUILD
+
+  t.end()
+})
+
 test('GitHub Actions - PR', function (t) {
   process.env.GITHUB_ACTIONS = 'true'
   process.env.GITHUB_EVENT_NAME = 'pull_request'
