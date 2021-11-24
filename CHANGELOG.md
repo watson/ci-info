@@ -1,6 +1,6 @@
 # Changelog
 
-## Master
+## v3.3.0
 
 - support Expo Application Services ([#70](https://github.com/watson/ci-info/pull/70))
 
