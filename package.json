@@ -6,13 +6,8 @@
   "typings": "index.d.ts",
   "author": "Thomas Watson Steen <w@tson.dk> (https://twitter.com/wa7son)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/watson/ci-info.git"
-  },
-  "bugs": {
-    "url": "https://github.com/watson/ci-info/issues"
-  },
+  "repository": "https://github.com/watson/ci-info.git",
+  "bugs": "https://github.com/watson/ci-info/issues",
   "homepage": "https://github.com/watson/ci-info",
   "keywords": [
     "ci",
@@ -21,9 +16,11 @@
     "test",
     "detect"
   ],
-  "coordinates": [
-    55.778231,
-    12.593179
+  "files": [
+    "vendors.json",
+    "index.js",
+    "index.d.ts",
+    "CHANGELOG.md"
   ],
   "scripts": {
     "test": "standard && node test.js"
