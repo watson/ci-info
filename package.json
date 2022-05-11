@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "clear-module": "^4.1.2",
-    "standard": "^16.0.4",
-    "tape": "^5.3.2"
+    "standard": "^17.0.0",
+    "tape": "^5.5.3"
   }
 }
