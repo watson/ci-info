@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.3.2
+
+  - fix: export correct typings for `EAS`
+
 ## v3.3.1
 
 - fix: export `EAS_BUILD` constant in typings
