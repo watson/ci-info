@@ -766,7 +766,43 @@ test('Visual Studio App Center', function (t) {
   t.equal(ci.APPCENTER, true)
   assertVendorConstants('APPCENTER', ci, t)
 
-  delete process.env.APPCENTER
+  delete process.env.APPCENTER_BUILD_ID
+
+  t.end()
+})
+
+test('Codemagic - PR', function (t) {
+  process.env.CM_BUILD_ID = '1'
+  process.env.CM_PULL_REQUEST = '1'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Codemagic')
+  t.equal(ci.CODEMAGIC, true)
+  assertVendorConstants('CODEMAGIC', ci, t)
+
+  delete process.env.CM_BUILD_ID
+  delete process.env.CM_PULL_REQUEST
+
+  t.end()
+})
+
+test('Codemagic - Not PR', function (t) {
+  process.env.CM_BUILD_ID = '1'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Codemagic')
+  t.equal(ci.CODEMAGIC, true)
+  assertVendorConstants('CODEMAGIC', ci, t)
+
+  delete process.env.CM_BUILD_ID
 
   t.end()
 })

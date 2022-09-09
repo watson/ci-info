@@ -58,6 +58,12 @@
     "pr": "CIRRUS_PR"
   },
   {
+    "name": "Codemagic",
+    "constant": "CODEMAGIC",
+    "env": "CM_BUILD_ID",
+    "pr": "CM_PULL_REQUEST"
+  },
+  {
     "name": "AWS CodeBuild",
     "constant": "CODEBUILD",
     "env": "CODEBUILD_BUILD_ARN"
