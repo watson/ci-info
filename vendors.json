@@ -212,5 +212,11 @@
     "name": "Visual Studio App Center",
     "constant": "APPCENTER",
     "env": "APPCENTER_BUILD_ID"
+  },
+  {
+    "name": "Xcode Cloud",
+    "constant": "XCODE_CLOUD",
+    "env": "CI_XCODE_PROJECT",
+    "pr": "CI_PULL_REQUEST_NUMBER"
   }
 ]

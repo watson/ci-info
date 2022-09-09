@@ -807,6 +807,42 @@ test('Codemagic - Not PR', function (t) {
   t.end()
 })
 
+test('Xcode Cloud - PR', function (t) {
+  process.env.CI_XCODE_PROJECT = 'xx'
+  process.env.CI_PULL_REQUEST_NUMBER = '1'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Xcode Cloud')
+  t.equal(ci.XCODE_CLOUD, true)
+  assertVendorConstants('XCODE_CLOUD', ci, t)
+
+  delete process.env.CI_XCODE_PROJECT
+  delete process.env.CI_PULL_REQUEST_NUMBER
+
+  t.end()
+})
+
+test('Xcode Cloud - Not PR', function (t) {
+  process.env.CI_XCODE_PROJECT = 'xx'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Xcode Cloud')
+  t.equal(ci.XCODE_CLOUD, true)
+  assertVendorConstants('XCODE_CLOUD', ci, t)
+
+  delete process.env.CI_XCODE_PROJECT
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     let bool = constant === expect
