@@ -56,6 +56,26 @@ test('Unknown CI', function (t) {
   t.end()
 })
 
+test('Anonymous CI', function (t) {
+  const ANONYMOUS_ENV_VARS = [
+    'CI', 'CONTINUOUS_INTEGRATION', 'BUILD_NUMBER',
+    'CI_APP_ID', 'CI_BUILD_ID', 'CI_BUILD_NUMBER',
+    'RUN_ID'
+  ]
+
+  for (const envVar in ANONYMOUS_ENV_VARS) {
+    process.env[envVar] = true
+
+    clearModule('./')
+    const ci = require('./')
+    t.equal(ci.isCI, true)
+    t.equal(ci.isPR, null)
+    t.equal(ci.name, null)
+  }
+
+  t.end()
+})
+
 test('AppVeyor - PR', function (t) {
   process.env.APPVEYOR = 'true'
   process.env.APPVEYOR_PULL_REQUEST_NUMBER = '42'
