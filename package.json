@@ -23,6 +23,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
+    "lint:fix": "standard --fix",
     "test": "standard && node test.js"
   },
   "devDependencies": {
