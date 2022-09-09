@@ -218,5 +218,10 @@
     "constant": "XCODE_CLOUD",
     "env": "CI_XCODE_PROJECT",
     "pr": "CI_PULL_REQUEST_NUMBER"
+  },
+  {
+    "name": "Xcode Server",
+    "constant": "XCODE_SERVER",
+    "env": "XCS"
   }
 ]
