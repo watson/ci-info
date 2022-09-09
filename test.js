@@ -843,6 +843,23 @@ test('Xcode Cloud - Not PR', function (t) {
   t.end()
 })
 
+test('Xcode Server - Not PR', function (t) {
+  process.env.XCS = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  // t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Xcode Server')
+  t.equal(ci.XCODE_SERVER, true)
+  assertVendorConstants('XCODE_SERVER', ci, t)
+
+  delete process.env.XCS
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     let bool = constant === expect
