@@ -71,6 +71,7 @@ Officially supported CI servers:
 | [Travis CI](http://travis-ci.org)                                               | `ci.TRAVIS`          | ✅   |
 | [Vercel](https://vercel.com/)                                                   | `ci.VERCEL`          | 🚫   |
 | [Visual Studio App Center](https://appcenter.ms/)                               | `ci.APPCENTER`       | 🚫   |
+| [Woodpecker](https://woodpecker-ci.org/)                                        | `ci.WOODPECKER`      | ✅   |
 
 ## API
 
