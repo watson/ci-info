@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.5.0
+
+- support Woodpecker CI ([#90](https://github.com/watson/ci-info/pull/90))
+
 ## v3.4.0
 
 - partial support Appflow CI (only CI detection) ([#84](https://github.com/watson/ci-info/pull/84))
