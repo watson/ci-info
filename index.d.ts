@@ -64,3 +64,4 @@ export const VERCEL: boolean;
 export const APPCENTER: boolean;
 export const XCODE_CLOUD: boolean;
 export const XCODE_SERVER: boolean;
+export const WOODPECKER: boolean;
