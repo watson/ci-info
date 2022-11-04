@@ -122,6 +122,7 @@ ci-info has been ported to the following languages
 |----------|------------|
 | Go       | https://github.com/hofstadter-io/cinful |
 | Rust     | https://github.com/sagiegurari/ci_info |
+| Kotlin   | https://github.com/cloudflightio/ci-info |
 
 ## License
 
