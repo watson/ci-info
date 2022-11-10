@@ -119,6 +119,11 @@
     "pr": "LAYERCI_PULL_REQUEST"
   },
   {
+    "name": "Gerrit",
+    "constant": "GERRIT",
+    "env": "GERRIT_PROJECT"
+  },
+  {
     "name": "Hudson",
     "constant": "HUDSON",
     "env": "HUDSON_URL"
