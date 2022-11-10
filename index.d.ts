@@ -45,6 +45,7 @@ export const GERRIT: boolean;
 export const GITHUB_ACTIONS: boolean;
 export const GITLAB: boolean;
 export const GOCD: boolean;
+export const GOOGLE_CLOUD_BUILD: boolean;
 export const HUDSON: boolean;
 export const JENKINS: boolean;
 export const LAYERCI: boolean;
