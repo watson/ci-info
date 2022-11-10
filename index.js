@@ -67,7 +67,16 @@ exports.isCI = !!(
 )
 
 function checkEnv (obj) {
+  // "env": "CIRRUS"
   if (typeof obj === 'string') return !!env[obj]
+
+  // "env": { "env": "NODE", "includes": "/app/.heroku/node/bin/node" }
+  if ('env' in obj) {
+    // Currently there are no other types, uncomment when there are
+    // if ('includes' in obj) {
+    return env[obj.env] && env[obj.env].includes(obj.includes)
+    // }
+  }
   return Object.keys(obj).every(function (k) {
     return env[k] === obj[k]
   })

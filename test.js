@@ -860,6 +860,22 @@ test('Xcode Server - Not PR', function (t) {
   t.end()
 })
 
+test('Heroku', function (t) {
+  const realNode = process.env.NODE
+  process.env.NODE = '/extra/content/app/.heroku/node/bin/node --extra --content'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, 'Heroku')
+  t.equal(ci.HEROKU, true)
+  assertVendorConstants('HEROKU', ci, t)
+
+  process.env.NODE = realNode
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     let bool = constant === expect

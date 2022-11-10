@@ -55,6 +55,7 @@ Officially supported CI servers:
 | [GitLab CI](https://about.gitlab.com/gitlab-ci/)                                | `ci.GITLAB`             | ✅   |
 | [GoCD](https://www.go.cd/)                                                      | `ci.GOCD`               | 🚫   |
 | [Google Cloud Build](https://cloud.google.com/build)                            | `ci.GOOGLE_CLOUD_BUILD` | 🚫   |
+| [Heroku](https://www.heroku.com)                                                | `ci.HEROKU`             | 🚫   |
 | [Hudson](http://hudson-ci.org)                                                  | `ci.HUDSON`             | 🚫   |
 | [Jenkins CI](https://jenkins-ci.org)                                            | `ci.JENKINS`            | ✅   |
 | [LayerCI](https://layerci.com/)                                                 | `ci.LAYERCI`            | ✅   |

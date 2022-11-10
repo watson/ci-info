@@ -129,6 +129,11 @@
     "env": "GERRIT_PROJECT"
   },
   {
+    "name": "Heroku",
+    "constant": "HEROKU",
+    "env": { "env": "NODE", "includes": "/app/.heroku/node/bin/node" }
+  },
+  {
     "name": "Hudson",
     "constant": "HUDSON",
     "env": "HUDSON_URL"
