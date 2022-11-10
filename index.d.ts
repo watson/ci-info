@@ -41,6 +41,7 @@ export const CODESHIP: boolean;
 export const DRONE: boolean;
 export const DSARI: boolean;
 export const EAS: boolean;
+export const GERRIT: boolean;
 export const GITHUB_ACTIONS: boolean;
 export const GITLAB: boolean;
 export const GOCD: boolean;
