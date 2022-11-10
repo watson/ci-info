@@ -61,6 +61,7 @@ exports.isCI = !!(
   env.CI_BUILD_ID || // Appflow
   env.CI_BUILD_NUMBER || // Appflow
   env.RUN_ID || // TaskCluster, dsari
+  env.CI_NAME || // Codeship and others
   exports.name ||
   false
 )
