@@ -56,6 +56,7 @@ vendors.forEach(function (vendor) {
 exports.isCI = !!(
   env.CI || // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip, dsari
   env.CONTINUOUS_INTEGRATION || // Travis CI, Cirrus CI
+  env.BUILD_ID || // Jenkins, Cloudbees
   env.BUILD_NUMBER || // Jenkins, TeamCity
   env.CI_APP_ID || // Appflow
   env.CI_BUILD_ID || // Appflow
