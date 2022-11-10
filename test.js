@@ -60,7 +60,7 @@ test('Anonymous CI', function (t) {
   const ANONYMOUS_ENV_VARS = [
     'CI', 'CONTINUOUS_INTEGRATION', 'BUILD_NUMBER',
     'CI_APP_ID', 'CI_BUILD_ID', 'CI_BUILD_NUMBER',
-    'RUN_ID'
+    'RUN_ID', 'CI_NAME'
   ]
 
   for (const envVar in ANONYMOUS_ENV_VARS) {
