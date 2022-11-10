@@ -1,20 +1,25 @@
 [
   {
+    "name": "Appcircle",
+    "constant": "APPCIRCLE",
+    "env": "AC_APPCIRCLE"
+  },
+  {
     "name": "AppVeyor",
     "constant": "APPVEYOR",
     "env": "APPVEYOR",
     "pr": "APPVEYOR_PULL_REQUEST_NUMBER"
   },
   {
+    "name": "AWS CodeBuild",
+    "constant": "CODEBUILD",
+    "env": "CODEBUILD_BUILD_ARN"
+  },
+  {
     "name": "Azure Pipelines",
     "constant": "AZURE_PIPELINES",
     "env": "SYSTEM_TEAMFOUNDATIONCOLLECTIONURI",
     "pr": "SYSTEM_PULLREQUEST_PULLREQUESTID"
-  },
-  {
-    "name": "Appcircle",
-    "constant": "APPCIRCLE",
-    "env": "AC_APPCIRCLE"
   },
   {
     "name": "Bamboo",
@@ -58,21 +63,16 @@
     "pr": "CIRRUS_PR"
   },
   {
-    "name": "Codemagic",
-    "constant": "CODEMAGIC",
-    "env": "CM_BUILD_ID",
-    "pr": "CM_PULL_REQUEST"
-  },
-  {
-    "name": "AWS CodeBuild",
-    "constant": "CODEBUILD",
-    "env": "CODEBUILD_BUILD_ARN"
-  },
-  {
     "name": "Codefresh",
     "constant": "CODEFRESH",
     "env": "CF_BUILD_ID",
     "pr": { "any": ["CF_PULL_REQUEST_NUMBER", "CF_PULL_REQUEST_ID"] }
+  },
+  {
+    "name": "Codemagic",
+    "constant": "CODEMAGIC",
+    "env": "CM_BUILD_ID",
+    "pr": "CM_PULL_REQUEST"
   },
   {
     "name": "Codeship",
@@ -84,12 +84,6 @@
     "constant": "DRONE",
     "env": "DRONE",
     "pr": { "DRONE_BUILD_EVENT": "pull_request" }
-  },
-  {
-    "name": "Woodpecker",
-    "constant": "WOODPECKER",
-    "env": { "CI": "woodpecker" },
-    "pr": { "CI_BUILD_EVENT": "pull_request" }
   },
   {
     "name": "dsari",
@@ -165,16 +159,16 @@
     "pr": "SAIL_PULL_REQUEST_NUMBER"
   },
   {
-    "name": "Semaphore",
-    "constant": "SEMAPHORE",
-    "env": "SEMAPHORE",
-    "pr": "PULL_REQUEST_NUMBER"
-  },
-  {
     "name": "Screwdriver",
     "constant": "SCREWDRIVER",
     "env": "SCREWDRIVER",
     "pr": { "env": "SD_PULL_REQUEST", "ne": "false" }
+  },
+  {
+    "name": "Semaphore",
+    "constant": "SEMAPHORE",
+    "env": "SEMAPHORE",
+    "pr": "PULL_REQUEST_NUMBER"
   },
   {
     "name": "Shippable",
@@ -218,6 +212,12 @@
     "name": "Visual Studio App Center",
     "constant": "APPCENTER",
     "env": "APPCENTER_BUILD_ID"
+  },
+  {
+    "name": "Woodpecker",
+    "constant": "WOODPECKER",
+    "env": { "CI": "woodpecker" },
+    "pr": { "CI_BUILD_EVENT": "pull_request" }
   },
   {
     "name": "Xcode Cloud",
