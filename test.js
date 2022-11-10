@@ -606,7 +606,7 @@ test('Netlify CI - Not PR', function (t) {
   t.end()
 })
 
-test('Vercel', function (t) {
+test('Vercel - NOW_BUILDER', function (t) {
   process.env.NOW_BUILDER = '1'
 
   clearModule('./')
@@ -619,6 +619,23 @@ test('Vercel', function (t) {
   assertVendorConstants('VERCEL', ci, t)
 
   delete process.env.NOW_BUILDER
+
+  t.end()
+})
+
+test('Vercel - VERCEL_URL', function (t) {
+  process.env.VERCEL_URL = '1'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, null)
+  t.equal(ci.name, 'Vercel')
+  t.equal(ci.VERCEL, true)
+  assertVendorConstants('VERCEL', ci, t)
+
+  delete process.env.VERCEL_URL
 
   t.end()
 })

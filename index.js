@@ -78,6 +78,11 @@ function checkEnv (obj) {
     return env[obj.env] && env[obj.env].includes(obj.includes)
     // }
   }
+  if ('any' in obj) {
+    return obj.any.some(function (k) {
+      return !!env[k]
+    })
+  }
   return Object.keys(obj).every(function (k) {
     return env[k] === obj[k]
   })
