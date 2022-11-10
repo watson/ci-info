@@ -113,6 +113,11 @@
     "env": "GO_PIPELINE_LABEL"
   },
   {
+    "name": "Google Cloud Build",
+    "constant": "GOOGLE_CLOUD_BUILD",
+    "env": "BUILDER_OUTPUT"
+  },
+  {
     "name": "LayerCI",
     "constant": "LAYERCI",
     "env": "LAYERCI",
