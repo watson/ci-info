@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.6.1
+
+- fix error in typings [357b454](https://github.com/watson/ci-info/commit/357b454)
+
 ## v3.6.0
 
 This release attempts to bring parity with [@npmcli/ci-detect](https://github.com/npm/ci-detect). See [#95](https://github.com/watson/ci-info/pull/95) for more details.
