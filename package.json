@@ -29,7 +29,7 @@
   "devDependencies": {
     "clear-module": "^4.1.2",
     "standard": "^17.0.0",
-    "tape": "^5.6.0"
+    "tape": "^5.6.1"
   },
   "engines": {
     "node": ">=8"
