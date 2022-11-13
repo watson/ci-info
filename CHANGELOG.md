@@ -1,5 +1,15 @@
 # Changelog
 
+## v3.6.0
+
+This release attempts to bring parity with [@npmcli/ci-detect](https://github.com/npm/ci-detect). See [#95](https://github.com/watson/ci-info/pull/95) for more details.
+
+- support gerrit ([#95](https://github.com/watson/ci-info/pull/95))
+- support google cloud build ([#95](https://github.com/watson/ci-info/pull/95))
+- support heroku ([#95](https://github.com/watson/ci-info/pull/95))
+- support anonymous CI's that exposes BUILD_ID and CI_NAME env vars ([#95](https://github.com/watson/ci-info/pull/95))
+- support more vercel environments ([#95](https://github.com/watson/ci-info/pull/95))
+
 ## v3.5.0
 
 - support Woodpecker CI ([#90](https://github.com/watson/ci-info/pull/90))
