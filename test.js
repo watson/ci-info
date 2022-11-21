@@ -623,8 +623,8 @@ test('Vercel - NOW_BUILDER', function (t) {
   t.end()
 })
 
-test('Vercel - VERCEL_URL', function (t) {
-  process.env.VERCEL_URL = '1'
+test('Vercel - VERCEL', function (t) {
+  process.env.VERCEL = '1'
 
   clearModule('./')
   const ci = require('./')
@@ -635,7 +635,7 @@ test('Vercel - VERCEL_URL', function (t) {
   t.equal(ci.VERCEL, true)
   assertVendorConstants('VERCEL', ci, t)
 
-  delete process.env.VERCEL_URL
+  delete process.env.VERCEL
 
   t.end()
 })

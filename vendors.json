@@ -221,7 +221,7 @@
   {
     "name": "Vercel",
     "constant": "VERCEL",
-    "env": { "any": ["NOW_BUILDER", "VERCEL_URL"] }
+    "env": { "any": ["NOW_BUILDER", "VERCEL"] }
   },
   {
     "name": "Visual Studio App Center",
