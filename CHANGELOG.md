@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.6.2
+
+- fix VERCEL environment detection ([#98](https://github.com/watson/ci-info/pull/98))
+
 ## v3.6.1
 
 - fix error in typings [357b454](https://github.com/watson/ci-info/commit/357b454)
