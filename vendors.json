@@ -198,6 +198,11 @@
     "pr": "TDDIUM_PR_ID"
   },
   {
+    "name": "Sourcehut",
+    "constant": "SOURCEHUT",
+    "env": { "CI_NAME": "sourcehut" }
+  },
+  {
     "name": "Strider CD",
     "constant": "STRIDER",
     "env": "STRIDER"

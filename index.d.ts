@@ -61,6 +61,7 @@ export const SCREWDRIVER: boolean;
 export const SEMAPHORE: boolean;
 export const SHIPPABLE: boolean;
 export const SOLANO: boolean;
+export const SOURCEHUT: boolean;
 export const STRIDER: boolean;
 export const TASKCLUSTER: boolean;
 export const TEAMCITY: boolean;

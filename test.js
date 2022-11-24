@@ -893,6 +893,22 @@ test('Heroku', function (t) {
   t.end()
 })
 
+test('Sourcehit', function (t) {
+  process.env.CI_NAME = 'sourcehut'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, 'Sourcehut')
+  t.equal(ci.SOURCEHUT, true)
+  assertVendorConstants('SOURCEHUT', ci, t)
+
+  delete process.env.CI_NAME
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     let bool = constant === expect

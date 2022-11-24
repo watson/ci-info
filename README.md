@@ -68,6 +68,7 @@ Officially supported CI servers:
 | [Semaphore](https://semaphoreci.com)                                            | `ci.SEMAPHORE`          | ✅   |
 | [Shippable](https://www.shippable.com/)                                         | `ci.SHIPPABLE`          | ✅   |
 | [Solano CI](https://www.solanolabs.com/)                                        | `ci.SOLANO`             | ✅   |
+| [Sourcehut](https://sourcehut.org/)                                             | `ci.SOURCEHUT`          | 🚫   |
 | [Strider CD](https://strider-cd.github.io/)                                     | `ci.STRIDER`            | 🚫   |
 | [TaskCluster](http://docs.taskcluster.net)                                      | `ci.TASKCLUSTER`        | 🚫   |
 | [TeamCity](https://www.jetbrains.com/teamcity/) by JetBrains                    | `ci.TEAMCITY`           | 🚫   |
