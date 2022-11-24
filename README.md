@@ -62,7 +62,7 @@ Officially supported CI servers:
 | [Magnum CI](https://magnum-ci.com)                                              | `ci.MAGNUM`             | 🚫   |
 | [Netlify CI](https://www.netlify.com/)                                          | `ci.NETLIFY`            | ✅   |
 | [Nevercode](http://nevercode.io/)                                               | `ci.NEVERCODE`          | ✅   |
-| [ReleaseHub](https://releasehub.com/)                                           | `ci.RELEASEHUB`         | ✅   |
+| [ReleaseHub](https://releasehub.com/)                                           | `ci.RELEASEHUB`         | 🚫   |
 | [Render](https://render.com/)                                                   | `ci.RENDER`             | ✅   |
 | [Sail CI](https://sail.ci/)                                                     | `ci.SAIL`               | ✅   |
 | [Screwdriver](https://screwdriver.cd/)                                          | `ci.SCREWDRIVER`        | ✅   |
