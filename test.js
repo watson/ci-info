@@ -909,6 +909,22 @@ test('Sourcehit', function (t) {
   t.end()
 })
 
+test('ReleaseHub', function (t) {
+  process.env.RELEASE_BUILD_ID = '1a'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, 'ReleaseHub')
+  t.equal(ci.RELEASEHUB, true)
+  assertVendorConstants('RELEASEHUB', ci, t)
+
+  delete process.env.RELEASE_BUILD_ID
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     let bool = constant === expect

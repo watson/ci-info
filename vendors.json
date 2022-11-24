@@ -162,6 +162,11 @@
     "pr": { "env": "NEVERCODE_PULL_REQUEST", "ne": "false" }
   },
   {
+    "name": "ReleaseHub",
+    "constant": "RELEASEHUB",
+    "env": "RELEASE_BUILD_ID"
+  },
+  {
     "name": "Render",
     "constant": "RENDER",
     "env": "RENDER",
