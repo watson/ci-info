@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.7.0
+
+- support Sourcehut CI [85b96ea](https://github.com/watson/ci-info/commit/85b96ea)
+- support ReleaseHub CI [409d886](https://github.com/watson/ci-info/commit/409d886)
+
 ## v3.6.2
 
 - fix VERCEL environment detection ([#98](https://github.com/watson/ci-info/pull/98))
