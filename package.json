@@ -22,6 +22,12 @@
     "index.d.ts",
     "CHANGELOG.md"
   ],
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/sibiraj-s"
+    }
+  ],
   "scripts": {
     "lint:fix": "standard --fix",
     "test": "standard && node test.js",
