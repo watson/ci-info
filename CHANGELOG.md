@@ -1,5 +1,9 @@
 # Changelog
 
+## v3.7.1
+
+- ignore ci detection when CI is set to `'false'` [24cc450](https://github.com/watson/ci-info/commit/24cc450)
+
 ## v3.7.0
 
 - support Sourcehut CI [85b96ea](https://github.com/watson/ci-info/commit/85b96ea)
