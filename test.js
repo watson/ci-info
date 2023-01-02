@@ -41,6 +41,17 @@ test('Not CI', function (t) {
   t.end()
 })
 
+test('Bypass isCI checks with CI set to `false`', function (t) {
+  process.env.CI = 'false'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, false)
+
+  t.end()
+})
+
 test('Unknown CI', function (t) {
   process.env.CI = 'true'
 
