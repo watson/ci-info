@@ -137,6 +137,11 @@
     "env": "BUILDER_OUTPUT"
   },
   {
+    "name": "Harness CI",
+    "constant": "HARNESS",
+    "env": "HARNESS_BUILD_ID"
+  },
+  {
     "name": "Heroku",
     "constant": "HEROKU",
     "env": {
