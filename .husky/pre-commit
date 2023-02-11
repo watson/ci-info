@@ -1,6 +1,8 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
+node sort-vendors.js
 node create-typings.js
 
 git add index.d.ts
+git add vendors.json
