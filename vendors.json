@@ -287,7 +287,8 @@
         "NOW_BUILDER",
         "VERCEL"
       ]
-    }
+    },
+    "pr": "VERCEL_GIT_PULL_REQUEST_ID"
   },
   {
     "name": "Visual Studio App Center",

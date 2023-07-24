@@ -624,7 +624,7 @@ test('Vercel - NOW_BUILDER', function (t) {
   const ci = require('./')
 
   t.equal(ci.isCI, true)
-  t.equal(ci.isPR, null)
+  t.equal(ci.isPR, false)
   t.equal(ci.name, 'Vercel')
   t.equal(ci.VERCEL, true)
   assertVendorConstants('VERCEL', ci, t)
@@ -641,7 +641,25 @@ test('Vercel - VERCEL', function (t) {
   const ci = require('./')
 
   t.equal(ci.isCI, true)
-  t.equal(ci.isPR, null)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Vercel')
+  t.equal(ci.VERCEL, true)
+  assertVendorConstants('VERCEL', ci, t)
+
+  delete process.env.VERCEL
+
+  t.end()
+})
+
+test('Vercel - PR', function (t) {
+  process.env.VERCEL = '1'
+  process.env.VERCEL_GIT_PULL_REQUEST_ID = '23'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
   t.equal(ci.name, 'Vercel')
   t.equal(ci.VERCEL, true)
   assertVendorConstants('VERCEL', ci, t)
