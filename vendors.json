@@ -19,7 +19,9 @@
     "name": "Azure Pipelines",
     "constant": "AZURE_PIPELINES",
     "env": "TF_BUILD",
-    "pr": "SYSTEM_PULLREQUEST_PULLREQUESTID"
+    "pr": {
+      "BUILD_REASON": "PullRequest"
+    }
   },
   {
     "name": "Bamboo",
