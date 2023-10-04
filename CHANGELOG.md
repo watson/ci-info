@@ -1,5 +1,10 @@
 # Changelog
 
+## v3.9.0
+
+- better support for Azure Pipelines ([#116](https://github.com/watson/ci-info/pull/116)), [5ea8d85](https://github.com/watson/ci-info/commit/5ea8d85)
+- detect PullRequest in Azure Pipelines [5ea8d85](https://github.com/watson/ci-info/commit/5ea8d85)
+
 ## v3.8.0
 
 - support Harness CI [76a2867](https://github.com/watson/ci-info/commit/76a2867)
