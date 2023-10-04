@@ -124,8 +124,8 @@ test('AppVeyor - Not PR', function (t) {
 })
 
 test('Azure Pipelines - PR', function (t) {
-  process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = 'https://dev.azure.com/Contoso'
-  process.env.SYSTEM_PULLREQUEST_PULLREQUESTID = '42'
+  process.env.TF_BUILD = 'true'
+  process.env.BUILD_REASON = 'PullRequest'
 
   clearModule('./')
   const ci = require('./')
@@ -136,14 +136,14 @@ test('Azure Pipelines - PR', function (t) {
   t.equal(ci.AZURE_PIPELINES, true)
   assertVendorConstants('AZURE_PIPELINES', ci, t)
 
-  delete process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI
-  delete process.env.SYSTEM_PULLREQUEST_PULLREQUESTID
+  delete process.env.TF_BUILD
+  delete process.env.BUILD_REASON
 
   t.end()
 })
 
 test('Azure Pipelines - Not PR', function (t) {
-  process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI = 'https://dev.azure.com/Contoso'
+  process.env.TF_BUILD = 'true'
 
   clearModule('./')
   const ci = require('./')
@@ -154,7 +154,7 @@ test('Azure Pipelines - Not PR', function (t) {
   t.equal(ci.AZURE_PIPELINES, true)
   assertVendorConstants('AZURE_PIPELINES', ci, t)
 
-  delete process.env.SYSTEM_TEAMFOUNDATIONCOLLECTIONURI
+  delete process.env.TF_BUILD
 
   t.end()
 })
