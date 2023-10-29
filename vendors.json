@@ -211,6 +211,11 @@
     }
   },
   {
+    "name": "Prow",
+    "constant": "PROW",
+    "env": "PROW_JOB_ID"
+  },
+  {
     "name": "ReleaseHub",
     "constant": "RELEASEHUB",
     "env": "RELEASE_BUILD_ID"

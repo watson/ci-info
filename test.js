@@ -972,6 +972,22 @@ test('Vela - PR', function (t) {
   t.end()
 })
 
+test('Prow', function (t) {
+  process.env.PROW_JOB_ID = '123'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, 'Prow')
+  t.equal(ci.PROW, true)
+  assertVendorConstants('PROW', ci, t)
+
+  delete process.env.PROW
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     let bool = constant === expect

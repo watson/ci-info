@@ -58,6 +58,7 @@ export const LAYERCI: boolean;
 export const MAGNUM: boolean;
 export const NETLIFY: boolean;
 export const NEVERCODE: boolean;
+export const PROW: boolean;
 export const RELEASEHUB: boolean;
 export const RENDER: boolean;
 export const SAIL: boolean;
