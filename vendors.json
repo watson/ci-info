@@ -111,6 +111,11 @@
     "env": "DSARI"
   },
   {
+    "name": "Earthly",
+    "constant": "EARTHLY",
+    "env": "EARTHLY_CI"
+  },
+  {
     "name": "Expo Application Services",
     "constant": "EAS",
     "env": "EAS_BUILD"

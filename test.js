@@ -983,7 +983,23 @@ test('Prow', function (t) {
   t.equal(ci.PROW, true)
   assertVendorConstants('PROW', ci, t)
 
-  delete process.env.PROW
+  delete process.env.PROW_JOB_ID
+
+  t.end()
+})
+
+test('Earthly CI', function (t) {
+  process.env.EARTHLY_CI = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, 'Earthly')
+  t.equal(ci.EARTHLY, true)
+  assertVendorConstants('EARTHLY', ci, t)
+
+  delete process.env.EARTHLY_CI
 
   t.end()
 })

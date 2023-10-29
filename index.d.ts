@@ -43,6 +43,7 @@ export const CODEMAGIC: boolean;
 export const CODESHIP: boolean;
 export const DRONE: boolean;
 export const DSARI: boolean;
+export const EARTHLY: boolean;
 export const EAS: boolean;
 export const GERRIT: boolean;
 export const GITEA_ACTIONS: boolean;
