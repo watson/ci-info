@@ -1006,7 +1006,7 @@ test('Earthly CI', function (t) {
 
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
-    let bool = constant === expect
+    const bool = constant === expect
     t.equal(ci[constant], bool, 'ci.' + constant)
   })
 }
