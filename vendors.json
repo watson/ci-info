@@ -285,6 +285,14 @@
     }
   },
   {
+    "name": "Vela",
+    "constant": "VELA",
+    "env": "VELA",
+    "pr": {
+      "VELA_PULL_REQUEST": "1"
+    }
+  },
+  {
     "name": "Vercel",
     "constant": "VERCEL",
     "env": {

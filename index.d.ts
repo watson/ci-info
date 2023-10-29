@@ -69,6 +69,7 @@ export const STRIDER: boolean;
 export const TASKCLUSTER: boolean;
 export const TEAMCITY: boolean;
 export const TRAVIS: boolean;
+export const VELA: boolean;
 export const VERCEL: boolean;
 export const APPCENTER: boolean;
 export const WOODPECKER: boolean;

@@ -970,6 +970,44 @@ test('Agola CI - PR', function (t) {
   t.end()
 })
 
+test('Vela', function (t) {
+  process.env.VELA = 'true'
+  process.env.VELA_PULL_REQUEST = '2'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Vela')
+  t.equal(ci.VELA, true)
+  assertVendorConstants('VELA', ci, t)
+
+  delete process.env.VELA
+  delete process.env.VELA_PULL_REQUEST
+
+  t.end()
+})
+
+test('Vela - PR', function (t) {
+  process.env.VELA = 'true'
+  process.env.VELA_PULL_REQUEST = '1'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Vela')
+  t.equal(ci.VELA, true)
+  assertVendorConstants('VELA', ci, t)
+
+  delete process.env.VELA
+  delete process.env.VELA_PULL_REQUEST
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     let bool = constant === expect
