@@ -932,6 +932,44 @@ test('Gitea Actions', function (t) {
   t.end()
 })
 
+test('Agola CI', function (t) {
+  process.env.AGOLA_GIT_REF = 'true'
+  process.env.AGOLA_PULL_REQUEST_ID = ''
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Agola CI')
+  t.equal(ci.AGOLA, true)
+  assertVendorConstants('AGOLA', ci, t)
+
+  delete process.env.AGOLA_GIT_REF
+  delete process.env.AGOLA_PULL_REQUEST_ID
+
+  t.end()
+})
+
+test('Agola CI - PR', function (t) {
+  process.env.AGOLA_GIT_REF = 'true'
+  process.env.AGOLA_PULL_REQUEST_ID = '12'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Agola CI')
+  t.equal(ci.AGOLA, true)
+  assertVendorConstants('AGOLA', ci, t)
+
+  delete process.env.AGOLA_GIT_REF
+  delete process.env.AGOLA_PULL_REQUEST_ID
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     let bool = constant === expect

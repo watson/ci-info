@@ -26,6 +26,7 @@ export const isPR: boolean | null;
  */
 export const name: string | null;
 
+export const AGOLA: boolean;
 export const APPCIRCLE: boolean;
 export const APPVEYOR: boolean;
 export const CODEBUILD: boolean;

@@ -1,5 +1,11 @@
 [
   {
+    "name": "Agola CI",
+    "constant": "AGOLA",
+    "env": "AGOLA_GIT_REF",
+    "pr": "AGOLA_PULL_REQUEST_ID"
+  },
+  {
     "name": "Appcircle",
     "constant": "APPCIRCLE",
     "env": "AC_APPCIRCLE"
