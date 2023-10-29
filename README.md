@@ -53,6 +53,7 @@ Officially supported CI servers:
 | [Gerrit CI](https://www.gerritcodereview.com)                                   | `ci.GERRIT`             | 🚫   |
 | [GitHub Actions](https://github.com/features/actions/)                          | `ci.GITHUB_ACTIONS`     | ✅   |
 | [GitLab CI](https://about.gitlab.com/gitlab-ci/)                                | `ci.GITLAB`             | ✅   |
+| [Gitea Actions](https://about.gitea.com/)                                       | `ci.GITEA_ACTIONS`      | 🚫  |
 | [GoCD](https://www.go.cd/)                                                      | `ci.GOCD`               | 🚫   |
 | [Google Cloud Build](https://cloud.google.com/build)                            | `ci.GOOGLE_CLOUD_BUILD` | 🚫   |
 | [Harness CI](https://www.harness.io/products/continuous-integration)            | `ci.HARNESS`            | 🚫   |

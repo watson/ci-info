@@ -916,6 +916,22 @@ test('ReleaseHub', function (t) {
   t.end()
 })
 
+test('Gitea Actions', function (t) {
+  process.env.GITEA_ACTIONS = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, 'Gitea Actions')
+  t.equal(ci.GITEA_ACTIONS, true)
+  assertVendorConstants('GITEA_ACTIONS', ci, t)
+
+  delete process.env.GITEA_ACTIONS
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     let bool = constant === expect
