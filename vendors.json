@@ -245,12 +245,6 @@
     "pr": "PULL_REQUEST_NUMBER"
   },
   {
-    "name": "Solano CI",
-    "constant": "SOLANO",
-    "env": "TDDIUM",
-    "pr": "TDDIUM_PR_ID"
-  },
-  {
     "name": "Sourcehut",
     "constant": "SOURCEHUT",
     "env": {

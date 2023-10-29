@@ -70,7 +70,6 @@ Officially supported CI servers:
 | [Sail CI](https://sail.ci/)                                                     | `ci.SAIL`               | ✅   |
 | [Screwdriver](https://screwdriver.cd/)                                          | `ci.SCREWDRIVER`        | ✅   |
 | [Semaphore](https://semaphoreci.com)                                            | `ci.SEMAPHORE`          | ✅   |
-| [Solano CI](https://www.solanolabs.com/)                                        | `ci.SOLANO`             | ✅   |
 | [Sourcehut](https://sourcehut.org/)                                             | `ci.SOURCEHUT`          | 🚫   |
 | [Strider CD](https://strider-cd.github.io/)                                     | `ci.STRIDER`            | 🚫   |
 | [TaskCluster](http://docs.taskcluster.net)                                      | `ci.TASKCLUSTER`        | 🚫   |
@@ -116,11 +115,6 @@ the given CI server, otherwise `false`.
 
 Examples of vendor constants are `ci.TRAVIS` or `ci.APPVEYOR`. For a
 complete list, see the support table above.
-
-Deprecated vendor constants that will be removed in the next major
-release:
-
-- `ci.TDDIUM` (Solano CI) This have been renamed `ci.SOLANO`
 
 ## Ports
 

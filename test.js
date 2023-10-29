@@ -467,42 +467,6 @@ test('Semaphore - Not PR', function (t) {
   t.end()
 })
 
-test('Solano CI - PR', function (t) {
-  process.env.TDDIUM = 'true'
-  process.env.TDDIUM_PR_ID = '42'
-
-  clearModule('./')
-  const ci = require('./')
-
-  t.equal(ci.isCI, true)
-  t.equal(ci.isPR, true)
-  t.equal(ci.name, 'Solano CI')
-  t.equal(ci.SOLANO, true)
-  assertVendorConstants('SOLANO', ci, t)
-
-  delete process.env.TDDIUM
-  delete process.env.TDDIUM_PR_ID
-
-  t.end()
-})
-
-test('Solano CI - Not PR', function (t) {
-  process.env.TDDIUM = 'true'
-
-  clearModule('./')
-  const ci = require('./')
-
-  t.equal(ci.isCI, true)
-  t.equal(ci.isPR, false)
-  t.equal(ci.name, 'Solano CI')
-  t.equal(ci.SOLANO, true)
-  assertVendorConstants('SOLANO', ci, t)
-
-  delete process.env.TDDIUM
-
-  t.end()
-})
-
 test('Travis CI - PR', function (t) {
   process.env.TRAVIS = 'true'
   process.env.TRAVIS_PULL_REQUEST = '42'
@@ -1011,7 +975,6 @@ test('Vela - PR', function (t) {
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     let bool = constant === expect
-    bool = (expect === 'SOLANO' && constant === 'TDDIUM') || bool // support deprecated option
     t.equal(ci[constant], bool, 'ci.' + constant)
   })
 }

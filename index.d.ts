@@ -63,7 +63,6 @@ export const RENDER: boolean;
 export const SAIL: boolean;
 export const SCREWDRIVER: boolean;
 export const SEMAPHORE: boolean;
-export const SOLANO: boolean;
 export const SOURCEHUT: boolean;
 export const STRIDER: boolean;
 export const TASKCLUSTER: boolean;
