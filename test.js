@@ -467,44 +467,6 @@ test('Semaphore - Not PR', function (t) {
   t.end()
 })
 
-test('Shippable - PR', function (t) {
-  process.env.SHIPPABLE = 'true'
-  process.env.IS_PULL_REQUEST = 'true'
-
-  clearModule('./')
-  const ci = require('./')
-
-  t.equal(ci.isCI, true)
-  t.equal(ci.isPR, true)
-  t.equal(ci.name, 'Shippable')
-  t.equal(ci.SHIPPABLE, true)
-  assertVendorConstants('SHIPPABLE', ci, t)
-
-  delete process.env.SHIPPABLE
-  delete process.env.IS_PULL_REQUEST
-
-  t.end()
-})
-
-test('Semaphore - Not PR', function (t) {
-  process.env.SHIPPABLE = 'true'
-  process.env.IS_PULL_REQUEST = 'false'
-
-  clearModule('./')
-  const ci = require('./')
-
-  t.equal(ci.isCI, true)
-  t.equal(ci.isPR, false)
-  t.equal(ci.name, 'Shippable')
-  t.equal(ci.SHIPPABLE, true)
-  assertVendorConstants('SHIPPABLE', ci, t)
-
-  delete process.env.SHIPPABLE
-  delete process.env.IS_PULL_REQUEST
-
-  t.end()
-})
-
 test('Solano CI - PR', function (t) {
   process.env.TDDIUM = 'true'
   process.env.TDDIUM_PR_ID = '42'

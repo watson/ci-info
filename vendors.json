@@ -234,14 +234,6 @@
     "pr": "PULL_REQUEST_NUMBER"
   },
   {
-    "name": "Shippable",
-    "constant": "SHIPPABLE",
-    "env": "SHIPPABLE",
-    "pr": {
-      "IS_PULL_REQUEST": "true"
-    }
-  },
-  {
     "name": "Solano CI",
     "constant": "SOLANO",
     "env": "TDDIUM",
