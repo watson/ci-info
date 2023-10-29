@@ -35,10 +35,10 @@ Officially supported CI servers:
 | Name                                                                            | Constant                | isPR |
 | ------------------------------------------------------------------------------- | ----------------------- | ---- |
 | [Agola CI](https://agola.io/)                                                   | `ci.AGOLA`              | ✅   |
-| [AWS CodeBuild](https://aws.amazon.com/codebuild/)                              | `ci.CODEBUILD`          | 🚫   |
-| [AppVeyor](http://www.appveyor.com)                                             | `ci.APPVEYOR`           | ✅   |
-| [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) | `ci.AZURE_PIPELINES`    | ✅   |
 | [Appcircle](https://appcircle.io/)                                              | `ci.APPCIRCLE`          | 🚫   |
+| [AppVeyor](http://www.appveyor.com)                                             | `ci.APPVEYOR`           | ✅   |
+| [AWS CodeBuild](https://aws.amazon.com/codebuild/)                              | `ci.CODEBUILD`          | 🚫   |
+| [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) | `ci.AZURE_PIPELINES`    | ✅   |
 | [Bamboo](https://www.atlassian.com/software/bamboo) by Atlassian                | `ci.BAMBOO`             | 🚫   |
 | [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)         | `ci.BITBUCKET`          | ✅   |
 | [Bitrise](https://www.bitrise.io/)                                              | `ci.BITRISE`            | ✅   |
@@ -69,7 +69,7 @@ Officially supported CI servers:
 | [Render](https://render.com/)                                                   | `ci.RENDER`             | ✅   |
 | [Sail CI](https://sail.ci/)                                                     | `ci.SAIL`               | ✅   |
 | [Screwdriver](https://screwdriver.cd/)                                          | `ci.SCREWDRIVER`        | ✅   |
-| [Semaphore](https://semaphoreci.com)                                            | `ci.SEMAPHORE`          | ✅   |-
+| [Semaphore](https://semaphoreci.com)                                            | `ci.SEMAPHORE`          | ✅   |
 | [Solano CI](https://www.solanolabs.com/)                                        | `ci.SOLANO`             | ✅   |
 | [Sourcehut](https://sourcehut.org/)                                             | `ci.SOURCEHUT`          | 🚫   |
 | [Strider CD](https://strider-cd.github.io/)                                     | `ci.STRIDER`            | 🚫   |
