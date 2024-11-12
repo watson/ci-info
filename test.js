@@ -35,6 +35,7 @@ test('Not CI', function (t) {
   t.equal(ci.isCI, false)
   t.equal(ci.isPR, null)
   t.equal(ci.name, null)
+  t.equal(ci.id, null)
   t.equal(ci.TRAVIS, false)
   assertVendorConstants(null, ci, t)
 
@@ -61,6 +62,7 @@ test('Unknown CI', function (t) {
   t.equal(ci.isCI, true)
   t.equal(ci.isPR, null)
   t.equal(ci.name, null)
+  t.equal(ci.id, null)
   t.equal(ci.TRAVIS, false)
   assertVendorConstants(null, ci, t)
 
@@ -82,6 +84,7 @@ test('Anonymous CI', function (t) {
     t.equal(ci.isCI, true)
     t.equal(ci.isPR, null)
     t.equal(ci.name, null)
+    t.equal(ci.id, null)
   }
 
   t.end()
@@ -98,6 +101,7 @@ test('AppVeyor - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'AppVeyor')
   t.equal(ci.APPVEYOR, true)
+  t.equal(ci.id, 'APPVEYOR')
   assertVendorConstants('APPVEYOR', ci, t)
 
   delete process.env.APPVEYOR
@@ -116,6 +120,7 @@ test('AppVeyor - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'AppVeyor')
   t.equal(ci.APPVEYOR, true)
+  t.equal(ci.id, 'APPVEYOR')
   assertVendorConstants('APPVEYOR', ci, t)
 
   delete process.env.APPVEYOR
@@ -134,6 +139,7 @@ test('Azure Pipelines - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Azure Pipelines')
   t.equal(ci.AZURE_PIPELINES, true)
+  t.equal(ci.id, 'AZURE_PIPELINES')
   assertVendorConstants('AZURE_PIPELINES', ci, t)
 
   delete process.env.TF_BUILD
@@ -152,6 +158,7 @@ test('Azure Pipelines - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Azure Pipelines')
   t.equal(ci.AZURE_PIPELINES, true)
+  t.equal(ci.id, 'AZURE_PIPELINES')
   assertVendorConstants('AZURE_PIPELINES', ci, t)
 
   delete process.env.TF_BUILD
@@ -170,6 +177,7 @@ test('Bitbucket Pipelines - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Bitbucket Pipelines')
   t.equal(ci.BITBUCKET, true)
+  t.equal(ci.id, 'BITBUCKET')
   assertVendorConstants('BITBUCKET', ci, t)
 
   delete process.env.BITBUCKET_COMMIT
@@ -188,6 +196,7 @@ test('Bitbucket Pipelines - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Bitbucket Pipelines')
   t.equal(ci.BITBUCKET, true)
+  t.equal(ci.id, 'BITBUCKET')
   assertVendorConstants('BITBUCKET', ci, t)
 
   delete process.env.BITBUCKET_COMMIT
@@ -206,6 +215,7 @@ test('Buildkite - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Buildkite')
   t.equal(ci.BUILDKITE, true)
+  t.equal(ci.id, 'BUILDKITE')
   assertVendorConstants('BUILDKITE', ci, t)
 
   delete process.env.BUILDKITE
@@ -225,6 +235,7 @@ test('Buildkite - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Buildkite')
   t.equal(ci.BUILDKITE, true)
+  t.equal(ci.id, 'BUILDKITE')
   assertVendorConstants('BUILDKITE', ci, t)
 
   delete process.env.BUILDKITE
@@ -244,6 +255,7 @@ test('CircleCI - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'CircleCI')
   t.equal(ci.CIRCLE, true)
+  t.equal(ci.id, 'CIRCLE')
   assertVendorConstants('CIRCLE', ci, t)
 
   delete process.env.CIRCLECI
@@ -262,6 +274,7 @@ test('CircleCI - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'CircleCI')
   t.equal(ci.CIRCLE, true)
+  t.equal(ci.id, 'CIRCLE')
   assertVendorConstants('CIRCLE', ci, t)
 
   delete process.env.CIRCLECI
@@ -280,6 +293,7 @@ test('Cirrus CI - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Cirrus CI')
   t.equal(ci.CIRRUS, true)
+  t.equal(ci.id, 'CIRRUS')
   assertVendorConstants('CIRRUS', ci, t)
 
   delete process.env.CIRRUS_CI
@@ -298,6 +312,7 @@ test('Cirrus CI - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Cirrus CI')
   t.equal(ci.CIRRUS, true)
+  t.equal(ci.id, 'CIRRUS')
   assertVendorConstants('CIRRUS', ci, t)
 
   delete process.env.CIRRUS_CI
@@ -316,6 +331,7 @@ test('Codefresh - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Codefresh')
   t.equal(ci.CODEFRESH, true)
+  t.equal(ci.id, 'CODEFRESH')
   assertVendorConstants('CODEFRESH', ci, t)
 
   delete process.env.CF_BUILD_ID
@@ -334,6 +350,7 @@ test('Codefresh - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Codefresh')
   t.equal(ci.CODEFRESH, true)
+  t.equal(ci.id, 'CODEFRESH')
   assertVendorConstants('CODEFRESH', ci, t)
 
   delete process.env.CF_BUILD_ID
@@ -352,6 +369,7 @@ test('LayerCI - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'LayerCI')
   t.equal(ci.LAYERCI, true)
+  t.equal(ci.id, 'LAYERCI')
   assertVendorConstants('LAYERCI', ci, t)
 
   delete process.env.LAYERCI
@@ -370,6 +388,7 @@ test('LayerCI - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'LayerCI')
   t.equal(ci.LAYERCI, true)
+  t.equal(ci.id, 'LAYERCI')
   assertVendorConstants('LAYERCI', ci, t)
 
   delete process.env.LAYERCI
@@ -386,6 +405,7 @@ test('Appcircle', function (t) {
   t.equal(ci.isCI, true)
   t.equal(ci.name, 'Appcircle')
   t.equal(ci.APPCIRCLE, true)
+  t.equal(ci.id, 'APPCIRCLE')
   assertVendorConstants('APPCIRCLE', ci, t)
 
   delete process.env.AC_APPCIRCLE
@@ -404,6 +424,7 @@ test('Render - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Render')
   t.equal(ci.RENDER, true)
+  t.equal(ci.id, 'RENDER')
   assertVendorConstants('RENDER', ci, t)
 
   delete process.env.RENDER
@@ -423,6 +444,7 @@ test('Render - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Render')
   t.equal(ci.RENDER, true)
+  t.equal(ci.id, 'RENDER')
   assertVendorConstants('RENDER', ci, t)
 
   delete process.env.RENDER
@@ -442,6 +464,7 @@ test('Semaphore - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Semaphore')
   t.equal(ci.SEMAPHORE, true)
+  t.equal(ci.id, 'SEMAPHORE')
   assertVendorConstants('SEMAPHORE', ci, t)
 
   delete process.env.SEMAPHORE
@@ -460,6 +483,7 @@ test('Semaphore - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Semaphore')
   t.equal(ci.SEMAPHORE, true)
+  t.equal(ci.id, 'SEMAPHORE')
   assertVendorConstants('SEMAPHORE', ci, t)
 
   delete process.env.SEMAPHORE
@@ -478,6 +502,7 @@ test('Travis CI - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Travis CI')
   t.equal(ci.TRAVIS, true)
+  t.equal(ci.id, 'TRAVIS')
   assertVendorConstants('TRAVIS', ci, t)
 
   delete process.env.TRAVIS
@@ -497,6 +522,7 @@ test('Travis CI - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Travis CI')
   t.equal(ci.TRAVIS, true)
+  t.equal(ci.id, 'TRAVIS')
   assertVendorConstants('TRAVIS', ci, t)
 
   delete process.env.TRAVIS
@@ -516,6 +542,7 @@ test('Netlify CI - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Netlify CI')
   t.equal(ci.NETLIFY, true)
+  t.equal(ci.id, 'NETLIFY')
   assertVendorConstants('NETLIFY', ci, t)
 
   delete process.env.NETLIFY
@@ -535,6 +562,7 @@ test('Netlify CI - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Netlify CI')
   t.equal(ci.NETLIFY, true)
+  t.equal(ci.id, 'NETLIFY')
   assertVendorConstants('NETLIFY', ci, t)
 
   delete process.env.NETLIFY
@@ -553,6 +581,7 @@ test('Vercel - NOW_BUILDER', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Vercel')
   t.equal(ci.VERCEL, true)
+  t.equal(ci.id, 'VERCEL')
   assertVendorConstants('VERCEL', ci, t)
 
   delete process.env.NOW_BUILDER
@@ -570,6 +599,7 @@ test('Vercel - VERCEL', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Vercel')
   t.equal(ci.VERCEL, true)
+  t.equal(ci.id, 'VERCEL')
   assertVendorConstants('VERCEL', ci, t)
 
   delete process.env.VERCEL
@@ -588,6 +618,7 @@ test('Vercel - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Vercel')
   t.equal(ci.VERCEL, true)
+  t.equal(ci.id, 'VERCEL')
   assertVendorConstants('VERCEL', ci, t)
 
   delete process.env.VERCEL
@@ -606,6 +637,7 @@ test('Nevercode - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Nevercode')
   t.equal(ci.NEVERCODE, true)
+  t.equal(ci.id, 'NEVERCODE')
   assertVendorConstants('NEVERCODE', ci, t)
 
   delete process.env.NEVERCODE
@@ -625,6 +657,7 @@ test('Nevercode - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Nevercode')
   t.equal(ci.NEVERCODE, true)
+  t.equal(ci.id, 'NEVERCODE')
   assertVendorConstants('NEVERCODE', ci, t)
 
   delete process.env.NEVERCODE
@@ -643,6 +676,7 @@ test('Expo Application Services', function (t) {
   t.equal(ci.isPR, null)
   t.equal(ci.name, 'Expo Application Services')
   t.equal(ci.EAS, true)
+  t.equal(ci.id, 'EAS')
   assertVendorConstants('EAS', ci, t)
 
   delete process.env.EAS_BUILD
@@ -661,6 +695,7 @@ test('GitHub Actions - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'GitHub Actions')
   t.equal(ci.GITHUB_ACTIONS, true)
+  t.equal(ci.id, 'GITHUB_ACTIONS')
   assertVendorConstants('GITHUB_ACTIONS', ci, t)
 
   delete process.env.GITHUB_ACTIONS
@@ -680,6 +715,7 @@ test('GitHub Actions - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'GitHub Actions')
   t.equal(ci.GITHUB_ACTIONS, true)
+  t.equal(ci.id, 'GITHUB_ACTIONS')
   assertVendorConstants('GITHUB_ACTIONS', ci, t)
 
   delete process.env.GITHUB_ACTIONS
@@ -699,6 +735,7 @@ test('Screwdriver - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Screwdriver')
   t.equal(ci.SCREWDRIVER, true)
+  t.equal(ci.id, 'SCREWDRIVER')
   assertVendorConstants('SCREWDRIVER', ci, t)
 
   delete process.env.SCREWDRIVER
@@ -718,6 +755,7 @@ test('Screwdriver - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Screwdriver')
   t.equal(ci.SCREWDRIVER, true)
+  t.equal(ci.id, 'SCREWDRIVER')
   assertVendorConstants('SCREWDRIVER', ci, t)
 
   delete process.env.SCREWDRIVER
@@ -736,6 +774,7 @@ test('Visual Studio App Center', function (t) {
   // t.equal(ci.isPR, false)
   t.equal(ci.name, 'Visual Studio App Center')
   t.equal(ci.APPCENTER, true)
+  t.equal(ci.id, 'APPCENTER')
   assertVendorConstants('APPCENTER', ci, t)
 
   delete process.env.APPCENTER_BUILD_ID
@@ -754,6 +793,7 @@ test('Codemagic - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Codemagic')
   t.equal(ci.CODEMAGIC, true)
+  t.equal(ci.id, 'CODEMAGIC')
   assertVendorConstants('CODEMAGIC', ci, t)
 
   delete process.env.CM_BUILD_ID
@@ -772,6 +812,7 @@ test('Codemagic - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Codemagic')
   t.equal(ci.CODEMAGIC, true)
+  t.equal(ci.id, 'CODEMAGIC')
   assertVendorConstants('CODEMAGIC', ci, t)
 
   delete process.env.CM_BUILD_ID
@@ -790,6 +831,7 @@ test('Xcode Cloud - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Xcode Cloud')
   t.equal(ci.XCODE_CLOUD, true)
+  t.equal(ci.id, 'XCODE_CLOUD')
   assertVendorConstants('XCODE_CLOUD', ci, t)
 
   delete process.env.CI_XCODE_PROJECT
@@ -808,6 +850,7 @@ test('Xcode Cloud - Not PR', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Xcode Cloud')
   t.equal(ci.XCODE_CLOUD, true)
+  t.equal(ci.id, 'XCODE_CLOUD')
   assertVendorConstants('XCODE_CLOUD', ci, t)
 
   delete process.env.CI_XCODE_PROJECT
@@ -825,6 +868,7 @@ test('Xcode Server - Not PR', function (t) {
   // t.equal(ci.isPR, false)
   t.equal(ci.name, 'Xcode Server')
   t.equal(ci.XCODE_SERVER, true)
+  t.equal(ci.id, 'XCODE_SERVER')
   assertVendorConstants('XCODE_SERVER', ci, t)
 
   delete process.env.XCS
@@ -842,6 +886,7 @@ test('Heroku', function (t) {
   t.equal(ci.isCI, true)
   t.equal(ci.name, 'Heroku')
   t.equal(ci.HEROKU, true)
+  t.equal(ci.id, 'HEROKU')
   assertVendorConstants('HEROKU', ci, t)
 
   process.env.NODE = realNode
@@ -857,6 +902,7 @@ test('Sourcehit', function (t) {
   t.equal(ci.isCI, true)
   t.equal(ci.name, 'Sourcehut')
   t.equal(ci.SOURCEHUT, true)
+  t.equal(ci.id, 'SOURCEHUT')
   assertVendorConstants('SOURCEHUT', ci, t)
 
   delete process.env.CI_NAME
@@ -873,6 +919,7 @@ test('ReleaseHub', function (t) {
   t.equal(ci.isCI, true)
   t.equal(ci.name, 'ReleaseHub')
   t.equal(ci.RELEASEHUB, true)
+  t.equal(ci.id, 'RELEASEHUB')
   assertVendorConstants('RELEASEHUB', ci, t)
 
   delete process.env.RELEASE_BUILD_ID
@@ -889,6 +936,7 @@ test('Gitea Actions', function (t) {
   t.equal(ci.isCI, true)
   t.equal(ci.name, 'Gitea Actions')
   t.equal(ci.GITEA_ACTIONS, true)
+  t.equal(ci.id, 'GITEA_ACTIONS')
   assertVendorConstants('GITEA_ACTIONS', ci, t)
 
   delete process.env.GITEA_ACTIONS
@@ -907,6 +955,7 @@ test('Agola CI', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Agola CI')
   t.equal(ci.AGOLA, true)
+  t.equal(ci.id, 'AGOLA')
   assertVendorConstants('AGOLA', ci, t)
 
   delete process.env.AGOLA_GIT_REF
@@ -926,6 +975,7 @@ test('Agola CI - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Agola CI')
   t.equal(ci.AGOLA, true)
+  t.equal(ci.id, 'AGOLA')
   assertVendorConstants('AGOLA', ci, t)
 
   delete process.env.AGOLA_GIT_REF
@@ -945,6 +995,7 @@ test('Vela', function (t) {
   t.equal(ci.isPR, false)
   t.equal(ci.name, 'Vela')
   t.equal(ci.VELA, true)
+  t.equal(ci.id, 'VELA')
   assertVendorConstants('VELA', ci, t)
 
   delete process.env.VELA
@@ -964,6 +1015,7 @@ test('Vela - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'Vela')
   t.equal(ci.VELA, true)
+  t.equal(ci.id, 'VELA')
   assertVendorConstants('VELA', ci, t)
 
   delete process.env.VELA
@@ -981,6 +1033,7 @@ test('Prow', function (t) {
   t.equal(ci.isCI, true)
   t.equal(ci.name, 'Prow')
   t.equal(ci.PROW, true)
+  t.equal(ci.id, 'PROW')
   assertVendorConstants('PROW', ci, t)
 
   delete process.env.PROW_JOB_ID
@@ -997,6 +1050,7 @@ test('Earthly CI', function (t) {
   t.equal(ci.isCI, true)
   t.equal(ci.name, 'Earthly')
   t.equal(ci.EARTHLY, true)
+  t.equal(ci.id, 'EARTHLY')
   assertVendorConstants('EARTHLY', ci, t)
 
   delete process.env.EARTHLY_CI
@@ -1013,6 +1067,7 @@ test('AWS Codebuild', function (t) {
   t.equal(ci.isCI, true)
   t.equal(ci.name, 'AWS CodeBuild')
   t.equal(ci.CODEBUILD, true)
+  t.equal(ci.id, 'CODEBUILD')
   assertVendorConstants('CODEBUILD', ci, t)
 
   delete process.env.CODEBUILD_BUILD_ARN
@@ -1031,6 +1086,7 @@ test('AWS Codebuild - PR', function (t) {
   t.equal(ci.isPR, true)
   t.equal(ci.name, 'AWS CodeBuild')
   t.equal(ci.CODEBUILD, true)
+  t.equal(ci.id, 'CODEBUILD')
   assertVendorConstants('CODEBUILD', ci, t)
 
   delete process.env.CODEBUILD_BUILD_ARN

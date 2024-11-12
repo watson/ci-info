@@ -25,7 +25,13 @@ export const isPR: boolean | null;
  * to use `ci.TRAVIS` instead.
  */
 export const name: string | null;
+/**
+ * Returns a string containing the identifier of the CI server the code is running on. If
+ * CI server is not detected, it returns `null`.
+ */
+export const id: string | null;
 
+/* Vendor constants */
 export const AGOLA: boolean;
 export const APPCIRCLE: boolean;
 export const APPVEYOR: boolean;

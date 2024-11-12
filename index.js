@@ -13,6 +13,7 @@ Object.defineProperty(exports, '_vendors', {
 
 exports.name = null
 exports.isPR = null
+exports.id = null
 
 vendors.forEach(function (vendor) {
   const envs = Array.isArray(vendor.env) ? vendor.env : [vendor.env]
@@ -28,6 +29,7 @@ vendors.forEach(function (vendor) {
 
   exports.name = vendor.name
   exports.isPR = checkPR(vendor)
+  exports.id = vendor.constant
 })
 
 exports.isCI = !!(
