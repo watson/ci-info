@@ -1,5 +1,12 @@
 # Changelog
 
+
+### v4.1.0
+
+- support Appcircle PR [1d42c26](https://github.com/watson/ci-info/commit/1d42c26)
+- support AWS CodeBuild PR [e6fcdd2](https://github.com/watson/ci-info/commit/e6fcdd2)
+- add `ci.id` to return vendor constant [81fd993](https://github.com/watson/ci-info/commit/81fd993)
+
 ## v4.0.0
 
 - support Earthly CI [fb8bd85](https://github.com/watson/ci-info/commit/fb8bd85)
