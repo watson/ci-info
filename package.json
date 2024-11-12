@@ -37,7 +37,7 @@
   "scripts": {
     "lint:fix": "standard --fix",
     "test": "standard && node test.js",
-    "prepare": "husky install"
+    "prepare": "husky install || true"
   },
   "devDependencies": {
     "clear-module": "^4.1.2",
