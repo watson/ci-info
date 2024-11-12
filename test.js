@@ -422,6 +422,45 @@ test('Appcircle', function (t) {
   t.end()
 })
 
+test('Appcircle - PR', function (t) {
+  process.env.AC_APPCIRCLE = 'true'
+  process.env.AC_GIT_PR = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Appcircle')
+  t.equal(ci.APPCIRCLE, true)
+  t.equal(ci.id, 'APPCIRCLE')
+  assertVendorConstants('APPCIRCLE', ci, t)
+
+  delete process.env.AC_APPCIRCLE
+  delete process.env.AC_GIT_PR
+
+  t.end()
+})
+
+test('Appcircle - Not PR', function (t) {
+  process.env.AC_APPCIRCLE = 'true'
+  process.env.AC_GIT_PR = 'false'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, false)
+  t.equal(ci.name, 'Appcircle')
+  t.equal(ci.APPCIRCLE, true)
+  t.equal(ci.id, 'APPCIRCLE')
+  assertVendorConstants('APPCIRCLE', ci, t)
+
+  delete process.env.AC_APPCIRCLE
+
+  t.end()
+})
+
 test('Render - PR', function (t) {
   process.env.RENDER = 'true'
   process.env.IS_PULL_REQUEST = 'true'
