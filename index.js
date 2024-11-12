@@ -35,8 +35,15 @@ vendors.forEach(function (vendor) {
       break
     case 'object':
       if ('env' in vendor.pr) {
-        // "pr": { "env": "BUILDKITE_PULL_REQUEST", "ne": "false" }
-        exports.isPR = vendor.pr.env in env && env[vendor.pr.env] !== vendor.pr.ne
+        if ('any' in vendor.pr) {
+          // "pr": { "env": "CODEBUILD_WEBHOOK_EVENT", "any": ["PULL_REQUEST_CREATED", "PULL_REQUEST_UPDATED"] }
+          exports.isPR = vendor.pr.any.some(function (key) {
+            return env[vendor.pr.env] === key
+          })
+        } else {
+          // "pr": { "env": "BUILDKITE_PULL_REQUEST", "ne": "false" }
+          exports.isPR = vendor.pr.env in env && env[vendor.pr.env] !== vendor.pr.ne
+        }
       } else if ('any' in vendor.pr) {
         // "pr": { "any": ["ghprbPullId", "CHANGE_ID"] }
         exports.isPR = vendor.pr.any.some(function (key) {
@@ -79,11 +86,13 @@ function checkEnv (obj) {
     return env[obj.env] && env[obj.env].includes(obj.includes)
     // }
   }
+
   if ('any' in obj) {
     return obj.any.some(function (k) {
       return !!env[k]
     })
   }
+
   return Object.keys(obj).every(function (k) {
     return env[k] === obj[k]
   })

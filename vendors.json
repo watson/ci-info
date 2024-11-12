@@ -19,7 +19,15 @@
   {
     "name": "AWS CodeBuild",
     "constant": "CODEBUILD",
-    "env": "CODEBUILD_BUILD_ARN"
+    "env": "CODEBUILD_BUILD_ARN",
+    "pr": {
+      "env": "CODEBUILD_WEBHOOK_EVENT",
+      "any": [
+        "PULL_REQUEST_CREATED",
+        "PULL_REQUEST_UPDATED",
+        "PULL_REQUEST_REOPENED"
+      ]
+    }
   },
   {
     "name": "Azure Pipelines",

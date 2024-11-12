@@ -1004,6 +1004,40 @@ test('Earthly CI', function (t) {
   t.end()
 })
 
+test('AWS Codebuild', function (t) {
+  process.env.CODEBUILD_BUILD_ARN = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, 'AWS CodeBuild')
+  t.equal(ci.CODEBUILD, true)
+  assertVendorConstants('CODEBUILD', ci, t)
+
+  delete process.env.CODEBUILD_BUILD_ARN
+
+  t.end()
+})
+
+test('AWS Codebuild - PR', function (t) {
+  process.env.CODEBUILD_BUILD_ARN = 'true'
+  process.env.CODEBUILD_WEBHOOK_EVENT = 'PULL_REQUEST_CREATED'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'AWS CodeBuild')
+  t.equal(ci.CODEBUILD, true)
+  assertVendorConstants('CODEBUILD', ci, t)
+
+  delete process.env.CODEBUILD_BUILD_ARN
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     const bool = constant === expect
