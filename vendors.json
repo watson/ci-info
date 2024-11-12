@@ -9,7 +9,10 @@
     "name": "Appcircle",
     "constant": "APPCIRCLE",
     "env": "AC_APPCIRCLE",
-    "pr": "AC_GIT_PR"
+    "pr": {
+      "env": "AC_GIT_PR",
+      "ne": "false"
+    }
   },
   {
     "name": "AppVeyor",

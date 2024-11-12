@@ -820,7 +820,7 @@ test('Visual Studio App Center', function (t) {
   const ci = require('./')
 
   t.equal(ci.isCI, true)
-  // t.equal(ci.isPR, false)
+  t.equal(ci.isPR, null)
   t.equal(ci.name, 'Visual Studio App Center')
   t.equal(ci.APPCENTER, true)
   t.equal(ci.id, 'APPCENTER')
@@ -914,7 +914,7 @@ test('Xcode Server - Not PR', function (t) {
   const ci = require('./')
 
   t.equal(ci.isCI, true)
-  // t.equal(ci.isPR, false)
+  t.equal(ci.isPR, null)
   t.equal(ci.name, 'Xcode Server')
   t.equal(ci.XCODE_SERVER, true)
   t.equal(ci.id, 'XCODE_SERVER')
@@ -1035,7 +1035,6 @@ test('Agola CI - PR', function (t) {
 
 test('Vela', function (t) {
   process.env.VELA = 'true'
-  process.env.VELA_PULL_REQUEST = '2'
 
   clearModule('./')
   const ci = require('./')
@@ -1048,7 +1047,6 @@ test('Vela', function (t) {
   assertVendorConstants('VELA', ci, t)
 
   delete process.env.VELA
-  delete process.env.VELA_PULL_REQUEST
 
   t.end()
 })
@@ -1139,6 +1137,7 @@ test('AWS Codebuild - PR', function (t) {
   assertVendorConstants('CODEBUILD', ci, t)
 
   delete process.env.CODEBUILD_BUILD_ARN
+  delete process.env.CODEBUILD_WEBHOOK_EVENT
 
   t.end()
 })
