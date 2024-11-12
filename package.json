@@ -9,6 +9,18 @@
   "repository": "https://github.com/watson/ci-info.git",
   "bugs": "https://github.com/watson/ci-info/issues",
   "homepage": "https://github.com/watson/ci-info",
+  "contributors": [
+    {
+      "name": "Sibiraj",
+      "url": "https://github.com/sibiraj-s"
+    }
+  ],
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/sibiraj-s"
+    }
+  ],
   "keywords": [
     "ci",
     "continuous",
@@ -21,12 +33,6 @@
     "index.js",
     "index.d.ts",
     "CHANGELOG.md"
-  ],
-  "funding": [
-    {
-      "type": "github",
-      "url": "https://github.com/sponsors/sibiraj-s"
-    }
   ],
   "scripts": {
     "lint:fix": "standard --fix",
