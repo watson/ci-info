@@ -41,9 +41,9 @@
   },
   "devDependencies": {
     "clear-module": "^4.1.2",
-    "husky": "^8.0.3",
-    "standard": "^17.1.0",
-    "tape": "^5.7.0"
+    "husky": "^9.1.6",
+    "standard": "^17.1.2",
+    "tape": "^5.9.0"
   },
   "engines": {
     "node": ">=8"
