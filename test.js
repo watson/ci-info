@@ -3,7 +3,7 @@
 const test = require('tape')
 const clearModule = require('clear-module')
 
-const isActualPR = !!(process.env.GITHUB_EVENT_NAME && process.env.GITHUB_EVENT_NAME === 'pull_request')
+const isActualPR = process.env.GITHUB_EVENT_NAME === 'pull_request'
 
 test('Known CI', function (t) {
   process.env.GITHUB_ACTIONS = 'true'
@@ -23,12 +23,15 @@ test('Known CI', function (t) {
 })
 
 test('Not CI', function (t) {
-  delete process.env.CI
-  delete process.env.CONTINUOUS_INTEGRATION
-  delete process.env.BUILD_NUMBER
-  delete process.env.TRAVIS
-  delete process.env.GITHUB_ACTIONS
+  const envVars = [
+    'CI',
+    'CONTINUOUS_INTEGRATION',
+    'BUILD_NUMBER',
+    'TRAVIS',
+    'GITHUB_ACTIONS'
+  ]
 
+  envVars.forEach((envVar) => delete process.env[envVar])
   clearModule('./')
   const ci = require('./')
 
@@ -71,12 +74,18 @@ test('Unknown CI', function (t) {
 
 test('Anonymous CI', function (t) {
   const ANONYMOUS_ENV_VARS = [
-    'CI', 'CONTINUOUS_INTEGRATION', 'BUILD_ID',
-    'BUILD_NUMBER', 'CI_APP_ID', 'CI_BUILD_ID',
-    'CI_BUILD_NUMBER', 'RUN_ID', 'CI_NAME'
+    'CI',
+    'CONTINUOUS_INTEGRATION',
+    'BUILD_ID',
+    'BUILD_NUMBER',
+    'CI_APP_ID',
+    'CI_BUILD_ID',
+    'CI_BUILD_NUMBER',
+    'RUN_ID',
+    'CI_NAME'
   ]
 
-  for (const envVar in ANONYMOUS_ENV_VARS) {
+  ANONYMOUS_ENV_VARS.forEach((envVar) => {
     process.env[envVar] = true
 
     clearModule('./')
@@ -85,7 +94,7 @@ test('Anonymous CI', function (t) {
     t.equal(ci.isPR, null)
     t.equal(ci.name, null)
     t.equal(ci.id, null)
-  }
+  })
 
   t.end()
 })
