@@ -457,6 +457,7 @@ test('Appcircle - Not PR', function (t) {
   assertVendorConstants('APPCIRCLE', ci, t)
 
   delete process.env.AC_APPCIRCLE
+  delete process.env.AC_GIT_PR
 
   t.end()
 })
