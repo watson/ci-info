@@ -37,7 +37,7 @@ Officially supported CI servers:
 | [Agola CI](https://agola.io/)                                                   | `ci.AGOLA`              | ✅   |
 | [Appcircle](https://appcircle.io/)                                              | `ci.APPCIRCLE`          | 🚫   |
 | [AppVeyor](http://www.appveyor.com)                                             | `ci.APPVEYOR`           | ✅   |
-| [AWS CodeBuild](https://aws.amazon.com/codebuild/)                              | `ci.CODEBUILD`          | 🚫   |
+| [AWS CodeBuild](https://aws.amazon.com/codebuild/)                              | `ci.CODEBUILD`          | ✅   |
 | [Azure Pipelines](https://azure.microsoft.com/en-us/services/devops/pipelines/) | `ci.AZURE_PIPELINES`    | ✅   |
 | [Bamboo](https://www.atlassian.com/software/bamboo) by Atlassian                | `ci.BAMBOO`             | 🚫   |
 | [Bitbucket Pipelines](https://bitbucket.org/product/features/pipelines)         | `ci.BITBUCKET`          | ✅   |
