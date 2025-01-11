@@ -46,6 +46,7 @@ Officially supported CI servers:
 | [Buildkite](https://buildkite.com)                                              | `ci.BUILDKITE`          | ✅   |
 | [CircleCI](http://circleci.com)                                                 | `ci.CIRCLE`             | ✅   |
 | [Cirrus CI](https://cirrus-ci.org)                                              | `ci.CIRRUS`             | ✅   |
+| [Cloudflare Pages](https://pages.cloudflare.com/)                               | `ci.CLOUDFLARE_PAGES`   | 🚫   |
 | [Codefresh](https://codefresh.io/)                                              | `ci.CODEFRESH`          | ✅   |
 | [Codeship](https://codeship.com)                                                | `ci.CODESHIP`           | 🚫   |
 | [Drone](https://drone.io)                                                       | `ci.DRONE`              | ✅   |
