@@ -329,6 +329,25 @@ test('Cirrus CI - Not PR', function (t) {
   t.end()
 })
 
+test('Cloudflare Pages - Not PR', function (t) {
+  // https://developers.cloudflare.com/pages/configuration/build-configuration/#environment-variables
+  process.env.CF_PAGES = '1'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, null)
+  t.equal(ci.name, 'Cloudflare Pages')
+  t.equal(ci.CLOUDFLARE_PAGES, true)
+  t.equal(ci.id, 'CLOUDFLARE_PAGES')
+  assertVendorConstants('CLOUDFLARE_PAGES', ci, t)
+
+  delete process.env.CF_PAGES
+
+  t.end()
+})
+
 test('Codefresh - PR', function (t) {
   process.env.CF_BUILD_ID = 'true'
   process.env.CF_PULL_REQUEST_ID = '42'

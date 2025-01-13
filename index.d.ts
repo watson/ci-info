@@ -44,6 +44,7 @@ export const BUDDY: boolean;
 export const BUILDKITE: boolean;
 export const CIRCLE: boolean;
 export const CIRRUS: boolean;
+export const CLOUDFLARE_PAGES: boolean;
 export const CODEFRESH: boolean;
 export const CODEMAGIC: boolean;
 export const CODESHIP: boolean;
