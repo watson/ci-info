@@ -42,8 +42,8 @@
   },
   "devDependencies": {
     "clear-module": "^4.1.2",
-    "husky": "^9.1.6",
-    "publint": "^0.2.12",
+    "husky": "^9.1.7",
+    "publint": "^0.3.8",
     "standard": "^17.1.2",
     "tape": "^5.9.0"
   },
