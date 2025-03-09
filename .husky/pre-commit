@@ -1,5 +1,4 @@
-node sort-vendors.js
-node create-typings.js
+npm run build
 
 git add index.d.ts
 git add vendors.json

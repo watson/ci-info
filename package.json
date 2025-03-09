@@ -36,6 +36,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
+    "build": "node sort-vendors.js && node create-typings.js",
     "lint:fix": "standard --fix",
     "test": "standard && node test.js",
     "prepare": "husky install || true"
