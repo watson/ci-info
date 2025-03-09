@@ -1,5 +1,8 @@
 # Changelog
 
+## v4.2.0
+
+- support Cloudflare Pages [75c9de8](https://github.com/watson/ci-info/commit/75c9de8)
 
 ### v4.1.0
 
