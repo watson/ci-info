@@ -233,6 +233,12 @@
     }
   },
   {
+    "name": "Nx Cloud",
+    "constant": "NX_CLOUD",
+    "env": "NX_CI_EXECUTION_ID",
+    "pr": "NX_BRANCH"
+  },
+  {
     "name": "Prow",
     "constant": "PROW",
     "env": "PROW_JOB_ID"

@@ -56,7 +56,7 @@ Officially supported CI servers:
 | [Gerrit CI](https://www.gerritcodereview.com)                                   | `ci.GERRIT`             | 🚫   |
 | [GitHub Actions](https://github.com/features/actions/)                          | `ci.GITHUB_ACTIONS`     | ✅   |
 | [GitLab CI](https://about.gitlab.com/gitlab-ci/)                                | `ci.GITLAB`             | ✅   |
-| [Gitea Actions](https://about.gitea.com/)                                       | `ci.GITEA_ACTIONS`      | 🚫  |
+| [Gitea Actions](https://about.gitea.com/)                                       | `ci.GITEA_ACTIONS`      | 🚫   |
 | [GoCD](https://www.go.cd/)                                                      | `ci.GOCD`               | 🚫   |
 | [Google Cloud Build](https://cloud.google.com/build)                            | `ci.GOOGLE_CLOUD_BUILD` | 🚫   |
 | [Harness CI](https://www.harness.io/products/continuous-integration)            | `ci.HARNESS`            | 🚫   |
@@ -67,6 +67,7 @@ Officially supported CI servers:
 | [Magnum CI](https://magnum-ci.com)                                              | `ci.MAGNUM`             | 🚫   |
 | [Netlify CI](https://www.netlify.com/)                                          | `ci.NETLIFY`            | ✅   |
 | [Nevercode](http://nevercode.io/)                                               | `ci.NEVERCODE`          | ✅   |
+| [Nx Cloud](https://nx.dev/)                                                     | `ci.NX_CLOUD`           | ✅   |
 | [Prow](https://docs.prow.k8s.io/)                                               | `ci.PROW`               | 🚫   |
 | [ReleaseHub](https://releasehub.com/)                                           | `ci.RELEASEHUB`         | 🚫   |
 | [Render](https://render.com/)                                                   | `ci.RENDER`             | ✅   |
