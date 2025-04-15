@@ -1161,6 +1161,43 @@ test('AWS Codebuild - PR', function (t) {
   t.end()
 })
 
+test('Nx Cloud', function (t) {
+  process.env.NX_CI_EXECUTION_ID = '123'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.name, 'Nx Cloud')
+  t.equal(ci.NX_CLOUD, true)
+  t.equal(ci.id, 'NX_CLOUD')
+  assertVendorConstants('NX_CLOUD', ci, t)
+
+  delete process.env.NX_CI_EXECUTION_ID
+
+  t.end()
+})
+
+test('Nx Cloud - PR', function (t) {
+  process.env.NX_CI_EXECUTION_ID = '123'
+  process.env.NX_BRANCH = '42'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, true)
+  t.equal(ci.name, 'Nx Cloud')
+  t.equal(ci.NX_CLOUD, true)
+  t.equal(ci.id, 'NX_CLOUD')
+  assertVendorConstants('NX_CLOUD', ci, t)
+
+  delete process.env.NX_CI_EXECUTION_ID
+  delete process.env.NX_BRANCH
+
+  t.end()
+})
+
 function assertVendorConstants (expect, ci, t) {
   ci._vendors.forEach(function (constant) {
     const bool = constant === expect
