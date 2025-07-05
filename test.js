@@ -348,6 +348,25 @@ test('Cloudflare Pages - Not PR', function (t) {
   t.end()
 })
 
+test('Cloudflare Workers - Not PR', function (t) {
+  // https://developers.cloudflare.com/pages/configuration/build-configuration/#environment-variables
+  process.env.WORKERS_CI = '1'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, null)
+  t.equal(ci.name, 'Cloudflare Workers')
+  t.equal(ci.CLOUDFLARE_WORKERS, true)
+  t.equal(ci.id, 'CLOUDFLARE_WORKERS')
+  assertVendorConstants('CLOUDFLARE_WORKERS', ci, t)
+
+  delete process.env.WORKERS_CI
+
+  t.end()
+})
+
 test('Codefresh - PR', function (t) {
   process.env.CF_BUILD_ID = 'true'
   process.env.CF_PULL_REQUEST_ID = '42'

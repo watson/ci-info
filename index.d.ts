@@ -45,6 +45,7 @@ export const BUILDKITE: boolean;
 export const CIRCLE: boolean;
 export const CIRRUS: boolean;
 export const CLOUDFLARE_PAGES: boolean;
+export const CLOUDFLARE_WORKERS: boolean;
 export const CODEFRESH: boolean;
 export const CODEMAGIC: boolean;
 export const CODESHIP: boolean;
