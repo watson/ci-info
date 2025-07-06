@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.3.0
+
+- support Cloudflare workers [e438266](https://github.com/watson/ci-info/commit/e438266)
+
 ## v4.2.0
 
 - support Cloudflare Pages [75c9de8](https://github.com/watson/ci-info/commit/75c9de8)
