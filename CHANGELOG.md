@@ -1,5 +1,9 @@
 # Changelog
 
+## v4.3.1
+
+- don't read envs when CI is set to `false` [3fae1ac](https://github.com/watson/ci-info/commit/3fae1ac)
+
 ## v4.3.0
 
 - support Cloudflare workers [e438266](https://github.com/watson/ci-info/commit/e438266)
