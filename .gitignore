@@ -91,6 +91,7 @@ node_modules/
 jspm_packages/
 
 # Lock files
+package-lock.json
 pnpm-lock.yaml
 yarn.lock
 
