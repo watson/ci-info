@@ -27,7 +27,7 @@ jobs:
       - name: Update npm
         run: npm install -g npm@latest
 
-      - run: npm i
+      - run: npm ci
       - run: npm run build
 
       - name: Publish to NPM
