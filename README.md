@@ -120,6 +120,14 @@ the given CI server, otherwise `false`.
 Examples of vendor constants are `ci.TRAVIS` or `ci.APPVEYOR`. For a
 complete list, see the support table above.
 
+## Disable CI Checks
+
+To disable CI checks and vendor assertion, set the environment variable
+
+```
+CI=false
+```
+
 ## Ports
 
 ci-info has been ported to the following languages
