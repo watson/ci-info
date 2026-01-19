@@ -33,6 +33,7 @@ export const id: string | null;
 
 /* Vendor constants */
 export const AGOLA: boolean;
+export const ALPIC: boolean;
 export const APPCIRCLE: boolean;
 export const APPVEYOR: boolean;
 export const CODEBUILD: boolean;

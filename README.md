@@ -35,6 +35,7 @@ Officially supported CI servers:
 | Name                                                                            | Constant                | isPR |
 | ------------------------------------------------------------------------------- | ----------------------- | ---- |
 | [Agola CI](https://agola.io/)                                                   | `ci.AGOLA`              | ✅   |
+| [Alpic](https://alpic.ai/)                                                      | `ci.ALPIC`              | 🚫   |
 | [Appcircle](https://appcircle.io/)                                              | `ci.APPCIRCLE`          | ✅   |
 | [AppVeyor](http://www.appveyor.com)                                             | `ci.APPVEYOR`           | ✅   |
 | [AWS CodeBuild](https://aws.amazon.com/codebuild/)                              | `ci.CODEBUILD`          | ✅   |

@@ -99,6 +99,24 @@ test('Anonymous CI', function (t) {
   t.end()
 })
 
+test('Alpic', function (t) {
+  process.env.ALPIC_HOST = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, null)
+  t.equal(ci.name, 'Alpic')
+  t.equal(ci.ALPIC, true)
+  t.equal(ci.id, 'ALPIC')
+  assertVendorConstants('ALPIC', ci, t)
+
+  delete process.env.ALPIC_HOST
+
+  t.end()
+})
+
 test('AppVeyor - PR', function (t) {
   process.env.APPVEYOR = 'true'
   process.env.APPVEYOR_PULL_REQUEST_NUMBER = '42'
