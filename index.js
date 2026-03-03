@@ -3,6 +3,9 @@
 const vendors = require('./vendors.json')
 
 const env = process.env
+const isCursorAgent = env.CURSOR_EXTENSION_HOST_ROLE === 'agent-exec' ||
+  env.CURSOR_AGENT === '1' ||
+  env.CURSOR_AGENT === 'true'
 
 // Used for testing only
 Object.defineProperty(exports, '_vendors', {
@@ -18,7 +21,7 @@ exports.id = null
 if (env.CI !== 'false') {
   vendors.forEach(function (vendor) {
     const envs = Array.isArray(vendor.env) ? vendor.env : [vendor.env]
-    const isCI = envs.every(function (obj) {
+    const isCI = !isCursorAgent && envs.every(function (obj) {
       return checkEnv(obj)
     })
 
@@ -36,6 +39,7 @@ if (env.CI !== 'false') {
 
 exports.isCI = !!(
   env.CI !== 'false' && // Bypass all checks if CI env is explicitly set to 'false'
+  !isCursorAgent && // Cursor agent sets CI=1, but is not a CI runtime
   (env.BUILD_ID || // Jenkins, Cloudbees
     env.BUILD_NUMBER || // Jenkins, TeamCity
     env.CI || // Travis CI, CircleCI, Cirrus CI, Gitlab CI, Appveyor, CodeShip, dsari, Cloudflare Pages/Workers

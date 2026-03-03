@@ -5,6 +5,10 @@ const clearModule = require('clear-module')
 
 const isActualPR = process.env.GITHUB_EVENT_NAME === 'pull_request'
 
+// Keep tests deterministic across local shells and Cursor agent sessions.
+delete process.env.CURSOR_AGENT
+delete process.env.CURSOR_EXTENSION_HOST_ROLE
+
 test('Known CI', function (t) {
   process.env.GITHUB_ACTIONS = 'true'
 
@@ -68,6 +72,31 @@ test('Unknown CI', function (t) {
   t.equal(ci.id, null)
   t.equal(ci.TRAVIS, false)
   assertVendorConstants(null, ci, t)
+
+  t.end()
+})
+
+test('Cursor Agent is not CI', function (t) {
+  const realCI = process.env.CI
+
+  process.env.CI = 'true'
+  process.env.CURSOR_AGENT = '1'
+  process.env.CURSOR_EXTENSION_HOST_ROLE = 'agent-exec'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, false)
+  t.equal(ci.isPR, null)
+  t.equal(ci.name, null)
+  t.equal(ci.id, null)
+  assertVendorConstants(null, ci, t)
+
+  if (realCI === undefined) delete process.env.CI
+  else process.env.CI = realCI
+
+  delete process.env.CURSOR_AGENT
+  delete process.env.CURSOR_EXTENSION_HOST_ROLE
 
   t.end()
 })
