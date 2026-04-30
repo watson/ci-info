@@ -72,6 +72,7 @@ Officially supported CI servers:
 | [Prow](https://docs.prow.k8s.io/)                                               | `ci.PROW`               | 🚫   |
 | [ReleaseHub](https://releasehub.com/)                                           | `ci.RELEASEHUB`         | 🚫   |
 | [Render](https://render.com/)                                                   | `ci.RENDER`             | ✅   |
+| [RWX](https://rwx.com)                                                          | `ci.RWX`                | 🚫   |
 | [Sail CI](https://sail.ci/)                                                     | `ci.SAIL`               | ✅   |
 | [Screwdriver](https://screwdriver.cd/)                                          | `ci.SCREWDRIVER`        | ✅   |
 | [Semaphore](https://semaphoreci.com)                                            | `ci.SEMAPHORE`          | ✅   |

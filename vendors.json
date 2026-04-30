@@ -261,6 +261,11 @@
     }
   },
   {
+    "name": "RWX",
+    "constant": "RWX",
+    "env": "RWX"
+  },
+  {
     "name": "Sail CI",
     "constant": "SAIL",
     "env": "SAILCI",

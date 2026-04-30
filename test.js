@@ -558,6 +558,24 @@ test('Render - Not PR', function (t) {
   t.end()
 })
 
+test('RWX', function (t) {
+  process.env.RWX = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, null)
+  t.equal(ci.name, 'RWX')
+  t.equal(ci.RWX, true)
+  t.equal(ci.id, 'RWX')
+  assertVendorConstants('RWX', ci, t)
+
+  delete process.env.RWX
+
+  t.end()
+})
+
 test('Semaphore - PR', function (t) {
   process.env.SEMAPHORE = 'true'
   process.env.PULL_REQUEST_NUMBER = '42'
