@@ -71,6 +71,7 @@ export const NEVERCODE: boolean;
 export const PROW: boolean;
 export const RELEASEHUB: boolean;
 export const RENDER: boolean;
+export const RWX: boolean;
 export const SAIL: boolean;
 export const SCREWDRIVER: boolean;
 export const SEMAPHORE: boolean;
