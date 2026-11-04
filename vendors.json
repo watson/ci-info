@@ -79,6 +79,11 @@
     }
   },
   {
+    "name": "Capawesome Cloud",
+    "constant": "CAPAWESOME_CLOUD",
+    "env": "CAPAWESOME_CLOUD"
+  },
+  {
     "name": "CircleCI",
     "constant": "CIRCLE",
     "env": "CIRCLECI",
