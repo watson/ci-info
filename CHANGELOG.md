@@ -1,5 +1,10 @@
 # Changelog
 
+## v4.5.0
+
+- support Capawesome Cloud [f8a1427](https://github.com/watson/ci-info/commit/f8a1427)
+- support RWX [f45f838](https://github.com/watson/ci-info/commit/f45f838)
+
 ## v4.4.0
 
 - add aplic support [f329ff5](https://github.com/watson/ci-info/commit/f329ff5)
