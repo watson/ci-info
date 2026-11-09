@@ -43,6 +43,7 @@ export const BITBUCKET: boolean;
 export const BITRISE: boolean;
 export const BUDDY: boolean;
 export const BUILDKITE: boolean;
+export const CAPAWESOME_CLOUD: boolean;
 export const CIRCLE: boolean;
 export const CIRRUS: boolean;
 export const CLOUDFLARE_PAGES: boolean;

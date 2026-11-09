@@ -271,6 +271,24 @@ test('Buildkite - Not PR', function (t) {
   t.end()
 })
 
+test('Capawesome Cloud', function (t) {
+  process.env.CAPAWESOME_CLOUD = 'true'
+
+  clearModule('./')
+  const ci = require('./')
+
+  t.equal(ci.isCI, true)
+  t.equal(ci.isPR, null)
+  t.equal(ci.name, 'Capawesome Cloud')
+  t.equal(ci.CAPAWESOME_CLOUD, true)
+  t.equal(ci.id, 'CAPAWESOME_CLOUD')
+  assertVendorConstants('CAPAWESOME_CLOUD', ci, t)
+
+  delete process.env.CAPAWESOME_CLOUD
+
+  t.end()
+})
+
 test('CircleCI - PR', function (t) {
   process.env.CIRCLECI = 'true'
   process.env.CIRCLE_PULL_REQUEST = '42'

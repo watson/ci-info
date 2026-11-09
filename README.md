@@ -45,6 +45,7 @@ Officially supported CI servers:
 | [Bitrise](https://www.bitrise.io/)                                              | `ci.BITRISE`            | ✅   |
 | [Buddy](https://buddy.works/)                                                   | `ci.BUDDY`              | ✅   |
 | [Buildkite](https://buildkite.com)                                              | `ci.BUILDKITE`          | ✅   |
+| [Capawesome Cloud](https://capawesome.io/cloud/)                                | `ci.CAPAWESOME_CLOUD`   | 🚫   |
 | [CircleCI](http://circleci.com)                                                 | `ci.CIRCLE`             | ✅   |
 | [Cirrus CI](https://cirrus-ci.org)                                              | `ci.CIRRUS`             | ✅   |
 | [Cloudflare Pages](https://pages.cloudflare.com/)                               | `ci.CLOUDFLARE_PAGES`   | 🚫   |
